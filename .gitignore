@@ -13,6 +13,7 @@ yarn-error.log
 
 # IDEs and editors
 .idea/
+.idea/*
 .project
 .classpath
 .c9/
@@ -59,7 +60,6 @@ node_modules/
 bower_components/
 
 # IDEs and editors
-.idea/
 
 # misc
 .sass-cache/
