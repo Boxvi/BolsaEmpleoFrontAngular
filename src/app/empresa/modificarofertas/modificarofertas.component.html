@@ -1,0 +1,124 @@
+<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <svg class="bi me-2" width="30" height="24">
+        <use xlink:href="#bootstrap" />
+      </svg>
+      <span class="fs-5 fw-semibold">INSTA EMPLEO</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+          data-bs-target="#home-collapse" aria-expanded="true">
+          DATOS DE LA EMPRESA
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="datosempresa" class="link-dark rounded">REVISAR DATOS DE LA EMPRESA </a></li>
+          
+          </ul>
+          
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+          data-bs-target="#dashboard-collapse" aria-expanded="false">
+          DATOS DEL CONTACTO
+        </button>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="datoscontacto" class="link-dark rounded">REVISAR DATOS DEL CONTACTO</a></li>
+          
+  
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+          data-bs-target="#orders-collapse" aria-expanded="false">
+           OFERTAS LABORALES
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="publicarofertas" class="link-dark rounded">LISTADO DE OFERTAS LABORALES</a></li>
+  
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+          data-bs-target="#account-collapse" aria-expanded="false">
+          CURRICULUMS 
+        </button>
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="concultarcurriculumstabla" class="link-dark rounded">CONSULTAR CURRICULUMS</a></li>
+            
+          </ul>
+        </div>
+      </li>
+    </ul>
+</div>
+  
+  <div style="margin-top:-300px ;margin-left: 350px; ">
+  </div>
+  <div  class="forma">
+    <div class="row " >
+      <div class="col" >
+        <input type="text" class="form-control" placeholder="CARGO" aria-label="First name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="REQUISITOS" aria-label="Last name">
+      </div>
+    </div>
+    <br>
+    <div class="row " >
+      <div class="col" >
+        <input type="text" class="form-control" placeholder="DESCRIPCION" aria-label="First name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="UBICACION" aria-label="Last name">
+      </div>
+    </div>
+
+    <br>
+    <div class="row " >
+      <div class="col" >
+        <input type="text" class="form-control" placeholder="SECTOR EMPRESARIAL" aria-label="First name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="CIUDAD" aria-label="Last name">
+      </div>
+    </div>
+
+    <br>
+    <div class="row " >
+      <div class="col">
+        <input type="text" class="form-control" placeholder="JORNADA" aria-label="Last name">
+      </div>
+      <div class="col" >
+        <label for="star">FECHA INICIO DE CONVOCATORIA </label>
+  
+        <input type="date" id="star"  name="trip-start" value="2021-08-01" min="2021-08-01" max="2021-08-31">
+      </div>
+    </div>
+
+    <br>
+    <div class="row " >
+      <div class="col">
+        <input type="text" class="form-control" placeholder="AREA DE CONOCIMIENTO" aria-label="Last name">
+      </div>
+      <div class="col" >
+        <label for="star">FECHA FIN DE CONVOCATORIA </label>
+  
+        <input type="date" id="star"  name="trip-start" value="2021-08-01" min="2021-08-01" max="2021-08-31">
+      </div>
+    </div>
+  
+  </div>
+    <br>
+    <div style="margin-left: 550px;">
+    <button type="submit" class="btn btn-primary  ">PUBLICAR</button> &nbsp;&nbsp;
+  
+    <button type="submit"  [routerLink]="['/publicarofertas']" class="btn btn-primary">CANCELAR</button>
+  </div>
