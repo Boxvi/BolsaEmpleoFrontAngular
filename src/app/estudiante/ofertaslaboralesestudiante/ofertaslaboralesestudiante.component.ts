@@ -12,4 +12,12 @@ export class OfertaslaboralesestudianteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayStyle1 = "none";
+
+  OpenPopupol() {
+    this.displayStyle1 = "block";
+  }
+  closePopuppl() {
+    this.displayStyle1 = "none";
+  }
 }

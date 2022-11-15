@@ -75,5 +75,17 @@
 
 .forma{
   margin-left: 350px;
-  margin-top:-300px ;
+  margin-top:-350px ;
+
+}
+.crear{
+  position: relative;
+  border: 1px;
+  margin-top: 5%;
+  margin-left: 35%;
+  width: 370px;
+  height: 400px;
+  background-color: white;
+  box-shadow: 2px 2px 15px black;
+  border-radius: 20px;
 }
