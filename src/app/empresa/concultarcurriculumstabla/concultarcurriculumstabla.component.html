@@ -62,26 +62,38 @@
   </ul>
 </div>
 
-<div class="card forma" style="width: 80rem;">
-    <div class="card-body">
-      
-      <table class="table table-bordered table-striped">
-          <thead>
-              <tr>
-                <th>CEDULA</th>
-                <th>NOMBRE</th>
-                <th>CORREO</th>
-                <th>TELEFONO</th>
-                <th>CARGO</th>
-                <th>CV</th>
-              </tr>
-          </thead>
-
-          <tbody>
-            
-                  <td><button type="button" [routerLink]="['/consultarcurriculums']" name="button" class="btn btn-primary">Ver</button></td>
-
-          </tbody>
-      </table>
-    </div>
+<div class="forma">
+  <div style="width: 80%;">
+    <input type="search" class="form-control" placeholder="Buscar" aria-label="Last name">
   </div>
+  <br>
+  <div style="width: 165rem">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div style="width: 80rem;">
+            <div class="card-body">
+              
+              <table class="table table-bordered table-striped">
+                  <thead>
+                      <tr>
+                        <th>CEDULA</th>
+                        <th>NOMBRE</th>
+                        <th>CORREO</th>
+                        <th>TELEFONO</th>
+                        <th>CARGO</th>
+                        <th>CV</th>
+                      </tr>
+                  </thead>
+        
+                  <tbody>
+                    
+                          <td><button type="button" [routerLink]="['/consultarcurriculums']" name="button" class="btn btn-primary">Ver</button></td>
+        
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
