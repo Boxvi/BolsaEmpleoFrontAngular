@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="loginModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img width="50px" src="..../../../../assets/icons/maletin-icon.svg" alt="icon">
+        <h1 class="modal-title fs-5 text-uppercase" id="loginModalLabel">Login</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="username" class="col-form-label text-uppercase">Usuario:</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="loginForm.username"/>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="col-form-label text-uppercase">Contraseña:</label>
+            <input type="password" class="form-control" id="password" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer d-flex justify-content-center align-items-center">
+        <button type="button" class="btn btn-dark px-4 text-uppercase" data-bs-dismiss="modal">
+          Ingresar
+        </button>
+        <button type="button" class="btn btn-dark px-4 text-uppercase">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>
