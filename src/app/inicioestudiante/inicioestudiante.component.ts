@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 
 
 
+
 @Component({
   selector: 'app-inicioestudiante',
   templateUrl: './inicioestudiante.component.html',
@@ -9,6 +10,7 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./inicioestudiante.component.css']
 })
 export class InicioestudianteComponent implements OnInit {
+
 
   constructor() { }
 
@@ -24,5 +26,6 @@ export class InicioestudianteComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
+
 
 }

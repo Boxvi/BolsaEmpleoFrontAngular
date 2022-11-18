@@ -1,11 +1,13 @@
 <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
   <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-    <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+    <svg class="bi me-2" width="30" height="24">
+      <use xlink:href="#bootstrap" /></svg>
     <span class="fs-5 fw-semibold">INSTA EMPLEO</span>
   </a>
   <ul class="list-unstyled ps-0">
     <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+        data-bs-target="#home-collapse" aria-expanded="true">
         CURRICULUM VITAE
       </button>
       <div class="collapse show" id="home-collapse">
@@ -21,7 +23,8 @@
       </div>
     </li>
     <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+        data-bs-target="#dashboard-collapse" aria-expanded="false">
         OFERTAS
       </button>
       <div class="collapse" id="dashboard-collapse">
@@ -33,7 +36,8 @@
       </div>
     </li>
     <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+        data-bs-target="#orders-collapse" aria-expanded="false">
         PERFIL EMPRESARIAL
       </button>
       <div class="collapse" id="orders-collapse">
@@ -47,77 +51,87 @@
   </ul>
 </div>
 
-<div  class="forma">
 
-  <div class="row " >
-    <label >PERFIL OCUPACIONAL</label>
-    <br>
-    <br>
-    <div class="col" >
-      <input type="text" class="form-control" placeholder="HABILIDADES" aria-label="First name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="DESTRESAS" aria-label="Last name">
-    </div>
-    <br> <br>
-    <div class="row " >
-      <div class="col" >
-        <input type="text" class="form-control" placeholder="APTITUDES" aria-label="First name">
-      </div>
-  </div>
-  <br> <br>
-  <hr>
-  <br>
-  <label >EXPERIENCIA</label>
-    <br>
-    <div class="row " >
-      <div class="col" >
-        <input type="text" class="form-control" placeholder="AREA DE TRABAJO" aria-label="First name">
+
+<div class="forma">
+
+    <div class="row ">
+      <label>PERFIL OCUPACIONAL</label>
+      <br>
+      <br>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="HABILIDADES" aria-label="First name"
+          [(ngModel)]="informacionlaboral.habilidades" name="habilidades">
+
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="CARGO" aria-label="Last name">
-      </div>
-    </div>
-    <br> <br>
-    <div class="row " >
-      <div class="col" >
-        <input type="text" class="form-control" placeholder="DURACION" aria-label="First name">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="INTITUCION/EMPRESA" aria-label="Last name">
-      </div>
-    </div>
-    <br> <br>
-    <div class="row " >
-      <div class="col" >
-        <input type="text" class="form-control" placeholder="ACTIVIDAD" aria-label="First name">
+        <input type="text" class="form-control" placeholder="DESTRESAS" aria-label="Last name"
+          [(ngModel)]="informacionlaboral.destrezas" name="destresas">
       </div>
       <br> <br>
-  <hr>
-  <br>
-  <label >REFERENCIAS LABORALES</label>
-    <br>
-    <div class="row " >
-      <div class="col" >
-        <input type="text" class="form-control" placeholder="INSTITUCION/EMPRESA" aria-label="First name">
+      <div class="row ">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="APTITUDES" aria-label="First name"
+            [(ngModel)]="informacionlaboral.actitudes" name="actitudes">
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="NOMBRES" aria-label="Last name">
+
+      <br> <br>
+      <hr>
+      <br>
+      <label>EXPERIENCIA</label>
+      <br>
+      <div class="row ">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="AREA DE TRABAJO" aria-label="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="CARGO" aria-label="Last name">
+        </div>
       </div>
-    </div>
-    <br> <br>
-    <div class="row " >
-      <div class="col" >
-        <input type="text" class="form-control" placeholder="EMAIL" aria-label="First name">
+      <br> <br>
+      <div class="row ">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="DURACION" aria-label="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="INTITUCION/EMPRESA" aria-label="Last name">
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Last name">
+      <br> <br>
+      <div class="row ">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="ACTIVIDAD" aria-label="First name">
+        </div>
+        <br> <br>
+        <hr>
+        <br>
+        <label>REFERENCIAS LABORALES</label>
+        <br>
+        <div class="row ">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="INSTITUCION/EMPRESA" aria-label="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="NOMBRES" aria-label="Last name">
+          </div>
+        </div>
+        <br> <br>
+        <div class="row ">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="EMAIL" aria-label="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Last name">
+          </div>
+        </div>
+
       </div>
-    </div>
-  </div>
+
 </div>
+
 <br>
-  <div style="margin-left: 250px;">
+<div style="margin-left: 250px;">
   <button type="submit" class="btn btn-primary  ">EDITAR</button> &nbsp;&nbsp;
 
   <button type="submit" class="btn btn-primary">GUARDAR</button>

@@ -21,6 +21,7 @@ const routes: Routes = [
   {path:'perfilestudiante',component: PerfilestudianteComponent},
   {path:'intruformalestudiante',component: InstruccionformalestudianteComponent},
   {path:'infolaboralestudiante',component:InformacionlaboralestudianteComponent},
+  {path:'infolaboralestudiante/:id',component:InformacionlaboralestudianteComponent},
   {path:'capacitacionesestudiante',component:CapacitacionesestudianteComponent},
   {path:'refpersonalesesestudiante',component:RefpersonalesestudianteComponent},
   {path:'ofertaslaboralesesestudiante',component:OfertaslaboralesestudianteComponent},
