@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-    path: 'home', component: AppComponent, children: [
+    path: 'home', children: [
       { path: '', loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule) },
       { path: '**', redirectTo: '/home', pathMatch: 'full' }
     ]
