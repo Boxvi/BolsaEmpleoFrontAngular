@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ilogin } from 'src/app/data/interfaces/ilogin';
+import { Ilogin } from 'src/app/data/interfaces/models/ilogin';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +8,7 @@ import { Ilogin } from 'src/app/data/interfaces/ilogin';
 })
 export class LoginComponent implements OnInit {
 
-  public loginForm:Ilogin = {
+  public loginForm: Ilogin = {
     username: '',
     password: ''
   };
@@ -16,6 +16,15 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  isValidForm() {
+    return (this.loginForm.username.length > 0 && this.loginForm.password.length > 0);
+  }
+
+  cleanForm(){
+    this.loginForm.username = '';
+    this.loginForm.password = '';
   }
 
 }
