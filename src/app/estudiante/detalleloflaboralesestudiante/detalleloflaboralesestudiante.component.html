@@ -56,12 +56,16 @@
         <div class="col" >
           <label >CARGO</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name" readonly="readonly"
+          [(ngModel)]= "detalleloflaboralesestudiante.cargo" name="cargo"
+          >
         </div>
         <div class="col">
           <label >SECTOR EMPRESARIAL</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name"
+          [(ngModel)]="detalleloflaboralesestudiante.sector_empresarial" name="sector_empresarial"
+          >
         </div>
       </div>
       <br>
@@ -69,12 +73,16 @@
         <div class="col" >
           <label >REQUISITOS</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name" readonly="readonly"
+          [(ngModel)]="detalleloflaboralesestudiante.descripcion" name="descripcion"
+          >
         </div>
         <div class="col">
           <label >CIUDAD</label>
           <br>
-          <input type="text" class="form-control"  aria-label="Last name">
+          <input type="text" class="form-control"  aria-label="First name" readonly="readonly"
+          [(ngModel)]="detalleloflaboralesestudiante.ciudad" name="ciudad"
+          >
         </div>
       </div>
       <br>
@@ -82,12 +90,16 @@
         <div class="col" >
           <label >DESCRIPCION</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name" readonly="readonly"
+          [(ngModel)]="detalleloflaboralesestudiante.descripcion" name="descripcion"
+          >
         </div>
         <div class="col">
           <label >AREA DE CONOCIMIENTO</label>
           <br>
-          <input type="text" class="form-control"  aria-label="Last name">
+          <input type="text" class="form-control"  aria-label="Last name" readonly="readonly"
+          [(ngModel)]="detalleloflaboralesestudiante.area_conocimiento" name="area_conocimiento"
+          >
         </div>
       </div>
       <br>
@@ -95,13 +107,17 @@
         <div class="col" >
           <label >UBICACION</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name" readonly="readonly"
+          [(ngModel)]="detalleloflaboralesestudiante.ubicacion" name="ubicacion"
+          >
         </div>
 
         <div class="col">
           <label >EXPERIENCIA</label>
           <br>
-          <input type="text" class="form-control" aria-label="Last name">
+          <input type="text" class="form-control" aria-label="Last name" readonly="readonly"
+          [(ngModel)]="detalleloflaboralesestudiante.experiencia" name="experiencia"
+          >
         </div>
       </div>
     </div>

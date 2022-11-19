@@ -30,6 +30,7 @@ const routes: Routes = [
   {path:'detalleofeaplicadasestudiante',component:DetallelofaplicadasestudianteComponent},
   {path:'perfilempresasestudiante',component:PerfilempresasestudianteComponent},
   {path:'detalleperempresasestudiante',component:DetalleperfempresasestudianteComponent},
+  {path:'detalleofelaboralesesestudiante/:id',component:DetalleloflaboralesestudianteComponent},
 
 
 
