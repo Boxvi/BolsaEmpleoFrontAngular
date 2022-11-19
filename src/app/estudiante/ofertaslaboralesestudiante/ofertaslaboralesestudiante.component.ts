@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ofertaslaboralesestudiante } from './ofertaslaboralesestudiante'; 
+import { OfertaslaboralesestudianteService } from './ofertaslaboralesestudiante.service';
 
 @Component({
   selector: 'app-ofertaslaboralesestudiante',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfertaslaboralesestudianteComponent implements OnInit {
 
-  constructor() { }
+ofertaslaboralesestudiante: Ofertaslaboralesestudiante []=[];
+
+  constructor(private ofertaslaboralesestudianteService: OfertaslaboralesestudianteService) { }
 
   ngOnInit(): void {
+    this.ofertaslaboralesestudianteService.getAllOfertas().subscribe(
+      ofertaslaboralesestudiante => this.ofertaslaboralesestudiante = ofertaslaboralesestudiante
+
+    );
   }
 
   displayStyle1 = "none";

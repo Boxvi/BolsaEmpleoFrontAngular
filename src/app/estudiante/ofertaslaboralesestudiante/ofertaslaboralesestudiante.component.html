@@ -56,13 +56,40 @@
     <input type="search" class="form-control" placeholder="Buscar" aria-label="Last name">
   </div>
   <br>
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
+  <div class="row row-cols-1 row-cols-md-3 g-4" >
+    <div class="col" *ngFor="let ofertas of  ofertaslaboralesestudiante" >
       <div class="card">
 
         <div class="card-body">
-          <p class="card-text">EMPRESA <br> CARGO <br> REQUISITOS <br> UBICACION</p>
-          <a href="detalleofelaboralesesestudiante" class="btn btn-primary">VER</a>
+          <p class="card-text">
+            EMPRESA
+            <!--input type="text" class="form-control" aria-label="First name" 
+            [(ngModel)]="ofertas.empresa" name="empresa" -->
+            <li>{{ofertas.empresa}} </li>
+            <br> CARGO 
+            <!--input type="text" class="form-control" aria-label="First name"
+            [(ngModel)]="ofertas.cargo" name="cargo"
+            -->
+            <br>
+             <li>{{ofertas.cargo}} </li>
+            <br>
+             REQUISITOS
+             <br>
+             <li>{{ofertas.requisitos_academicos}} </li>
+             <!--input type="text" class="form-control" aria-label="First name"
+             [(ngModel)]="ofertas.requisitos_academicos" name="requisitos_academicos">
+              <br--> 
+              <br>
+             CIUDAD
+             <br>
+             <li>{{ofertas.ciudad}} </li> 
+             <br>                     
+             UBICACION
+             <br>
+             <li>{{ofertas.ubicacion}} </li>
+            
+            </p>
+          <a  class="btn btn-primary" [routerLink]="['/detalleofelaboralesesestudiante']" >VER</a>
         </div>
       </div>
     </div>
