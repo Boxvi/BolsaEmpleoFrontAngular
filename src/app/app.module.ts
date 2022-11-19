@@ -17,6 +17,8 @@ import { OfertaLaboralService } from './administrador/RevisarOfertasLaborales/Of
 import { RevofertalaboralService } from './administrador/RevisarOfertasLaborales/RevisarOfertaLaboral/revofertalaboral.service';
 
 import { RevofertaLaboralComponent } from './administrador/RevisarOfertasLaborales/RevisarOfertaLaboral/revoferta-laboral.component';
+import { ReporteComponent } from './administrador/ReportesEstadisticos/Reporte/reporte.component';
+import { GraficosComponent } from './administrador/ReportesEstadisticos/Graficos/graficos.component';
 
 const routes: Routes = [
   {path: '',redirectTo: '', pathMatch: 'full'},
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path: 'perfilEmpresa', component: PerfilEmpresaComponent},
   {path: 'empresa', component: EmpresaComponent},
   {path: 'ofertaLaboral', component: OfertaLaboralComponent},
-  {path: 'revOfertaLaboral', component: RevofertaLaboralComponent}
+  {path: 'revOfertaLaboral', component: RevofertaLaboralComponent},
+  {path: 'reporte', component: ReporteComponent},
+  {path: 'graficos', component: GraficosComponent}
 ];
 
 @NgModule({
@@ -38,7 +42,9 @@ const routes: Routes = [
     PerfilEmpresaComponent,
     EmpresaComponent,
     OfertaLaboralComponent,
-    RevofertaLaboralComponent
+    RevofertaLaboralComponent,
+    ReporteComponent,
+    GraficosComponent
   ],
   imports: [
     BrowserModule,
