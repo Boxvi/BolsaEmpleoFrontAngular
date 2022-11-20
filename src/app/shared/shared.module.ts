@@ -1,20 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 
+import { SidenavComponent } from './components/panel/sidenav/sidenav.component';
+import { BodyComponent } from './components/panel/body/body.component';
+import { TopbarComponent } from './components/panel/topbar/topbar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    TopbarComponent,
+    SidenavComponent,
+    BodyComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports:[
     FormsModule,
-    HeaderComponent
+    HeaderComponent,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

@@ -11,7 +11,7 @@ export class ValidationService {
   constructor() { }
 
   validateField(value: any, type: ENUM_VALIDATION_OPTIONS) {
-    switch (value) {
+    switch (type) {
       case ENUM_VALIDATION_OPTIONS.EMAIL:
         return this.validateEmail(value);
       case ENUM_VALIDATION_OPTIONS.PASSWORD:

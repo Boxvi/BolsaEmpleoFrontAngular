@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BodyComponent } from './shared/components/panel/body/body.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -9,6 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'signUp', loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule)
+  },
+  {
+    path: 'panel', component: BodyComponent
   },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 
