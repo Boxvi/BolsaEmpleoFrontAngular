@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Iusuario } from 'src/app/data/interfaces/models/iusuario';
-import { IResponseValidation } from 'src/app/data/interfaces/services/iresponse-validation.metadata';
-import { ValidationService } from 'src/app/shared/services/validations/validation.service';
 
 @Component({
   selector: 'app-register',

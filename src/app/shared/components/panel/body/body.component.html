@@ -1,5 +1,8 @@
 <div class="container-fluid g-0">
-  <app-topbar (sideNavToggled)="sideNavStatus = $event"></app-topbar>
+  <app-topbar
+    (sideNavToggled)="sideNavStatus = $event"
+    [username]="username"
+  ></app-topbar>
   <main>
     <app-sidenav
       [sideNavStatus]="sideNavStatus"
@@ -10,7 +13,6 @@
       [ngClass]="{ 'display-area-shrink': sideNavStatus }"
     >
       <p class="fs-1 fw-bold fst-italic">Contenido Principal</p>
-      
     </div>
   </main>
 </div>

@@ -6,6 +6,6 @@ export interface Iusuario {
   email: string;
   telefono: string;
   estado: boolean;
-  fechaCreacion?: Date;
+  fechaCreacion?: string;
   rol: string;
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-topbar',
@@ -8,14 +8,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TopbarComponent implements OnInit {
 
   @Output() sideNavToggled = new EventEmitter<boolean>();
-  menuStatus:boolean = false;
+  @Input() username: string = 'Usuario';
+  menuStatus: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  sideNavToggle(){
+  sideNavToggle() {
     this.menuStatus = !this.menuStatus;
     this.sideNavToggled.emit(this.menuStatus);
   }
