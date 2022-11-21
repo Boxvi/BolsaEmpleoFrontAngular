@@ -12,6 +12,8 @@
       <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
         data-bs-target="#home-collapse" aria-expanded="true">
         DATOS DE LA EMPRESA
+
+
       </button>
       <div class="collapse show" id="home-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -63,50 +65,56 @@
 </div>
 
 <div style="margin-top:-210px ;margin-left: 350px; ">
-  <img src="..." class="rounded" alt="...">
+  <img src="..." class="rounded" alt="..."
+  [(ngModel)]="consultarcurriculums.rutaImagen" name="rutaimagen">
 </div>
 
 <div  class="forma">
 
   <div class="row " >
     <div class="col" >
-      <input type="text" class="form-control" placeholder="NOMBRES" aria-label="First name">
+      <input type="text" class="form-control" placeholder="NOMBRES" aria-label="First name"
+      [(ngModel)]="consultarcurriculums.nombres" name="nombres">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="APELLIDOS" aria-label="Last name">
+      <input type="text" class="form-control" placeholder="APELLIDOS" aria-label="Last name"
+      [(ngModel)]="consultarcurriculums.apellidos" name="apellidos">
     </div>
   </div>
   <br>
   <div class="row " >
     <div class="col" >
-      <input type="text" class="form-control" placeholder="CEDULA" aria-label="First name">
+      <input type="text" class="form-control" placeholder="CEDULA" aria-label="First name"
+      [(ngModel)]="consultarcurriculums.cedula" name="cedula">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="GENERO" aria-label="Last name">
+      <input type="text" class="form-control" placeholder="GENERO" aria-label="Last name"
+      [(ngModel)]="consultarcurriculums.genero" name="genero">
     </div>
   </div>
   <br>
   <div class="row " >
     <div class="col" >
-      <input type="text" class="form-control" placeholder="TITULO" aria-label="First name">
+   
+    <div class="col">
+    
+  </div>
+<br>
+  <div class="row " >
+    <div class="col" >
+      <input type="text" class="form-control" placeholder="CIUDAD" aria-label="First name"
+      [(ngModel)]="consultarcurriculums.ciudad" name="ciudad">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Last name">
+      <input type="text" class="form-control" placeholder="DIRECCIONES" aria-label="Last name"
+      [(ngModel)]="consultarcurriculums.direccion" name="direccion">
     </div>
   </div>
 <br>
   <div class="row " >
     <div class="col" >
-      <input type="text" class="form-control" placeholder="CIUDAD" aria-label="First name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="DIRECCIONES" aria-label="Last name">
-    </div>
-  </div>
-<br>
-  <div class="row " >
-    <div class="col" >
-      <input type="text" class="form-control" placeholder="ESTADO CIVIL" aria-label="First name">
+      <input type="text" class="form-control" placeholder="ESTADO CIVIL" aria-label="First name"
+      [(ngModel)]="consultarcurriculums.estadoCivil" name="estadoCivil">
     </div>
 
   </div>

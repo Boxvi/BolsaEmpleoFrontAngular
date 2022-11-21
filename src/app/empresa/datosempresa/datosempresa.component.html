@@ -67,39 +67,47 @@
     <br>
     <div class="row " >
       <div class="col" >
-        <input type="text" class="form-control" placeholder="RUC" aria-label="First name">
+        <input type="text" class="form-control" placeholder="RUC" aria-label="First name"
+        [(ngModel)]="datosempresa.ruc" name="ruc">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="NOMBRE" aria-label="Last name">
+        <input type="text" class="form-control" placeholder="NOMBRE" aria-label="Last name"
+        [(ngModel)]="datosempresa.nombre" name="nombre">
       </div>
     </div>
     <br>
     <div class="row " >
       <div class="col" >
-        <input type="text" class="form-control" placeholder="RAZON SOCIAL" aria-label="First name">
+        <input type="text" class="form-control" placeholder="RAZON SOCIAL" aria-label="First name"
+        [(ngModel)]="datosempresa.razonSocial" name="razonSocial">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="TIPO EMPRESA" aria-label="Last name">
-      </div>
-    </div>
-
-    <br>
-    <div class="row " >
-      <div class="col" >
-        <input type="text" class="form-control" placeholder="SECTOR EMPRESARIAL" aria-label="First name">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="CIUDAD" aria-label="Last name">
+        <input type="text" class="form-control" placeholder="TIPO EMPRESA" aria-label="Last name"
+        [(ngModel)]="datosempresa.tipoEmpresa" name="tipoEmpresa">
       </div>
     </div>
 
     <br>
     <div class="row " >
       <div class="col" >
-        <input type="text" class="form-control" placeholder="DEPARTAMENTO" aria-label="First name">
+        <input type="text" class="form-control" placeholder="SECTOR EMPRESARIAL" aria-label="First name"
+        [(ngModel)]="datosempresa.sectorEmpresarial" name="sectorEmpresarial">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="PAGINA WEB" aria-label="Last name">
+        <input type="text" class="form-control" placeholder="CIUDAD" aria-label="Last name"
+        [(ngModel)]="datosempresa.ciudad" name="ciudad">
+      </div>
+    </div>
+
+    <br>
+    <div class="row " >
+      <div class="col" >
+        <input type="text" class="form-control" placeholder="DEPARTAMENTO" aria-label="First name"
+        [(ngModel)]="datosempresa.departamento" name="departamento">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="PAGINA WEB" aria-label="Last name"
+        [(ngModel)]="datosempresa.sitioWeb" name="sitioweb">
       </div>
     </div>
   

@@ -15,10 +15,13 @@ const routes: Routes = [
   {path:'registroempresa',component: RegistroempresaComponent},
   {path:'concultarcurriculumstabla',component: ConcultarcurriculumstablaComponent},
   {path:'datosempresa',component: DatosempresaComponent},
+  {path:'datosempresa/:id',component: DatosempresaComponent},
   {path:'datoscontacto',component: DatoscontactoComponent},
+  {path:'datoscontacto/:id',component: DatoscontactoComponent},
   {path:'publicarofertas',component: PublicarofertasComponent},
   {path:'modificarofertas',component: ModificarofertasComponent},
   {path:'consultarcurriculums',component: ConsultarcurriculumsComponent},
+  {path:'consultarcurriculums/:id',component: ConsultarcurriculumsComponent},
   
 
 ];

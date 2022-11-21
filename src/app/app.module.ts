@@ -11,7 +11,8 @@ import { ConsultarcurriculumsComponent } from './empresa/consultarcurriculums/co
 import { ConcultarcurriculumstablaComponent } from './empresa/concultarcurriculumstabla/concultarcurriculumstabla.component';
 import { PublicarofertasComponent } from './empresa/publicarofertas/publicarofertas.component';
 import { ModificarofertasComponent } from './empresa/modificarofertas/modificarofertas.component';
-
+import  {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ModificarofertasComponent } from './empresa/modificarofertas/modificaro
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

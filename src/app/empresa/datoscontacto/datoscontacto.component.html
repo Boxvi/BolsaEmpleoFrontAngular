@@ -67,19 +67,23 @@
     <span class="fs-5 fw-semibold">DATOS CONTACTO</span>
     <div class="row " >
       <div class="col" >
-        <input type="text" class="form-control" placeholder="NOMBRES" aria-label="First name">
+        <input type="text" class="form-control" placeholder="NOMBRES" aria-label="First name" 
+        [(ngModel)]="datoscontacto.nombre" name="nombres">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="CARGO" aria-label="Last name">
+        <input type="text" class="form-control" placeholder="CARGO" aria-label="Last name"
+        [(ngModel)]="datoscontacto.cargo" name="cargo">
       </div>
     </div>
     <br>
     <div class="row " >
       <div class="col" >
-        <input type="text" class="form-control" placeholder="EMAIL" aria-label="First name">
+        <input type="text" class="form-control" placeholder="EMAIL" aria-label="First name"
+        [(ngModel)]="datoscontacto.email" name="email">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Last name">
+        <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Last name"
+        [(ngModel)]="datoscontacto.telefono" name="telefono">
       </div>
     </div>
   
