@@ -9,7 +9,8 @@ export class BodyComponent implements OnInit {
 
   sideNavStatus: boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

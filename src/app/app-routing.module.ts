@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 import { BodyComponent } from './shared/components/panel/body/body.component';
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
     path: 'signUp', loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule)
   },
   {
-    path: 'panel', component: BodyComponent
+    path: 'panel', component: BodyComponent, canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Ilogin } from 'src/app/data/interfaces/models/ilogin';
+import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -50,6 +50,12 @@ export class LoginComponent implements OnInit {
     }
     console.log('🧧Data received', this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(r => {
+      if (r.error) {
+        Swal.fire({
+          icon: 'info',
+          text: `${r.message}`
+        })
+      }
       console.log(r);
     });
 

@@ -6,7 +6,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { RegisterComponent } from './register/register.component';
 
 
-
 @NgModule({
   declarations: [
     LoginComponent,
