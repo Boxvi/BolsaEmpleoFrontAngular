@@ -9,6 +9,6 @@ sector_empresarial?: string;
 ciudad?: string;
 area_conocimiento?: string;
 experiencia?: string;
-
+nombre?: string;
 
 }

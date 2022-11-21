@@ -64,7 +64,7 @@
           <label >SECTOR EMPRESARIAL</label>
           <br>
           <input type="text" class="form-control" aria-label="First name"
-          [(ngModel)]="detalleloflaboralesestudiante.sector_empresarial" name="sector_empresarial"
+          [(ngModel)]="detalleloflaboralesestudiante.empresa.sectorEmpresarial.nombre" name="sector_empresarial"
           >
         </div>
       </div>
@@ -81,7 +81,7 @@
           <label >CIUDAD</label>
           <br>
           <input type="text" class="form-control"  aria-label="First name" readonly="readonly"
-          [(ngModel)]="detalleloflaboralesestudiante.ciudad" name="ciudad"
+          [(ngModel)]="detalleloflaboralesestudiante.ciudad.nombre" name="ciudad"
           >
         </div>
       </div>
@@ -116,8 +116,8 @@
           <label >EXPERIENCIA</label>
           <br>
           <input type="text" class="form-control" aria-label="Last name" readonly="readonly"
-          [(ngModel)]="detalleloflaboralesestudiante.experiencia" name="experiencia"
-          >
+          [(ngModel)]="detalleloflaboralesestudiante.experiencia" name="experiencia"          
+         >
         </div>
       </div>
     </div>

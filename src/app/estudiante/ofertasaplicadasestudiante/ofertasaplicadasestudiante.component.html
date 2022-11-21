@@ -57,10 +57,18 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6" *ngFor="let ofertas of ofertasaplicadasestudiante"  >
       <div class="card">
         <div class="card-body">
-          <p class="card-text">EMPRESA <br> CARGO <br> REQUISITOS <br> UBICACION</p>
+          <p class="card-text">EMPRESA
+            <li>{{ofertas.ofertaLaboral.empresa.nombre}}</li>
+            <br> CARGO 
+            <li>{{ofertas.ofertaLaboral.cargo}}</li>
+            <br> REQUISITOS
+            <li>{{ofertas.ofertaLaboral.requisitos_academicos}}</li>
+            <br> UBICACION
+            <li>{{ofertas.ofertaLaboral.ubicacion}}</li>
+          </p>
           <a href="detalleofeaplicadasestudiante" class="btn btn-primary">VER</a>
         </div>
       </div>

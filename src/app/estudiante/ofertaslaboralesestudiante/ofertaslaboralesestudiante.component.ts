@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ofertaslaboralesestudiante } from './ofertaslaboralesestudiante'; 
 import { OfertaslaboralesestudianteService } from './ofertaslaboralesestudiante.service';
+import {Postulacion} from '../detalleloflaboralesestudiante/postulacion'
 
 @Component({
   selector: 'app-ofertaslaboralesestudiante',
@@ -11,6 +12,7 @@ export class OfertaslaboralesestudianteComponent implements OnInit {
 
 ofertaslaboralesestudiante: Ofertaslaboralesestudiante []=[];
 
+public postulacion: Postulacion = new Postulacion();
   constructor(private ofertaslaboralesestudianteService: OfertaslaboralesestudianteService) { }
 
   ngOnInit(): void {
@@ -19,6 +21,9 @@ ofertaslaboralesestudiante: Ofertaslaboralesestudiante []=[];
 
     );
   }
+
+
+
 
   displayStyle1 = "none";
 

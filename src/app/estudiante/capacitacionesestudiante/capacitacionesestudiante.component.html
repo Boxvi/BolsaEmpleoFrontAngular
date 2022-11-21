@@ -51,60 +51,91 @@
   </ul>
 </div>
 
-<div style="margin-top:-350px ;margin-left: 350px; ">
+<form >
+<div style="margin-top:-350px ;margin-left: 350px; " >
   <div class="row ">
     <div class="col">
       <label>INSTITUCION</label>
-      <input type="text" class="form-control" aria-label="First name">
+      <input type="text" class="form-control" aria-label="First name" name="institucion" 
+      [(ngModel)]="Capacitacionesestudiante.institucion" requreired>
+    </div>
+  </div>
+  <br>
+  <div class="row ">
+    <div class="col">
+      <label>Titulo de la capacitacion</label>
+      <input type="text" class="form-control" aria-label="First name" name="nombre_capacitacion"
+      [(ngModel)]="Capacitacionesestudiante.nombre_capacitacion" >
     </div>
   </div>
   <br>
   <div class="row ">
     <div class="col">
       <label>TIPO DE CAPACITACION</label>
-      <input type="text" class="form-control" aria-label="First name">
+      <input type="text" class="form-control" aria-label="First name"
+      [(ngModel)]="Capacitacionesestudiante.tipoCapacitacion" requreired
+      >
     </div>
   </div>
   <br>
   <label>AREA</label>
   <br>
-  <select class="form-select" aria-label="Default select example">
+  <select class="form-select" aria-label="Default select example"  >
     <option selected>Seleccione una opcion</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
+    <option value="1" *ngFor="let nivel of niveles">{{nivel.nombre}}</option>
+   
   </select>
   <br>
   <div class="row ">
     <div class="col">
       <label>TIPO DE CERTIFICADO</label>
-      <input type="text" class="form-control" aria-label="First name">
+      <input type="text" class="form-control" aria-label="First name"
+      [(ngModel)]="Capacitacionesestudiante. tipoCertificado" requreired
+      >
     </div>
   </div>
   <br>
   <div class="row ">
     <div class="col">
       <label for="star">FECHA DE INICIO </label> &nbsp;&nbsp;
-      <input type="date" id="star" name="trip-start" value="2021-08-01" min="2021-08-01" max="2021-08-31">
+      <input type="date" id="star" name="trip-start" value="2021-08-01" min="2015-01-01" max="2021-08-31"
+      [(ngModel)]="Capacitacionesestudiante.fechaInicio"  requreired
+      >
     </div>
   </div>
     <br> <br>
     <div class="row ">
       <div class="col">
         <label for="star">FECHA DE FIN </label> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="date" id="star" name="trip-start" value="2021-08-01" min="2021-08-01" max="2021-08-31">
+        <input type="date" id="star" name="trip-start" value="2021-08-01" min="2015-08-01" max="2021-08-31"
+        [(ngModel)]="Capacitacionesestudiante.fechaFin"  requreired
+        >
       </div>
       <br> <br>
       <div class="row ">
         <div class="col">
           <label>NUMERO DE HORAS</label>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name"
+          [(ngModel)]="Capacitacionesestudiante.numHoras"  required
+          >
+        </div>
+      </div>
+      <br> 
+      <div class="row ">
+        <div class="col">
+          <label>Cedula</label>
+          <input type="text" class="form-control" aria-label="First name" name="cedula" 
+          [(ngModel)]="Capacitacionesestudiante.cedula"  required
+          >
         </div>
       </div>
     </div>
     <br>
     <div style="margin-left: 250px;">
-      <button type="submit" class="btn btn-primary  ">EDITAR</button> &nbsp;&nbsp;
-
-      <button type="submit" class="btn btn-primary">GUARDAR</button>
+      <button type="submit" class="btn btn-primary ">EDITAR</button> &nbsp;&nbsp;
     </div>
+    <div style="margin-left: 250px;">
+      <button type="submit" class="btn btn-primary" (click)="create()"   >GUARDAR</button>
+    </div>
+</div>
+</form>
