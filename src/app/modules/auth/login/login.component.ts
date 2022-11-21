@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     if (!this.loginForm.valid) {
       return;
     }
-    console.log('Authenticated🎈', this.loginForm.value);
+    console.log('🧧Data received', this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(r => {
       console.log(r);
     });

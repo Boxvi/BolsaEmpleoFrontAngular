@@ -27,7 +27,6 @@ export class AuthService {
   }
 
   login(data: Ilogin): Observable<any> {
-  
     return this.http.post<any>(`${AUTH_API}/login`, data).pipe(
       map(r => {
         this.setUserLocalStorage(r);

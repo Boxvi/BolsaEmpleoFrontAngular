@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LEFT_NAV_ITEMS } from 'src/app/data/constants/ui/left-nav-menu.const';
+import { ISideNavItem } from 'src/app/data/interfaces/ui/isidenavitem';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,26 +10,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  @Input() sideNavStatus:boolean = false;
-  
-  optionList = [
-    {
-      name: 'Curriculum Vitae',
-      icon: 'bi bi-file-person-fill'
-    },
-    {
-      name: 'Ofertas',
-      icon: 'bi bi-newspaper'
-    },
-    {
-      name: 'Perfil Empresarial',
-      icon: 'bi bi-linkedin'
-    },
+  @Input() sideNavStatus: boolean = false;
 
-  ]
+  public menuItems: ISideNavItem[] = LEFT_NAV_ITEMS;
+  public logOutItem: ISideNavItem;
 
-  constructor() { }
-
+  constructor(private authService: AuthService) {
+    this.logOutItem = {
+      title: 'Cerrar sesión',
+      iconClass: 'bi bi-box-arrow-in-left',
+      method: () => authService.logout()
+    }
+  }
   ngOnInit(): void {
   }
 

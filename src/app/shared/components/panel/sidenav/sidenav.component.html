@@ -1,9 +1,17 @@
 <div class="side-nav-content">
-  <ul class="nav-list" [ngClass]="{'nav-list-open': sideNavStatus}">
-    <li class="nav-list-item" *ngFor="let item of optionList">
-      <i class="{{ item.icon }}"></i>
+  <ul class="nav-list" [ngClass]="{ 'nav-list-open': sideNavStatus }">
+    <li class="nav-list-item" *ngFor="let item of menuItems">
+      <i class="{{ item.iconClass }}"></i>
       <span>
-        <a href="">{{ item.name }}</a>
+        <a>{{ item.title }}</a>
+      </span>
+    </li>
+    <li class="nav-list-item">
+      <i class="{{ logOutItem.iconClass }}"></i>
+      <span>
+        <a (click)="logOutItem.method ? logOutItem.method() : null">{{
+          logOutItem.title
+        }}</a>
       </span>
     </li>
   </ul>
