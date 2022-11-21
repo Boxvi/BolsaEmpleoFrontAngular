@@ -51,6 +51,8 @@
 
   </ul>
 </div>
+
+
 <div  class="forma" >
       <div class="row " >
         <div class="col" >
@@ -63,12 +65,13 @@
         <div class="col">
           <label >SECTOR EMPRESARIAL</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name"
+          <input type="text" class="form-control" aria-label="First name" readonly="readonly"
           [(ngModel)]="detalleloflaboralesestudiante.empresa.sectorEmpresarial.nombre" name="sector_empresarial"
           >
         </div>
       </div>
       <br>
+      <form></form>
       <div class="row " >
         <div class="col" >
           <label >REQUISITOS</label>
@@ -81,8 +84,7 @@
           <label >CIUDAD</label>
           <br>
           <input type="text" class="form-control"  aria-label="First name" readonly="readonly"
-          [(ngModel)]="detalleloflaboralesestudiante.ciudad.nombre" name="ciudad"
-          >
+          [(ngModel)]="detalleloflaboralesestudiante.ciudad.nombre" name="ciudad">
         </div>
       </div>
       <br>
@@ -116,7 +118,8 @@
           <label >EXPERIENCIA</label>
           <br>
           <input type="text" class="form-control" aria-label="Last name" readonly="readonly"
-          [(ngModel)]="detalleloflaboralesestudiante.experiencia" name="experiencia"          
+          [(ngModel)]="detalleloflaboralesestudiante.experiencia" name="experiencia"  
+                  
          >
         </div>
       </div>
@@ -125,5 +128,6 @@
     <div style="margin-left: 500px;">
     <button type="submit" [routerLink]="['/ofertaslaboralesesestudiante']" class="btn btn-primary  ">REGRESAR</button> &nbsp;&nbsp;
 
-    <button type="submit" class="btn btn-primary">APLICAR</button>
-  </div>
+    <button type="submit" class="btn btn-primary" (click)=" create()">APLICAR</button>
+ 
+</div>

@@ -82,12 +82,16 @@
         <div class="col" >
           <label >DESCRIPCION</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name"
+          [(ngModel)]= "detallelofaplicadasestudiante.descripcion" name="descripcion"
+          >
         </div>
         <div class="col">
           <label >AREA DE CONOCIMIENTO</label>
           <br>
-          <input type="text" class="form-control"  aria-label="Last name">
+          <input type="text" class="form-control"  aria-label="Last name"
+          [(ngModel)]= "detallelofaplicadasestudiante.area_conocimiento" name="area_conocimiento"
+          >
         </div>
       </div>
       <br>
@@ -95,13 +99,17 @@
         <div class="col" >
           <label >UBICACION</label>
           <br>
-          <input type="text" class="form-control" aria-label="First name">
+          <input type="text" class="form-control" aria-label="First name"
+          [(ngModel)]= "detallelofaplicadasestudiante.ubicacion" name="ubicacion"
+          >
         </div>
 
         <div class="col">
           <label >EXPERIENCIA</label>
           <br>
-          <input type="text" class="form-control" aria-label="Last name">
+          <input type="text" class="form-control" aria-label="Last name"
+          [(ngModel)]= "detallelofaplicadasestudiante.experiencia" name="ubicacion"
+          >
         </div>
       </div>
     </div>

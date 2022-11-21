@@ -18,7 +18,7 @@ constructor(private http: HttpClient) {}
 
 savePostulacion(postulacion:Postulacion): Observable<any>{
 
-  return this.http.post(`${this.urlAllServices }/postulaciones`, postulacion, {headers: this.httpHeaders})
+  return this.http.post<Postulacion>(`${this.urlAllServices }/postulaciones`, postulacion, {headers: this.httpHeaders})
 }
 
 getIDoferta(id:Detalleloflaboralesestudiante): Observable<Detalleloflaboralesestudiante> {
