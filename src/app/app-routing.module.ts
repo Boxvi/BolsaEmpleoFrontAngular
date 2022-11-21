@@ -40,28 +40,8 @@ const routes: Routes = [
 ];
 
 
-import { AuthGuard } from './core/guards/auth.guard';
-import { BodyComponent } from './shared/components/panel/body/body.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {
-    path: 'home', loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule)
-    /*       { path: '**', redirectTo: '/home', pathMatch: 'full' } */
-  },
-  {
-    path: 'signUp', loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule)
-  },
-  {
-    path: 'panel', component: BodyComponent, canActivate: [AuthGuard]
-  },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }
-
-];
-
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
