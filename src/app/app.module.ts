@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { SlideestudianteComponent } from './estudiante/slideestudiante/slideestudiante.component';
 import { InicioestudianteComponent } from './inicioestudiante/inicioestudiante.component';
 import { RegistroestudianteComponent } from './estudiante/registroestudiante/registroestudiante.component';
@@ -20,6 +21,9 @@ import { DetalleperfempresasestudianteComponent } from './estudiante/detalleperf
 
 import  {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -43,8 +47,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     HttpClientModule,
     FormsModule
+
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
