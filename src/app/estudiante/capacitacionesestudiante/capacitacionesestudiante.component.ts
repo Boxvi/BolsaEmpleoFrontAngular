@@ -10,9 +10,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./capacitacionesestudiante.component.css']
 })
 export class CapacitacionesestudianteComponent implements OnInit {
-
+  dates: any=[];
   public capacitacionesestudiante: any= [];
+
   public niveles: any= [];
+  
   capacitacion: Capacitacionesestudiante[]=[];
   public Capacitacionesestudiante:Capacitacionesestudiante = new Capacitacionesestudiante()
   constructor(private CapacitacionesestudianteService:CapacitacionesestudianteService, private router:Router, private activatedRouter:ActivatedRoute) { }
@@ -36,6 +38,31 @@ public create(): void {
   )
  
 }
+
+guardado(){
+this.Capacitacionesestudiante.cedula ="0105995378"
+this.Capacitacionesestudiante.area_estudio= this.dates.area_estudio
+this.Capacitacionesestudiante.institucion= this.dates.institucion
+this.Capacitacionesestudiante.nombre_capacitacion = this.dates.nombre_capacitacion
+this.Capacitacionesestudiante.tipoCapacitacion =this.dates.tipoCapacitacion
+this.Capacitacionesestudiante.tipoCertificado = this.dates.tipoCertificado
+this.Capacitacionesestudiante.fechaInicio = this.dates.fechaInicio
+this.Capacitacionesestudiante.fechaFin = this.dates.fechaFin
+this.Capacitacionesestudiante.numHoras= this.dates.numHoras
+
+console.log(this.Capacitacionesestudiante)
+this.CapacitacionesestudianteService.create(this.capacitacionesestudiante)
+.subscribe(data =>
+ {
+
+  console.log("datos guardados")
+  console.log(data)
+
+ })
+
+}
+
+
 
 
 /*public getNivel(){
