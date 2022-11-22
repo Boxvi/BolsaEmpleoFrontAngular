@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'signUp', loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule)
   },
   {
-    path: 'panel', component: BodyComponent, canActivate: [AuthGuard]
+    path: 'panel', component: BodyComponent, loadChildren: () => import('./modules/estudiante/estudiante.module').then((m) => m.EstudianteModule),canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 
