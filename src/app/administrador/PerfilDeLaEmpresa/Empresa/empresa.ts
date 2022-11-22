@@ -1,5 +1,5 @@
 export class Empresa {
-
+  id: number = 0;
   ruc: number = 0;
   nombre: string = "";
   razonSocial: string = "";
@@ -8,7 +8,6 @@ export class Empresa {
   ciudad: string = "";
   departamento: string = "";
   paginaWeb: string = "";
-
   nombreCon: string = "";
   cargoCon: string = "";
   emailCon: string = "";

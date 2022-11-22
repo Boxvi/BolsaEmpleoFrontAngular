@@ -17,31 +17,28 @@
           <th scope="col">NOMBRE</th>
           <th scope="col">DEPARTAMENTO</th>
           <th scope="col">TIPO DE EMPRESA</th>
-          <th scope="col">ESTADO</th>
+          <th scope="col">SECTOR</th>
           <th scope="col">ACCION</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <!--
-          <td>{{pe.ruc}}</td>
-          <td>{{pe.nombre}}</td>
-          <td>{{pe.apellido}}</td>
-          <td>{{pe.correo}}</td>
-          <td>{{pe.estado}}</td>
-          -->
-        </tr>
+      <tr *ngFor = "let empresaperfil of perfil">
+        <td>{{empresaperfil.ruc}}</td>
+        <td>{{empresaperfil.nombre}}</td>
+        <td>{{empresaperfil.departamento}}</td>
+        <td>{{empresaperfil.tipoEmpresa}}</td>
+        <td>{{empresaperfil.sectorEmpresarial}}</td>
+        <div>
+        <button style="background-color: rgb(250, 246, 20); width: 90px; height: 50px; margin-left: 7%;"
+                routerLink="/empresa/{{empresaperfil.ruc}}}">
+          ver mas
+        </button>
+        </div>
+      </tr>
       </tbody>
     </table>
 
-  </div>
 
-
-  <div>
-    <button style="background-color: rgb(250, 246, 20); width: 200px; height: 50px; margin-left: 7%;"
-    routerLink="/empresa">
-      VISUALIZAR PERFIL DE EMPRESA
-    </button>
   </div>
 
 

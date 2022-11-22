@@ -3,7 +3,7 @@ export class HojaDeVida {
   //Datos Personales
   cedula: number = 0;
   nombre: string = "";
-  apellido: string = "";
+  apellidos: string = "";
   genero: string = "";
   fechaNacimiento: string = "";
   correo: string = "";

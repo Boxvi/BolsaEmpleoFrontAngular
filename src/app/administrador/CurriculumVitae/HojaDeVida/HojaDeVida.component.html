@@ -25,15 +25,23 @@
           <th scope="col">CORREO</th>
           <th scope="col">ESTADO</th>
           <th scope="col">ACCION</th>
+
         </tr>
       </thead>
       <tbody>
         <tr *ngFor = "let hojavida of hojaVidas">
           <td>{{hojavida.cedula}}</td>
-          <td>{{hojavida.nombre}}</td>
-          <td>{{hojavida.apellido}}</td>
+          <td>{{hojavida.nombres}}</td>
+          <td>{{hojavida.apellidos}}</td>
           <td>{{hojavida.correo}}</td>
-          <td>{{hojavida.estado}}</td>
+          <td>{{hojavida.estadoCivil}}</td>
+          <div>
+          <button style="background-color: chartreuse; width: 90px; height: 50px; margin-left: 7%;"
+                  routerLink="/cv">
+            ver mas
+          </button>
+          </div>
+
         </tr>
       </tbody>
     </table>
@@ -41,10 +49,7 @@
   </div>
 
   <div>
-    <button style="background-color: chartreuse; width: 150px; height: 50px; margin-left: 7%;"
-    routerLink="/cv">
-      VISUALIZAR CV
-    </button>
+
   </div>
 
 
