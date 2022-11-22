@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  roleName: string = '';
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +21,23 @@ export class HomeComponent implements OnInit {
   }
   closePopup() {
     this.displayStyle = "none";
+  }
+
+  selectEntity(option: number) {
+    switch (option) {
+      case 1:
+        this.roleName = 'ROLE_ESTUDIANTE';
+        break;
+      case 2:
+        this.roleName = 'ROLE_EMPRESA';
+        break;
+      case 3:
+        this.roleName = 'ROLE_ADMINISTRADOR';
+        break;
+    }
+
+    console.log(this.roleName);
+    
   }
 
 }

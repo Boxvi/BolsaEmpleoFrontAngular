@@ -42,9 +42,7 @@
           </div>
           <small
             class="bg-danger text-light my-1 px-2 py-1 rounded d-block"
-            *ngIf="
-              fm['username'].errors && loginSubmitted
-            "
+            *ngIf="fm['username'].errors && loginSubmitted"
             ><ng-container *ngIf="fm['username'].value === ''"
               >El usuario es requerido</ng-container
             ></small
@@ -64,9 +62,7 @@
           </div>
           <small
             class="bg-danger text-light my-1 px-2 py-1 rounded d-block"
-            *ngIf="
-              fm['password'].errors && loginSubmitted
-            "
+            *ngIf="fm['password'].errors && loginSubmitted"
             ><ng-container *ngIf="fm['password'].value === ''"
               >El password es requerido</ng-container
             ></small
@@ -82,10 +78,12 @@
               Ingresar
             </button>
             <button
+              *ngIf="role !== 'ROLE_ADMINISTRADOR'"
               type="button"
               class="btn btn-dark px-4 text-uppercase"
               data-bs-dismiss="modal"
               routerLink="/signUp"
+              (click)="register()"
             >
               Registrarse
             </button>

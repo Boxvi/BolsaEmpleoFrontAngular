@@ -7,6 +7,7 @@
       class="card bg-light"
       data-bs-toggle="modal"
       data-bs-target="#loginModal"
+      (click)="selectEntity(1)"
     >
       <div class="card-body">
         <div class="text-center">
@@ -22,6 +23,7 @@
       class="card bg-light"
       data-bs-toggle="modal"
       data-bs-target="#loginModal"
+      (click)="selectEntity(2)"
     >
       <div class="card-body">
         <div class="text-center">
@@ -37,6 +39,7 @@
       type="button"
       data-bs-toggle="modal"
       data-bs-target="#loginModal"
+      (click)="selectEntity(3)"
     >
       ADMINISTRADOR
     </button>
@@ -44,4 +47,4 @@
 </div>
 
 <!-- modal login -->
-<app-login></app-login>
+<app-login [role]="roleName"></app-login>

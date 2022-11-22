@@ -5,6 +5,7 @@ import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 import { ERRORS_CONST } from 'src/app/data/constants/errors/errors.const';
 import { IApiAuthUserMetadataTs } from 'src/app/data/interfaces/api/iapi-auth-user.metadata.ts';
 import { Ilogin } from 'src/app/data/interfaces/models/ilogin';
+import { Iusuario } from 'src/app/data/interfaces/models/iusuario';
 
 const AUTH_API = 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/auth';
 

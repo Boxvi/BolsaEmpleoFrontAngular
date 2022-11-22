@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
+import { PassRoleService } from '../services/pass-role.service';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  @Input() role: string = '';
 
   /*   public loginForm: Ilogin = {
       username: '',
@@ -19,7 +22,7 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder,
-    private authService: AuthService) {
+    private authService: AuthService, private passRoleService: PassRoleService) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -59,6 +62,12 @@ export class LoginComponent implements OnInit {
       console.log(r);
     });
 
+  }
+
+  register() {
+    this.passRoleService.roleTrigger.emit({
+      data:this.role
+    });
   }
 
 }
