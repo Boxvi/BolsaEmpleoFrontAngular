@@ -3,7 +3,7 @@
     <li class="nav-list-item" *ngFor="let item of menuItems">
       <i class="{{ item.iconClass }}"></i>
       <span>
-        <a>{{ item.title }}</a>
+        <a routerLink="{{ item.link ? item.link : null }}">{{ item.title }}</a>
       </span>
     </li>
     <li class="nav-list-item">

@@ -28,4 +28,20 @@ export class ResumeComponent implements OnInit {
 
   }
 
+  showGenre(genero: string): string {
+    
+    switch (genero) {
+      case 'M':
+        return 'Masculino';
+      case 'F':
+        return 'Femenino';
+      case 'Otro':
+        return genero;
+
+    }
+
+    return '';
+
+  }
+
 }

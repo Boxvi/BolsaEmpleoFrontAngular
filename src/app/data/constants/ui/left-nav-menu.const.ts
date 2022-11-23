@@ -7,7 +7,8 @@ export const LEFT_NAV_ITEMS: {
 } = {
   estudianate: [{
     title: 'Perfil',
-    iconClass: 'bi bi-file-person-fill'
+    iconClass: 'bi bi-file-person-fill',
+    link: '/panel/estudiante'
   },
   {
     title: 'Ofertas Laborales',
