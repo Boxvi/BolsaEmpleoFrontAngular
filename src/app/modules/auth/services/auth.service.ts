@@ -28,7 +28,7 @@ export class AuthService {
     return this.currentUser.value!;
   }
 
-  login(data: Ilogin): Observable<any> {
+  login(data: Ilogin, session: string): Observable<any> {
 
     const response = { error: true, message: ERRORS_CONST.LOGIN.ERROR, data: null };
 
@@ -39,7 +39,7 @@ export class AuthService {
         response.data = r;
         this.setUserLocalStorage(r);
         this.currentUser.next(r);
-        this.router.navigateByUrl("/panel");
+        this.router.navigateByUrl(`/panel/${session}`);
         return response;
 
       }),

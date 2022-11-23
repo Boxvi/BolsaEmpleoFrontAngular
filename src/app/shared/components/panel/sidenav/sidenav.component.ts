@@ -11,8 +11,7 @@ import { AuthService } from 'src/app/modules/auth/services/auth.service';
 export class SidenavComponent implements OnInit {
 
   @Input() sideNavStatus: boolean = false;
-
-  public menuItems: ISideNavItem[] = LEFT_NAV_ITEMS;
+  @Input() menuItems: ISideNavItem[] = [];
   public logOutItem: ISideNavItem;
 
   constructor(private authService: AuthService) {

@@ -1,0 +1,112 @@
+<app-title title="Datos Personales"></app-title>
+<p>{{ estudiante | json }}</p>
+<form class="row g-4">
+  <div class="col-lg-3 col-md-6">
+    <label for="nombre" class="form-label text-uppercase">Nombres</label>
+    <input
+      type="text"
+      class="form-control"
+      name="nombres"
+      id="nombre"
+      [(ngModel)]="estudiante.nombres"
+    />
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <label for="inputPassword4" class="form-label text-uppercase"
+      >Apellidos</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="inputPassword4"
+      name="apellidos"
+      [(ngModel)]="estudiante.apellidos"
+    />
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <label for="inputAddress" class="form-label text-uppercase">Cédula</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      placeholder="01010101010"
+    />
+  </div>
+  <div class="col-lg-3 col-md-6 text-uppercase">
+    <label for="inputAddress2" class="form-label text-uppercase">Género</label>
+    <div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="inlineRadioOptions"
+          id="inlineRadio1"
+          value="option1"
+          checked
+        />
+        <label class="form-check-label" for="inlineRadio1">M</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="inlineRadioOptions"
+          id="inlineRadio2"
+          value="option2"
+        />
+        <label class="form-check-label" for="inlineRadio2">F</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="inlineRadioOptions"
+          id="inlineRadio2"
+          value="option2"
+        />
+        <label class="form-check-label" for="inlineRadio2">Otro</label>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <label for="inputCity" class="form-label text-uppercase"
+      >F. Nacimiento</label
+    >
+    <input type="date" class="form-control" id="inputCity" />
+  </div>
+  <div class="col-md-4">
+    <label for="ciudad" class="form-label text-uppercase">Ciudad</label>
+    <select id="ciudad" name="ciudad" class="form-select">
+      <option [value]="ciudad.nombre" *ngFor="let ciudad of ciudades">
+        {{ ciudad.nombre }}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label for="estadoCivil" class="form-label text-uppercase"
+      >Estado Civil</label
+    >
+    <select id="estadoCivil" name="estadoCivil" class="form-select">
+      <option [value]="estadoCivil" *ngFor="let estadoCivil of estadosCivil">
+        {{ estadoCivil }}
+      </option>
+    </select>
+  </div>
+  <div class="col-lg-5 col-md-12 text-uppercase">
+    <label for="inputAddress2" class="form-label text-uppercase"
+      >Dirección</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress2"
+      placeholder="Calle Gran Colombia"
+    />
+  </div>
+
+  <div class="col-12 text-center">
+    <button type="submit" class="btn btn-dark text-uppercase px-4 py-2 mt-3">
+      Registrar
+    </button>
+  </div>
+</form>
