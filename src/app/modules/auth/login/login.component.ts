@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     }; */
   public loginForm: FormGroup;
   public loginSubmitted = false;
+  public session: string = '';
 
 
   constructor(private formBuilder: FormBuilder,
@@ -30,6 +31,21 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+
+  identifySession(): void {
+
+    switch (this.role) {
+      case 'ROLE_ESTUDIANTE':
+        this.session = "estudiante";
+        break;
+      case 'ROLE_EMPRESA':
+        this.session = 'empresa';
+        break
+      case 'ROLE_ADMINISTRADOR':
+        this.session = 'administrador';
+    }
   }
 
   /*   isValidForm() {
@@ -47,13 +63,19 @@ export class LoginComponent implements OnInit {
   }
 
   authenticate() {
+
+
+    this.identifySession();
+    console.log('Session', this.session);
+
     this.loginSubmitted = true;
     if (!this.loginForm.valid) {
       return;
     }
     console.log('🧧Data received', this.loginForm.value);
-    this.authService.login(this.loginForm.value).subscribe(r => {
+    this.authService.login(this.loginForm.value, this.session).subscribe(r => {
       if (r.error) {
+        this.cleanForm();
         Swal.fire({
           icon: 'info',
           text: `${r.message}`
@@ -66,7 +88,7 @@ export class LoginComponent implements OnInit {
 
   register() {
     this.passRoleService.roleTrigger.emit({
-      data:this.role
+      data: this.role
     });
   }
 

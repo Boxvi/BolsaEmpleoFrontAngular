@@ -13,7 +13,11 @@ const routes: Routes = [
     path: 'signUp', loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule)
   },
   {
-    path: 'panel', component: BodyComponent, canActivate: [AuthGuard]
+    path: 'panel', component: BodyComponent, children: [
+      { path: 'estudiante', loadChildren: () => import('./modules/estudiante/estudiante.module').then((m) => m.EstudianteModule) },
+      { path: 'empresa', loadChildren: () => import('./modules/empresa/empresa.module').then((m) => m.EmpresaModule) },
+      { path: 'administrador', loadChildren: () => import('./modules/administrador/administrador.module').then((m) => m.AdministradorModule) }
+    ], canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 

@@ -7,12 +7,13 @@
     <app-sidenav
       [sideNavStatus]="sideNavStatus"
       [ngClass]="{ 'app-sidenav-open': sideNavStatus }"
+      [menuItems]="leftNavItems"
     ></app-sidenav>
     <div
       class="display-area p-3"
       [ngClass]="{ 'display-area-shrink': sideNavStatus }"
     >
-      <p class="fs-1 fw-bold fst-italic">Contenido Principal</p>
+      <router-outlet></router-outlet>
     </div>
   </main>
 </div>
