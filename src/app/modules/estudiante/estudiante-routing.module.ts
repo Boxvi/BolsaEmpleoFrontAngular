@@ -8,7 +8,16 @@ const routes: Routes = [
   { path: '', component: ResumeComponent },
   { path: 'personal-form', component: PersonalFormComponent },
   { path: 'personal-form/:id', component: PersonalFormComponent },
-  { path: 'logros/estudiante/:id', component: ListLogrosComponent }
+  { path: 'logros/estudiante/:id', component: ListLogrosComponent },
+  /* {path:'preferenciasLaborales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+  /* {path:'perfilOcupacional/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+  /* {path:'instruccionFormal/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+  /* {path:'capacitaciones/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+  /* {path:'referenciasProfesionales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+  /* {path:'referenciasPersonales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+
+
+
 ];
 
 @NgModule({
