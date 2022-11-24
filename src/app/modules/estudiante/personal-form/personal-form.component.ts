@@ -36,29 +36,41 @@ export class PersonalFormComponent implements OnInit {
     })
     this.estudiante.username = this.authService.getUser().username;
     console.log(this.estudiante);
+    if (this.estudiante_id) {
+      this.estudianteService.getSummaryByEstudianteId(this.estudiante_id).subscribe(r => {
+        this.estudiante = r;
+      })
+    }
 
   }
 
   registrarEstudiante() {
     if (this.estudiante_id) {
       // actualizamos
-      console.log('🎑Actualizando...');
       
+      this.estudianteService.edit(this.estudiante_id, this.estudiante).subscribe(r => {
+        console.log('🎑Actualizando...');
+        this.response(r.error, r.icon, r.message);
+      })
 
     } else {
       this.estudianteService.save(this.estudiante).subscribe(
         r => {
-          Swal.fire({
-            icon: r.icon,
-            text: r.message
-          })
-          if (!r.error) {
-            this.router.navigateByUrl('/panel/estudiante');
-          }
+          this.response(r.error, r.icon, r.message);
         }
       )
     }
 
+  }
+
+  response(state: boolean, icon: any, text: any) {
+    Swal.fire({
+      icon: icon,
+      text: text
+    })
+    if (!state) {
+      this.router.navigateByUrl('/panel/estudiante');
+    }
   }
 
 }

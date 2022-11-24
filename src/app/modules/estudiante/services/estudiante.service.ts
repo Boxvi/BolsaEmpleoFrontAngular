@@ -36,8 +36,30 @@ export class EstudianteService {
     );
   }
 
+  edit(id: number, estudiante: IEstudiante): Observable<any> {
+    const response = { error: true, message: '', icon: '', data: null }
+    return this.http.put<any>(`${ESTUDIANTE_API}/${id}`, estudiante).pipe(
+      map(r => {
+        response.error = false;
+        response.message = 'Datos Actualizados';
+        response.icon = 'success';
+        response.data = r;
+        return response;
+      }),
+      catchError(e => {
+        response.message = e.error.message;
+        response.icon = 'error';
+        return of(response);
+      })
+    );
+  }
+
   getEstudianteById(id: number): Observable<any> {
     return this.http.get<any>(`${ESTUDIANTE_API}/${id}`);
+  }
+
+  getSummaryByEstudianteId(estudiante_id: number): Observable<any> {
+    return this.http.get<any>(`${ESTUDIANTE_API}/resumen/${estudiante_id}`);
   }
 
 }
