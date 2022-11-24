@@ -14,4 +14,8 @@ export class LogroService {
   getLogroByEstudianteId(estudiante_id: number): Observable<any> {
     return this.http.get<any>(`${LOGRO_API}/estudiante/${estudiante_id}`);
   }
+
+  deleteLogro(id: number): Observable<any> {
+    return this.http.delete<any>(`${LOGRO_API}/${id}`);
+  }
 }

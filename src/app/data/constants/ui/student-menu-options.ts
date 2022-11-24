@@ -31,7 +31,7 @@ export const STUDENT_MENU_OPTIONS: CardOption[] = [
     link: 'referenciasProfesionales/estudiante/'
   },
   {
-    icon: '../../../../assets/icons/profesional_references_icon.svg',
+    icon: '../../../../assets/icons/personal_references.svg',
     title: 'Referencias Personales',
     link: 'referenciasPersonales/estudiante/'
   }

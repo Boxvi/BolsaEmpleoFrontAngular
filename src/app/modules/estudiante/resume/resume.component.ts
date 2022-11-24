@@ -49,4 +49,11 @@ export class ResumeComponent implements OnInit {
 
   }
 
+  disableCards() {
+    if (!this.perfilEstudiante) {
+      return "btn btn-light disabled";
+    }
+    return '';
+  }
+
 }

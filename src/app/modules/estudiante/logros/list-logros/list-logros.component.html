@@ -1,5 +1,5 @@
 <app-title title="Logros"></app-title>
-<div class="container-fluid p-0">
+<div class="container-fluid p-0" *ngIf="logros.length > 0; else addOption">
   <button class="btn btn-dark mb-3">
     <i class="bi bi-plus-circle-fill"></i> Agregar Nuevo
   </button>
@@ -24,11 +24,21 @@
           </button>
         </td>
         <td>
-          <button type="button" class="btn btn-danger">
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deleteLogro(logro.id)"
+          >
             <i class="bi bi-x-circle-fill"></i>
           </button>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+<ng-template #addOption>
+  <app-add-option></app-add-option>
+</ng-template>
+<div class="text-center">
+  <app-back-button link="/panel/estudiante"></app-back-button>
 </div>
