@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { catchError, map, Observable, of } from 'rxjs';
 import { IEstudiante } from 'src/app/data/interfaces/models/iestudiante';
 
@@ -24,9 +23,9 @@ export class EstudianteService {
     return this.http.post<any>(ESTUDIANTE_API, estudiante).pipe(
       map(r => {
         response.error = false;
-        response.message = 'Estudiante Registrado',
-          response.icon = 'success',
-          response.data = r;
+        response.message = 'Estudiante Registrado';
+        response.icon = 'success';
+        response.data = r;
         return response;
       }),
       catchError(e => {
