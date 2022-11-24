@@ -1,0 +1,42 @@
+<label>EXPERIENCIA</label>
+<br>
+<div class="row ">
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example"  [(ngModel)]="experienciat.area_trabajo">
+    <option  *ngFor="let experiencia of areastrabajo">{{areastrabajo.nombre}}</option>
+  </select>
+
+</div>
+<br>
+
+
+<div class="col">
+  <input type="text" class="form-control" placeholder="CARGO" aria-label="Last name" [(ngModel)]="experienciat.cargo"
+    name="cargo">
+</div>
+
+<br> <br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="DURACION" aria-label="First name"
+      [(ngModel)]="experienciat.duracion" name="duracion">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="INTITUCION/EMPRESA" aria-label="Last name"
+      [(ngModel)]="experienciat.institucion" name="institucion">
+  </div>
+</div>
+<br> <br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="ACTIVIDAD" aria-label="First name"
+      [(ngModel)]="experienciat.actividad" name="actividad">
+  </div>
+
+  <br>
+  <br>
+  <div style="margin-left: 250px;">
+    <button type="submit" class="btn btn-primary" (click)="create()">Agregar</button> &nbsp;&nbsp;
+
+    <button type="submit" class="btn btn-primary" [routerLink]="['/editarexperienciaestudiante/:id']">editar</button>
+
+  </div>

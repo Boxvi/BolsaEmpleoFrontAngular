@@ -1,0 +1,46 @@
+<label>EXPERIENCIA</label>
+<br>
+<div class="row ">
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example"  [(ngModel)]="editarexperiencia.area_trabajo">
+    <option >Tecnico</option>
+    <option >Juridico</option>
+    <option >"Marketing y Comunicacion</option>
+    <option >Produccion</option>
+    <option >Tecnologías de Información</option>
+  </select>
+
+</div>
+
+<br><br>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="CARGO" aria-label="Last name"
+     [(ngModel)]="editarexperiencia.cargo"
+      name="cargo">
+  </div>
+
+<br> <br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="DURACION" aria-label="First name"
+      [(ngModel)]="editarexperiencia.duracion" name="duracion">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="INTITUCION/EMPRESA" aria-label="Last name"
+      [(ngModel)]="editarexperiencia.institucion" name="institucion">
+  </div>
+</div>
+<br> <br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="ACTIVIDAD" aria-label="First name"
+      [(ngModel)]="editarexperiencia.actividad" name="actividad">
+  </div>
+
+  <br>
+<br>
+<div style="margin-left: 250px;">
+
+
+  <button type="submit" class="btn btn-primary"  (click)="Editar()">GUARDAR</button>&nbsp;
+  <button type="submit" class="btn btn-primary"  [routerLink]="['/infolaboralestudiante/:id']">REGRESAR</button>
+</div>

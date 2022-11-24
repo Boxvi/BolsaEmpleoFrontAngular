@@ -1,0 +1,30 @@
+<label>REFERENCIAS LABORALES</label>
+<br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="INSTITUCION/EMPRESA" aria-label="First name"
+    [(ngModel)]="edireferenciaslaborales.institucion">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="NOMBRES" aria-label="Last name"
+    [(ngModel)]="edireferenciaslaborales.nombre">
+  </div>
+</div>
+<br> <br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="EMAIL" aria-label="First name"
+    [(ngModel)]="edireferenciaslaborales.email">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Last name"
+    [(ngModel)]="edireferenciaslaborales.telefono">
+  </div>
+<br>
+<br>
+<div style="margin-left: 250px;">
+
+
+  <button type="submit" class="btn btn-primary"  (click)="Editar()">GUARDAR</button>&nbsp;
+  <button type="submit" class="btn btn-primary"  [routerLink]="['/infolaboralestudiante/:id']">REGRESAR</button>
+</div>

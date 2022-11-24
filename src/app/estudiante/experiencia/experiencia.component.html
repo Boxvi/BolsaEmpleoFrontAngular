@@ -1,0 +1,74 @@
+<label>EXPERIENCIA</label>
+<br>
+<div class="row ">
+  <div class="col" [(ngModel)]="experiencia.area_trabajo">
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example"  >
+    <option >Tecnico</option>
+    <option >Juridico</option>
+    <option >"Marketing y Comunicacion</option>
+    <option >Produccion</option>
+    <option >Tecnologías de Información</option>
+  </select>
+</div>
+</div>
+<br>
+
+
+<div class="col">
+  <input type="text" class="form-control" placeholder="CARGO" aria-label="Last name" [(ngModel)]="experiencia.cargo"
+    name="cargo">
+</div>
+
+<br> <br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="DURACION" aria-label="First name"
+      [(ngModel)]="experiencia.duracion" name="duracion">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="INTITUCION/EMPRESA" aria-label="Last name"
+      [(ngModel)]="experiencia.institucion" name="institucion">
+  </div>
+</div>
+<br> <br>
+<div class="row ">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="ACTIVIDAD" aria-label="First name"
+      [(ngModel)]="experiencia.actividad" name="actividad">
+  </div>
+
+  <br>
+  <br>
+  <div style="margin-left: 250px;">
+    <button type="submit" class="btn btn-primary" (click)="create()">Agregar</button> &nbsp;&nbsp;
+
+    <button type="submit" class="btn btn-primary" [routerLink]="['/editarexperienciaestudiante/:id']">editar</button>
+  </div>
+   <br>
+   <br>
+   <div>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th>Area Trabajo</th>
+          <th>Cargo</th>
+          <th>duracion</th>
+          <th>Institucion</th>
+          <th>Actividad</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr  *ngFor = "let experiencia of expe">
+          <td>{{experiencia.area_trabajo}}</td>
+          <td>{{experiencia.cargo}}</td>
+          <td>{{experiencia.duracion}}</td>
+          <td>{{experiencia.institucion}}</td>
+          <td>{{experiencia.actividad}}</td>
+              <td><button type="button"  name="button" class="btn btn-primary" [routerLink]="['/editarexperienciaestudiante/:id']">Editar</button></td>
+              <td><button class="btn btn-danger" >Eliminar</button></td>
+             </tr>
+
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,29 @@
+
+<div class="row "  (ngSubmit)="Editar()">
+  <label>PERFIL OCUPACIONAL</label>
+  <br>
+  <br>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="HABILIDADES" aria-label="First name"
+      [(ngModel)]="editarperfilocupacional.habilidades" name="habilidades">
+
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="DESTRESAS" aria-label="Last name"
+      [(ngModel)]="editarperfilocupacional.destrezas" name="destresas">
+  </div>
+  <br> <br>
+  <div class="row ">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="APTITUDES" aria-label="First name"
+        [(ngModel)]="editarperfilocupacional.actitudes" name="actitudes">
+    </div>
+
+    <br>
+<br>
+  <div style="margin-left: 250px;">
+
+
+    <button type="submit" class="btn btn-primary"  (click)="Editar()">GUARDAR</button>&nbsp;
+    <button type="submit" class="btn btn-primary"  [routerLink]="['/infolaboralestudiante/:id']">REGRESAR</button>
+  </div>

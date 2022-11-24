@@ -20,7 +20,13 @@ import { DetalleperfempresasestudianteComponent } from './estudiante/detalleperf
 
 import  {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { PerfilocupacionalComponent } from './estudiante/perfilocupacional/perfilocupacional.component';
+import { ExperienciaComponent } from './estudiante/experiencia/experiencia.component';
+import { ReferenciaslaboralesComponent } from './estudiante/referenciaslaborales/referenciaslaborales.component';
+import { EditarperfilocupacionalComponent } from './estudiante/editarperfilocupacional/editarperfilocupacional.component';
+import { EditarexperienciaComponent } from './estudiante/editarexperiencia/editarexperiencia.component';
+import { EdireferenciaslaboralesComponent } from './estudiante/edireferenciaslaborales/edireferenciaslaborales.component';
+import { FormComponent } from './estudiante/experiencia/form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +44,22 @@ import { FormsModule } from '@angular/forms';
     DetallelofaplicadasestudianteComponent,
     PerfilempresasestudianteComponent,
     DetalleperfempresasestudianteComponent,
+    PerfilocupacionalComponent,
+    ExperienciaComponent,
+    ReferenciaslaboralesComponent,
+    EditarperfilocupacionalComponent,
+    EditarexperienciaComponent,
+    EdireferenciaslaboralesComponent,
+    FormComponent
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-  ],
+    FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
