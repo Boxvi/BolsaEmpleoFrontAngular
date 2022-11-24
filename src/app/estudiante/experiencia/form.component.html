@@ -1,10 +1,9 @@
 <label>EXPERIENCIA</label>
 <br>
-<div class="row ">
-  <select class="form-select form-select-sm" aria-label=".form-select-sm example"  [(ngModel)]="experienciat.area_trabajo">
-    <option  *ngFor="let experiencia of areastrabajo">{{areastrabajo.nombre}}</option>
+<div class="row " [(ngModel)]="experienciat.area_trabajo">
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+    <option *ngFor="let experiencia of areastrabajo">{{experiencia.nombre}}</option>
   </select>
-
 </div>
 <br>
 
@@ -23,7 +22,7 @@
   <div class="col">
     <input type="text" class="form-control" placeholder="INTITUCION/EMPRESA" aria-label="Last name"
       [(ngModel)]="experienciat.institucion" name="institucion">
-  </div>
+  </div>y
 </div>
 <br> <br>
 <div class="row ">
@@ -40,3 +39,4 @@
     <button type="submit" class="btn btn-primary" [routerLink]="['/editarexperienciaestudiante/:id']">editar</button>
 
   </div>
+

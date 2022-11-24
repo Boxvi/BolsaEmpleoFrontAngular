@@ -9,7 +9,7 @@ import { experiencia } from './experiencia';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-
+  public areastrabajo: any= [];
   expe:experiencia[]=[];
   public experiencia:experiencia = new experiencia();
 
@@ -20,7 +20,8 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.getProyectos().subscribe(
       expe => this.expe=expe
     );
-    this. getexperiencia()
+    this. getexperiencia();
+    this.getNiveles()
 
 
 
@@ -43,6 +44,14 @@ export class ExperienciaComponent implements OnInit {
     )
     }
 
+    public getNiveles(){
 
+      this.experienciaService.get("http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/areasTrabajo").subscribe(
+
+        areastrabajo => {
+          this.areastrabajo = areastrabajo;
+        }
+      )
+    }
 
   }

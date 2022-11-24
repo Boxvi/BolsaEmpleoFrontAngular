@@ -1,15 +1,9 @@
 <label>EXPERIENCIA</label>
 <br>
-<div class="row ">
-  <div class="col" [(ngModel)]="experiencia.area_trabajo">
-  <select class="form-select form-select-sm" aria-label=".form-select-sm example"  >
-    <option >Tecnico</option>
-    <option >Juridico</option>
-    <option >"Marketing y Comunicacion</option>
-    <option >Produccion</option>
-    <option >Tecnologías de Información</option>
+<div class="row " [(ngModel)]="experiencia.area_trabajo">
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+    <option *ngFor="let experiencia of areastrabajo">{{experiencia.nombre}}</option>
   </select>
-</div>
 </div>
 <br>
 
