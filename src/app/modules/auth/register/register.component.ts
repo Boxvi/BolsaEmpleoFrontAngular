@@ -13,14 +13,14 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class RegisterComponent implements OnInit {
 
-  public usuario: Iusuario = {
-    username: '',
-    password: '',
-    email: '',
-    telefono: '',
-    estado: true,
-    rol: ''
-  };
+  /*   public usuario: Iusuario = {
+      username: '',
+      password: '',
+      email: '',
+      telefono: '',
+      estado: true,
+      rol: ''
+    }; */
 
   rolReceived: string = '';
 
@@ -37,16 +37,24 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       telefono: ['', Validators.required],
       estado: [true],
-      rol: ['ROLE_ESTUDIANTE']
+      rol: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
-    this.passRoleService.roleTrigger.subscribe(data => {
-      console.log('ROLE 🎋', data);
-      this.rolReceived = data.data;
-      this.usuario.rol = this.rolReceived
-    })
+    /*     this.passRoleService.roleTrigger.subscribe(data => {
+          console.log('ROLE 🎋', data);
+          this.rolReceived = data.data;
+          this.usuario.rol = this.rolReceived
+          this.registerForm.get('rol')?.setValue(this.usuario.rol);
+          console.log('Subscribe action', this.registerForm.value);
+    
+        }) */
+    /*     console.log('Out Subscribe action', this.registerForm.value); */
+    this.rolReceived = this.passRoleService.getRol();
+    console.log(this.rolReceived);
+    this.registerForm.get('rol')?.setValue(this.rolReceived);
+
   }
 
   register() {
@@ -54,20 +62,19 @@ export class RegisterComponent implements OnInit {
     if (!this.registerForm.valid) {
       return;
     }
-    console.log('Registered🎁', this.registerForm.value);
+
     this.usuarioSerive.signUp(this.registerForm.value).subscribe(r => {
+
+      console.log('Registered🎁', this.registerForm.value);
       Swal.fire({
-        icon: 'success',
-        text: 'Usuario registrado'
-      });
-      this.router.navigateByUrl("/home");
-    },
-      err => {
-        Swal.fire({
-          icon: 'error',
-          text: `${err.error.message}`
-        })
-      });
+        icon: r.icon,
+        text: r.message
+      })
+      if (!r.error) {
+        this.router.navigateByUrl('/home');
+      }
+
+    });
 
   }
 

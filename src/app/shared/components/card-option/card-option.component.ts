@@ -10,12 +10,14 @@ export class CardOptionComponent implements OnInit {
 
   @Input() data: CardOption = {
     icon: '',
-    title: '',
-    link: ''
+    title: ''
   }
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    console.log('🧣', this.data);
   }
 
 }

@@ -4,13 +4,15 @@ import { ResumeComponent } from './resume/resume.component';
 import { EstudianteRoutingModule } from './estudiante-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PersonalFormComponent } from './personal-form/personal-form.component';
+import { ListLogrosComponent } from './logros/list-logros/list-logros.component';
 
 
 
 @NgModule({
   declarations: [
     ResumeComponent,
-    PersonalFormComponent
+    PersonalFormComponent,
+    ListLogrosComponent
   ],
   imports: [
     CommonModule,

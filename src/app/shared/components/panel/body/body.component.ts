@@ -16,6 +16,7 @@ export class BodyComponent implements OnInit {
   leftNavItems: ISideNavItem[] = [];
 
   constructor(private authService: AuthService) {
+    
   }
 
   ngOnInit(): void {

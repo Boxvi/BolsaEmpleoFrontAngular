@@ -87,6 +87,7 @@ export class LoginComponent implements OnInit {
   }
 
   register() {
+    this.passRoleService.setRol(this.role);
     this.passRoleService.roleTrigger.emit({
       data: this.role
     });

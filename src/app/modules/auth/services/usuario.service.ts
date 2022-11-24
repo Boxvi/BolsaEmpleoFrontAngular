@@ -15,9 +15,23 @@ export class UsuarioService {
 
   signUp(data: Iusuario): Observable<any> {
 
-    //const response = { error: true, message: 'Registro Inválido' };
+    const response = { error: true, message: '', icon: '' };
 
-    return this.http.post<any>(`${AUTH_API}/signup`, data);
+    return this.http.post<any>(`${AUTH_API}/signup`, data).pipe(
+      map(r => {
+        response.error = false;
+        response.message = 'Usuario Registrado';
+        response.icon = 'success';
+        return response;
+
+      }),
+      catchError(e => {
+        console.log(e);
+        response.message = e.error.message;
+        response.icon = 'error';
+        return of(response);
+      })
+    );
 
   }
 }

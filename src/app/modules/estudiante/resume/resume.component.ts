@@ -24,7 +24,28 @@ export class ResumeComponent implements OnInit {
 
     this.estudianteService.getEstudianteByUserId(this.usuario_id).subscribe(d => {
       this.perfilEstudiante = d;
+
+      for (const studentOption of this.studentOptions) {
+        studentOption.link += this.perfilEstudiante.id;
+      }
+
     })
+
+  }
+
+  showGenre(genero: string): string {
+
+    switch (genero) {
+      case 'M':
+        return 'Masculino';
+      case 'F':
+        return 'Femenino';
+      case 'Otro':
+        return genero;
+
+    }
+
+    return '';
 
   }
 
