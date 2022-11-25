@@ -36,8 +36,18 @@ constructor(
 
 
   ngOnInit(): void {
-  this.getAreasdeestudio();
+  this.estudiante_id = this.estudianteService.getId();
+  this.capacitacion.cedula= this.estudianteService.getCedula();
+  if(this.capacitacion_id){
 
+    this.capacitacionesService.getSummaryByCapId(this.capacitacion_id).subscribe(
+      r=>{
+        this.capacitacion = r;
+      }
+    )
+  }
+
+  this.getAreasdeestudio();
 }
 
 

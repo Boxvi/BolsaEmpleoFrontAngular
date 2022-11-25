@@ -11,7 +11,7 @@ const CAPACITACION_API = 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbea
 export class CapacitacionesService {
 
   private url:string= 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/capacitacion';
-  private httpHeaders =  new HttpHeaders({'Content-Type': 'application/json'})
+
  
 
 
