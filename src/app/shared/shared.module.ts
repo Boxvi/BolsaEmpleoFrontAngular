@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { TitleComponent } from './components/title/title.component';
 import { AddOptionComponent } from './components/add-option/add-option.component';
 import { CardOptionComponent } from './components/card-option/card-option.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardOptionComponent } from './components/card-option/card-option.compon
     BodyComponent,
     TitleComponent,
     AddOptionComponent,
-    CardOptionComponent
+    CardOptionComponent,
+    BackButtonComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { CardOptionComponent } from './components/card-option/card-option.compon
     ReactiveFormsModule,
     TitleComponent,
     AddOptionComponent,
-    CardOptionComponent
+    CardOptionComponent,
+    BackButtonComponent
   ]
 })
 export class SharedModule { }

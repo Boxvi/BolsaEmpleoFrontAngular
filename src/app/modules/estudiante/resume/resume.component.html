@@ -77,11 +77,12 @@
 </div>
 
 <ng-template #addOption>
-  <app-add-option></app-add-option>
+  <app-add-option link="/panel/estudiante/personal-form"></app-add-option>
 </ng-template>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <app-card-option
+    [ngClass]="disableCards()"
     [data]="option"
     *ngFor="let option of studentOptions"
   ></app-card-option>
