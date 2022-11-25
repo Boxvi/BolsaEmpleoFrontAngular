@@ -19,7 +19,11 @@ const routes: Routes = [
       { path: 'administrador', loadChildren: () => import('./modules/administrador/administrador.module').then((m) => m.AdministradorModule) }
     ], canActivate: [AuthGuard]
   },
-
+  {
+    path: '', component: BodyComponent, children: [
+      { path: 'ofertas', loadChildren: () => import('./modules/ofertas/ofertas.module').then((m) => m.OfertasModule) }
+    ]
+  },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 
 ];
