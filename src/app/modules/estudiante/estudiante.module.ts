@@ -5,6 +5,7 @@ import { EstudianteRoutingModule } from './estudiante-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PersonalFormComponent } from './personal-form/personal-form.component';
 import { ListLogrosComponent } from './logros/list-logros/list-logros.component';
+import { FormLogroComponent } from './logros/form-logro/form-logro.component';
 
 
 
@@ -12,7 +13,8 @@ import { ListLogrosComponent } from './logros/list-logros/list-logros.component'
   declarations: [
     ResumeComponent,
     PersonalFormComponent,
-    ListLogrosComponent
+    ListLogrosComponent,
+    FormLogroComponent
   ],
   imports: [
     CommonModule,

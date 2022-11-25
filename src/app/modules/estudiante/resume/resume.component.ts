@@ -15,6 +15,18 @@ export class ResumeComponent implements OnInit {
   public studentOptions: CardOption[] = STUDENT_MENU_OPTIONS;
   public perfilEstudiante: IEstudiante | any;
   public usuario_id = 0;
+  public estudiante_id = 0;
+
+  public links: { link: string }[] = [
+    { link: 'preferenciasLaborales/estudiante/' },
+    { link: 'perfilOcupacional/estudiante/' },
+    { link: 'instruccionFormal/estudiante/' },
+    { link: 'capacitaciones/estudiante/' },
+    { link: 'logros/estudiante/' },
+    { link: 'referenciasProfesionales/estudiante/' },
+    { link: 'referenciasPersonales/estudiante/' }
+  ];
+
 
   constructor(private authService: AuthService,
     private estudianteService: EstudianteService) { }
@@ -24,9 +36,13 @@ export class ResumeComponent implements OnInit {
 
     this.estudianteService.getEstudianteByUserId(this.usuario_id).subscribe(d => {
       this.perfilEstudiante = d;
+      this.estudiante_id = d.id;
+      /*       for (const studentOption of this.studentOptions) {
+              studentOption.link += this.perfilEstudiante.id;
+            } */
 
-      for (const studentOption of this.studentOptions) {
-        studentOption.link += this.perfilEstudiante.id;
+      for (let index = 0; index < this.studentOptions.length; index++) {
+        this.studentOptions[index].link = this.links[index].link + this.estudiante_id;
       }
 
     })

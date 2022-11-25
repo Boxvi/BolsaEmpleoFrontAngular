@@ -18,10 +18,7 @@ export class PersonalFormComponent implements OnInit {
   public ciudades: ICiudad[] = [];
   public estadosCivil = ESTADO_CIVIL_OPCIONES;
   public estudiante_id: number;
-  public estudiante: IEstudiante | any = {
-    /*     nombres: '',
-        apellidos: '' */
-  };
+  public estudiante: IEstudiante | any = {/*     nombres: '',apellidos: '' */ };
 
   constructor(private route: ActivatedRoute, private ciudadService: CiudadService,
     private estudianteService: EstudianteService,
@@ -47,7 +44,7 @@ export class PersonalFormComponent implements OnInit {
   registrarEstudiante() {
     if (this.estudiante_id) {
       // actualizamos
-      
+
       this.estudianteService.edit(this.estudiante_id, this.estudiante).subscribe(r => {
         console.log('🎑Actualizando...');
         this.response(r.error, r.icon, r.message);

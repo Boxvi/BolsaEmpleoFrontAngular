@@ -1,6 +1,6 @@
 <app-title title="Logros"></app-title>
 <div class="container-fluid p-0" *ngIf="logros.length > 0; else addOption">
-  <button class="btn btn-dark mb-3">
+  <button class="btn btn-dark mb-3" routerLink="/panel/estudiante/logros-form">
     <i class="bi bi-plus-circle-fill"></i> Agregar Nuevo
   </button>
 
@@ -19,7 +19,11 @@
         <td>{{ logro.tipoLogro }}</td>
         <td>{{ logro.descripcion }}</td>
         <td>
-          <button type="button" class="btn btn-warning">
+          <button
+            type="button"
+            class="btn btn-warning"
+            [routerLink]="'/panel/estudiante/logros-form/' + logro.id"
+          >
             <i class="bi bi-pen-fill"></i>
           </button>
         </td>
@@ -37,7 +41,7 @@
   </table>
 </div>
 <ng-template #addOption>
-  <app-add-option></app-add-option>
+  <app-add-option link="/panel/estudiante/logros-form"></app-add-option>
 </ng-template>
 <div class="text-center">
   <app-back-button link="/panel/estudiante"></app-back-button>

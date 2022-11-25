@@ -8,8 +8,27 @@ const ESTUDIANTE_API = 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeans
   providedIn: 'root'
 })
 export class EstudianteService {
+  private estudiante_id: number = 0;
+  private cedula: string = '';
 
   constructor(private http: HttpClient) { }
+
+  setId(estudiante_id: number) {
+    this.estudiante_id = estudiante_id;
+  }
+
+  getId() {
+    return this.estudiante_id;
+  }
+
+  setCedula(cedula: string) {
+    this.cedula = cedula;
+  }
+
+  getCedula() {
+    return this.cedula;
+  }
+
 
   getEstudianteByUserId(usuario_id: number): Observable<any> {
     return this.http.get<any>(`${ESTUDIANTE_API}/usuario/${usuario_id}`);
