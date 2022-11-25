@@ -20,6 +20,12 @@ const routes: Routes = [
     ], canActivate: [AuthGuard]
   },
 
+  {
+    path: '', component: BodyComponent, children: [
+      { path: 'ofertas', loadChildren: () => import('./modules/ofertas/ofertas.module').then((m) => m.OfertasModule) }
+    ]
+  },
+
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 
 ];
