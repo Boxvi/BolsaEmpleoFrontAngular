@@ -24,6 +24,10 @@ export const LEFT_NAV_ITEMS: {
   }],
   administrador: [
     {
+      title: 'Tablero',
+      iconClass: 'bi bi-speedometer'
+    },
+    {
       title: 'Hojas de Vida',
       iconClass: 'bi bi-person-vcard-fill'
     },
@@ -34,6 +38,10 @@ export const LEFT_NAV_ITEMS: {
     {
       title: 'Ofertas Laborales',
       iconClass: 'bi bi-linkedin'
+    },
+    {
+      title: 'Reportes estadísticos',
+      iconClass: 'bi bi-clipboard-data-fill'
     }
   ]
 };
