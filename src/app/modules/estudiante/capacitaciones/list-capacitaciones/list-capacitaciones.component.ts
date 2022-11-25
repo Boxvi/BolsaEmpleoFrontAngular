@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { CapacitacionesService } from '../services/capacitaciones/capacitaciones.service'; 
-import {Capacitacion} from 'src/app/data/interfaces/models/capacitacion'
+import {Capacitacion} from 'src/app/data/interfaces/models/capacitacion';
+import { CapacitacionesService} from 'src/app/modules/estudiante/services/capacitaciones/capacitaciones.service'; 
+
 
 @Component({
-  selector: 'app-capacitaciones',
-  templateUrl: './capacitaciones.component.html',
-  styleUrls: ['./capacitaciones.component.css']
+  selector: 'app-list-capacitaciones',
+  templateUrl: './list-capacitaciones.component.html',
+  styleUrls: ['./list-capacitaciones.component.css']
 })
-export class CapacitacionesComponent implements OnInit {
+export class ListCapacitacionesComponent implements OnInit {
 
   public capacitacion: Capacitacion [] = [];
   public estudiante_id: number=0;
@@ -36,14 +37,5 @@ public getCapacitacionByEstudiante(): void {
     console.log(this.capacitacion);
     }
 }
-
-
-
-
-
-
-
-
-
 
 }

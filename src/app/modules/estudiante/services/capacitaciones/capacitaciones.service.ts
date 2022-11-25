@@ -24,8 +24,12 @@ export class CapacitacionesService {
   }
 
 
-  createByEstudiante(capacitacion:Capacitacion): Observable<Capacitacion>{
+ /* createByEstudiante(capacitacion:Capacitacion): Observable<Capacitacion>{
   return this.http.post<Capacitacion>(`${CAPACITACION_API}_`, capacitacion);
+  }*/
+
+  deleteCapacitacion(id:number): Observable<any>{
+    return this.http.delete<any>(`${CAPACITACION_API}/${id}`);
   }
 
   
@@ -72,5 +76,13 @@ export class CapacitacionesService {
 
     return this.http.get(urls)
   }
+
+
+
+  getSummaryByCapId(capacitacion_id:number):Observable<any>{
+    return this.http.get<any>(`${CAPACITACION_API}/${capacitacion_id}`);
+  }
+
+
 
 }

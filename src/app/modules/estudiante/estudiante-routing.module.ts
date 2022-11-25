@@ -1,13 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { FormLogroComponent } from "./logros/form-logro/form-logro.component";
-
-import { CapacitacionesComponent } from "./capacitaciones/capacitaciones.component";
+import {FormCapacitacionComponent} from './capacitaciones/form-capacitacion/form-capacitacion.component';
 
 import { ListLogrosComponent } from "./logros/list-logros/list-logros.component";
 import { PersonalFormComponent } from "./personal-form/personal-form.component";
 import { ResumeComponent } from "./resume/resume.component";
-import {CapacitacionesFormComponent} from "./capacitaciones-form/capacitaciones-form.component"
+import{ListCapacitacionesComponent} from './capacitaciones/list-capacitaciones/list-capacitaciones.component'
 
 const routes: Routes = [
   { path: '', component: ResumeComponent },
@@ -16,11 +15,14 @@ const routes: Routes = [
   { path: 'logros/estudiante/:id', component: ListLogrosComponent },
 
   { path: 'logros-form', component: FormLogroComponent },
-  { path: 'logros-form/:id', component: FormLogroComponent }
+  { path: 'logros-form/:id', component: FormLogroComponent },
+
+  {path: 'capacitaciones/estudiante/:id', component:ListCapacitacionesComponent},
+  {path:'capacitacion-form', component:FormCapacitacionComponent},
+  {path: 'capacitacion-form/:id', component:FormCapacitacionComponent}
 
 
-  {path:'capacitaciones/estudiante/:id',component: CapacitacionesComponent } ,
-  {path: 'capacitaciones-form/estudiante/', component: CapacitacionesFormComponent}
+
  //{path:'capacitaciones-form/estudiante/:id/ ',component: FormCapacitacionComponent},
   
 
