@@ -1,5 +1,4 @@
-export class Capacitacionesestudiante{
-
+export class Capacitacion{
     id!: number;
     nombre_capacitacion?: string;
     cedula?: string;
@@ -10,5 +9,6 @@ export class Capacitacionesestudiante{
     fechaInicio?: Date;
     fechaFin?: Date;
     numHoras?: number;
+
 
 }
