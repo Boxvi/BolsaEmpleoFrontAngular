@@ -111,7 +111,7 @@ export class RefPersonalesComponent implements OnInit {
 
   Campos(){
 
-    this.nombresdatos = "Seleccione una opcion"
+    this.nombresdatos = null
       this.telefonodatos = null
   }
 
