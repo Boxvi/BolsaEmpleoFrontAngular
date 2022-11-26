@@ -18,6 +18,7 @@ import { IOferta } from 'src/app/data/interfaces/models/ioferta';
 
 export class DetalleofertaComponent implements OnInit {
 
+
   public usuario_id: number =0;
   public oferta: IOferta  | any={};
   public estudiante: any =[] ;
@@ -34,8 +35,7 @@ export class DetalleofertaComponent implements OnInit {
     private router:Router,private route: ActivatedRoute,
     ) { 
 
-      this.oferta_id=this.route.snapshot.params['id'];
-      
+      this.oferta_id=this.route.snapshot.params['id']; 
     }
 
   ngOnInit(): void {
