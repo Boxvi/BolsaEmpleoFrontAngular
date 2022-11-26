@@ -23,6 +23,12 @@ getByID(id: number): Observable<any> {
   return this.http.get<any>(`${OFERTAS_API}/${id}`);
 }
 
+getOfertasById(id: number): Observable<any> {
+  return this.http.get(`${OFERTAS_API}/resumen/${id}`);
+}
+
+
+
 
 //para guardar una psotulacion//
 
@@ -39,7 +45,7 @@ save(postulacion: Postulacion): Observable<any> {
     }),
     catchError(e => {
       response.message = e.error.message;
-      response.icon = 'error ya as postulado a esta oferta';
+      response.icon = 'error';
       return of(response);
     })
   );

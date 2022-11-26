@@ -7,6 +7,8 @@ import{OfertaService} from 'src/app/modules/ofertas/oferta.service';
 import { Alert } from 'src/app/data/classes/alert';
 import {Moment} from 'moment';
 import * as moment from 'moment';
+import { Ofertaslaborales } from 'src/app/data/interfaces/models/ofertaslaborales';
+import { IOferta } from 'src/app/data/interfaces/models/ioferta';
 
 @Component({
   selector: 'app-detalleoferta',
@@ -17,7 +19,7 @@ import * as moment from 'moment';
 export class DetalleofertaComponent implements OnInit {
 
   public usuario_id: number =0;
-  public oferta: any =[] ;
+  public oferta: IOferta  | any={};
   public estudiante: any =[] ;
  // public savePostulacion:Postulacion | any = {};
   public oferta_id: number =0;
@@ -54,7 +56,7 @@ export class DetalleofertaComponent implements OnInit {
 
 public getByDetail(): void{
 if(this.oferta_id){
-this.ofertasService.getByID(this.oferta_id).subscribe((p)=> this.oferta= p)
+this.ofertasService.getOfertasById(this.oferta_id).subscribe((p)=> this.oferta= p)
 }
 }
 
@@ -66,8 +68,7 @@ this.savePostulacion.cedula= this.estudiante.cedula;
 this.ofertasService.save(this.savePostulacion)
 .subscribe(r => {
   let alert = new Alert(r.error, r.icon, r.message, this.router);
-  alert.response('ofertas/' + this.oferta_id);
-
+  alert.response('/ofertas');
   console.log(this.savePostulacion);
 })
 console.log(this.savePostulacion);

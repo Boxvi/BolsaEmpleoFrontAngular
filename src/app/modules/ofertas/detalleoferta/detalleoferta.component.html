@@ -1,5 +1,5 @@
 <div  class="forma" >
-    <div >{{oferta.id}}</div>
+    <div >{{oferta?.id}}</div>
     <div >{{estudiante.cedula}}</div>
         <div class="row " >
           <div class="col" >
@@ -17,14 +17,14 @@
             <label >REQUISITOS</label>
             <br>
             <input type="text" class="form-control" aria-label="First name" readonly="readonly"
-            [(ngModel)]="oferta.descripcion" name="descripcion"
+            [(ngModel)]="oferta.requisitos_academicos" name="requisitos_academicos"
             >
           </div>
           <div class="col">
             <label >CIUDAD</label>
             <br>
             <input type="text" class="form-control"  aria-label="First name" readonly="readonly"
-            [(ngModel)]="oferta.ciudad.nombre" name="ciudad">
+            [(ngModel)]="oferta.ciudad" name="ciudad">
           </div>
         </div>
         <br>
@@ -50,8 +50,7 @@
             <label >UBICACION</label>
             <br>
             <input type="text" class="form-control" aria-label="First name" readonly="readonly"
-            [(ngModel)]="oferta.ubicacion" name="ubicacion"
-            >
+            [(ngModel)]="oferta.ubicacion" name="ubicacion">
           </div>
   
           <div class="col">
