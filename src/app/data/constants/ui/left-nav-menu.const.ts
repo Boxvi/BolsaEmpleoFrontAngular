@@ -14,7 +14,13 @@ export const LEFT_NAV_ITEMS: {
     title: 'Ofertas Laborales',
     iconClass: 'bi bi-linkedin',
     link: '/ofertas'
-  }],
+  },
+  {
+    title: 'Ofertas Aplicadas',
+    iconClass: 'bi bi-check-circle-fill',
+    link: '/ofertas/ofertasAplicadas'
+  }
+  ],
   empresa: [{
     title: 'Datos Empresa',
     iconClass: 'bi bi-buildings-fill'
