@@ -4,18 +4,57 @@
   *ngIf="perfilEmpresa; else addOption"
 >
   <div class="row">
-    <div class="col-md-2">
-      <img src="../../../../assets/icons/building-icon.svg" width="100px">
+    <div class="col-md-2 text-center">
+      <img src="../../../../assets/icons/building-icon.svg" width="100px" />
     </div>
     <div class="col-md-9">
-
+      <div class="row px-2">
+        <div
+          class="col-md-6 d-flex justify-content-start align-items-center gap-2 py-2"
+        >
+          <h6 class="mb-0 text-uppercase">Nombre:</h6>
+          <div>{{ perfilEmpresa?.nombre }}</div>
+        </div>
+        <div
+          class="col-md-6 d-flex justify-content-start align-items-center gap-2 py-2"
+        >
+          <h6 class="mb-0 text-uppercase">RUC:</h6>
+          <div>{{ perfilEmpresa?.ruc }}</div>
+        </div>
+        <div
+          class="col-md-6 d-flex justify-content-start align-items-center gap-2 py-2"
+        >
+          <h6 class="mb-0 text-uppercase">Sector empresarial:</h6>
+          <div>{{ perfilEmpresa?.sectorEmpresarial }}</div>
+        </div>
+        <div
+          class="col-md-6 d-flex justify-content-start align-items-center gap-2 py-2"
+        >
+          <h6 class="mb-0 text-uppercase">Tipo Empresa:</h6>
+          <div>{{ perfilEmpresa?.tipoEmpresa }}</div>
+        </div>
+        <div
+          class="col-md-6 d-flex justify-content-start align-items-center gap-2 py-2"
+        >
+          <h6 class="mb-0 text-uppercase">Razon Social:</h6>
+          <div>{{ perfilEmpresa?.razonSocial }}</div>
+        </div>
+        <div
+          class="col-md-6 d-flex justify-content-start align-items-center gap-2 py-2"
+        >
+          <h6 class="mb-0 text-uppercase">Departamento:</h6>
+          <div>{{ perfilEmpresa?.departamento }}</div>
+        </div>
+      </div>
     </div>
     <div class="col-md-1">
-      <i
-      class="bi bi-pencil-square"
-      title="editar"
-      routerLink="/panel/estudiante/personal-form/perfilEmpresa"
-    ></i>
+      <div class="d-flex justify-content-end">
+        <i
+          class="bi bi-pencil-square"
+          title="editar"
+          routerLink="/panel/empresa/empresa-form/{{ perfilEmpresa?.id }}"
+        ></i>
+      </div>
     </div>
   </div>
 </div>
