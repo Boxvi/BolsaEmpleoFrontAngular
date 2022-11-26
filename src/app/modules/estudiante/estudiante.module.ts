@@ -6,6 +6,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { PersonalFormComponent } from './personal-form/personal-form.component';
 import { ListLogrosComponent } from './logros/list-logros/list-logros.component';
 import { FormLogroComponent } from './logros/form-logro/form-logro.component';
+import { FormsModule} from '@angular/forms';
+import { PostulacionOfertasComponent } from './postulacion-ofertas/postulacion-ofertas.component';
+import { ListCapacitacionesComponent } from './capacitaciones/list-capacitaciones/list-capacitaciones.component';
+import { FormCapacitacionComponent } from './capacitaciones/form-capacitacion/form-capacitacion.component';
+
+
 
 
 
@@ -14,7 +20,11 @@ import { FormLogroComponent } from './logros/form-logro/form-logro.component';
     ResumeComponent,
     PersonalFormComponent,
     ListLogrosComponent,
-    FormLogroComponent
+    FormLogroComponent, 
+    PostulacionOfertasComponent,
+    ListCapacitacionesComponent,
+    FormCapacitacionComponent
+
   ],
   imports: [
     CommonModule,

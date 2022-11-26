@@ -9,6 +9,8 @@
       placeholder="Buscar"
       aria-label="Search"
       aria-describedby="search-addon"
+      [(ngModel)]="filterPost"
+      name="filterPost"
     />
     <span class="input-group-text border-0" id="search-addon">
       <i class="bi bi-search"></i>
@@ -17,11 +19,11 @@
 </div>
 
 <!-- Ofertas -->
-<div class="d-flex justify-content-center flex-column align-items-center">
+<div class="d-flex justify-content-center flex-column align-items-center" >
   <div
-    *ngFor="let oferta of ofertas"
+    *ngFor="let oferta of ofertas "
     class="card mb-3 p-2"
-    [routerLink]="'oferta/detalle' + oferta.id"
+    [routerLink]="'/ofertas/oferta/detalle/' + oferta.id"    
   >
     <div class="row g-0">
       <div class="col-md-8">
