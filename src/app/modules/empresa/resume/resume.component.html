@@ -1,6 +1,32 @@
 <app-title title="Empresa"></app-title>
+<div
+  class="container-fluid shadow-sm p-5 mb-5 bg-body rounded"
+  *ngIf="perfilEmpresa; else addOption"
+>
+  <div class="row">
+    <div class="col-md-2">
+      <img src="../../../../assets/icons/building-icon.svg" width="100px">
+    </div>
+    <div class="col-md-9">
+
+    </div>
+    <div class="col-md-1">
+      <i
+      class="bi bi-pencil-square"
+      title="editar"
+      routerLink="/panel/estudiante/personal-form/perfilEmpresa"
+    ></i>
+    </div>
+  </div>
+</div>
+
+<ng-template #addOption>
+  <app-add-option link="/panel/empresa/empresa-form"></app-add-option>
+</ng-template>
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <app-card-option
+    [ngClass]="disableCards()"
     [data]="option"
     *ngFor="let option of empresaOptions"
   ></app-card-option>
