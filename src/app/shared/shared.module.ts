@@ -12,6 +12,7 @@ import { AddOptionComponent } from './components/add-option/add-option.component
 import { CardOptionComponent } from './components/card-option/card-option.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -21,7 +22,8 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
     TitleComponent,
     AddOptionComponent,
     CardOptionComponent,
-    BackButtonComponent
+    BackButtonComponent,
+
   ],
   imports: [
     CommonModule,

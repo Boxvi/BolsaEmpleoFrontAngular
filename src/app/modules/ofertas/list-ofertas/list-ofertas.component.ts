@@ -8,15 +8,18 @@ import { OfertaService } from '../oferta.service';
   styleUrls: ['./list-ofertas.component.css']
 })
 export class ListOfertasComponent implements OnInit {
+ 
+  filterPost='';
 
   public ofertas: IOferta[] = [];
 
   constructor(private ofertaService: OfertaService) { }
-
+ 
   ngOnInit(): void {
     this.ofertaService.getAll().subscribe(r => {
       this.ofertas = r;
     })
+    console.log(this.filterPost);
   }
 
 }
