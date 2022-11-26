@@ -4,6 +4,10 @@ import { ResumeComponent } from "./resume/resume.component";
 
 const routes: Routes = [
   { path: '', component: ResumeComponent }
+  /* {path:'contactosEmpresariales/empresa/:id',component: 🎈🎈Aquí va el nombre del componente } */
+  /* {path:'ofertasPublicadas/empresa/:id',component: 🎈🎈Aquí va el nombre del componente } */
+  /* {path:'ofertasAplicadas/empresa/:id',component: 🎈🎈Aquí va el nombre del componente } */
+
 ];
 
 @NgModule({
