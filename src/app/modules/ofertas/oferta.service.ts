@@ -19,6 +19,7 @@ export class OfertaService {
 
 
 
+
 getByID(id: number): Observable<any> {
   return this.http.get<any>(`${OFERTAS_API}/${id}`);
 }
@@ -55,6 +56,11 @@ save(postulacion: Postulacion): Observable<any> {
 
 
 
+
+
+  getOfertasById(id: number): Observable<any> {
+    return this.http.get(`${OFERTAS_API}/resumen/${id}`);
+  }
 
 
 }
