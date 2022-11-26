@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ListarOfertasComponent } from './publicar-ofertas/listar-ofertas/listar-ofertas.component';
 import { FormOfertasComponent } from './publicar-ofertas/form-ofertas/form-ofertas.component';
 import { OfAplicadasComponent } from './of-aplicadas/of-aplicadas.component';
+import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
 
 
 
@@ -15,8 +16,9 @@ import { OfAplicadasComponent } from './of-aplicadas/of-aplicadas.component';
     ResumeComponent,
     ListarOfertasComponent,
     FormOfertasComponent,
-    OfAplicadasComponent
-    
+    OfAplicadasComponent,
+    EmpresaFormComponent
+
   ],
   imports: [
     CommonModule,
