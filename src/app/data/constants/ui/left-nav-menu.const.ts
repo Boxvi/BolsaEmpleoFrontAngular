@@ -23,7 +23,8 @@ export const LEFT_NAV_ITEMS: {
   ],
   empresa: [{
     title: 'Datos Empresa',
-    iconClass: 'bi bi-buildings-fill'
+    iconClass: 'bi bi-buildings-fill',
+    link: '/panel/empresa'
   },
   {
     title: 'Hojas de Vida',
