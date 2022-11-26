@@ -30,9 +30,7 @@ getByID(id: number): Observable<any> {
   return this.http.get<any>(`${OFERTAS_API}/${id}`);
 }
 
-getOfertasById(id: number): Observable<any> {
-  return this.http.get(`${OFERTAS_API}/resumen/${id}`);
-}
+
 
 
 

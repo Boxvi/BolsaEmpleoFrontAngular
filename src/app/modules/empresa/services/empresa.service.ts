@@ -23,4 +23,5 @@ export class EmpresaService {
   getEmpresaByUserId(usuario_id: number): Observable<any> {
     return this.http.get<any>(`${EMPRESA_API}/usuario/${usuario_id}`);
   }
+  
 }

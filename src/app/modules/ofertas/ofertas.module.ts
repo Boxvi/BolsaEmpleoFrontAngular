@@ -15,10 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
-import { DetalleofertaComponent } from './detalleoferta/detalleoferta.component';
-import { FilterPipe } from './pipe/filter.pipe';
-import { FormsModule } from '@angular/forms';
-import { OfertasAplicadasComponent } from './ofertas-aplicadas/ofertas-aplicadas.component';
+
 
 
 

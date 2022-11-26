@@ -36,6 +36,7 @@ export class ResumeComponent implements OnInit {
 
     this.estudianteService.getEstudianteByUserId(this.usuario_id).subscribe(d => {
       this.perfilEstudiante = d;
+      localStorage.setItem('cedulaPerfil', d.cedula)
       this.estudiante_id = d.id;
       this.estudianteService.setId(d.id);
       /*       for (const studentOption of this.studentOptions) {
