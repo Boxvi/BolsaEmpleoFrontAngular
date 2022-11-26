@@ -18,9 +18,11 @@ export class OfertaService {
   }
 
 
+
   getOfertasById(id: number): Observable<any> {
     return this.http.get(`${OFERTAS_API}/resumen/${id}`);
   }
+
 
 
 
