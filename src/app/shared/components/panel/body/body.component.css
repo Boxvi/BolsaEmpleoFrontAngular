@@ -28,7 +28,7 @@ app-sidenav {
 
 .app-sidenav-open {
   width: 250px;
-/*   max-width: 250px; */
+  /*   max-width: 250px; */
 }
 
 .display-area {
@@ -41,5 +41,11 @@ app-sidenav {
 .display-area-shrink {
   left: 250px;
   width: calc(100% - 250px);
-/*   max-width: calc(100% - 250px); */
+  /*   max-width: calc(100% - 250px); */
+}
+
+@media screen and ( min-height: 700px ) {
+  app-sidenav {
+    height: calc(2500px - 4rem);
+  }
 }

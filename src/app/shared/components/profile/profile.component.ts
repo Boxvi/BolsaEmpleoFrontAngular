@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Alert } from 'src/app/data/classes/alert';
 import { Iusuario } from 'src/app/data/interfaces/models/iusuario';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { UsuarioService } from 'src/app/modules/auth/services/usuario.service';
 import { PassRoleService } from 'src/app/modules/auth/services/pass-role.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile',
@@ -36,10 +36,14 @@ export class ProfileComponent implements OnInit {
     this.usuarioService.edit(this.usuario_id, this.usuario).subscribe(d => {
 
       console.log('🎠Role', d.data?.rol?.nombre);
-      let alert = new Alert(d.error, d.icon, d.message, this.router);
-      alert.response(this.redirect(d?.data?.rol?.nombre));
+      Swal.fire({
+        icon: d.icon,
+        text: d.message
+      });
 
-      /* login service */
+      if (!d.error) {
+        this.authService.logout();
+      }
 
     })
   }

@@ -12,6 +12,7 @@ import { AddOptionComponent } from './components/add-option/add-option.component
 import { CardOptionComponent } from './components/card-option/card-option.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { DataCardComponent } from './components/data-card/data-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     AddOptionComponent,
     CardOptionComponent,
     BackButtonComponent,
-    ProfileComponent
+    ProfileComponent,
+    DataCardComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     TitleComponent,
     AddOptionComponent,
     CardOptionComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    DataCardComponent
   ]
 })
 export class SharedModule { }
