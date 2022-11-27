@@ -1,6 +1,62 @@
 <div class="text-lg-start">
   <app-back-button link="/panel/administrador"></app-back-button>
 </div>
+<div>
 
+
+  <div style="margin-left: 250px; width: 500px; height: 200px; margin-top: 50px;">
+    <div>
+      <label style="font-size: 20px;"> RUC:
+        <input id="ruc" name="ruc"  [(ngModel)]="empresas.ruc" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px;">Nombre:
+        <input id="nombre" name="nombre" [(ngModel)]="empresas.nombre" [disabled]="true">
+
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px;">Razon Social:
+        <input id="razonSocial" name="razonSocial" [(ngModel)]="empresas.razonSocial" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px;">Tipo De Empresa:
+        <input id="tipoEmpresa" name="tipoEmpresa" [(ngModel)]="empresas.tipoEmpresa" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px;">Sector Empresarial:
+        <input id="sectorEmpresarial" name="sectorEmpresarial" [(ngModel)]="empresas.sectorEmpresarial.nombre" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px;">Departamento:
+        <input id="departamento" name="deparatamento" [(ngModel)]="empresas.departamento" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px;">Ciudad:
+        <input id="ciudad" name="ciudad" [(ngModel)]="empresas.ciudad.nombre" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px;">Pagina Web:
+        <input id="sitioWeb" name="sitioWeb" [(ngModel)]="empresas.sitioWeb" [disabled]="true">
+      </label>
+    </div>
+</div>
+<div style="margin-left: 25%; margin-top: 35%;">
+
+  <div>
+    <input type="text" placeholder="COMENTARIOS..." style="width: 500px; height: 75px;">
+  </div>
+
+  <div style="margin-top: 5%;">
+    <button style="background-color: red; color: white; width: 150px; height: 55px;">Enviar Correo</button> <button style="margin-left: 250px;  background-color: blue; color: white; width: 150px; height: 55px;">Validar Y Publicar</button>
+  </div>
+
+</div>
 <br>
 <p>form-perfil-empresarial works!</p>

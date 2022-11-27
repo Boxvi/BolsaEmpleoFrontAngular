@@ -3,7 +3,34 @@
 </div>
 
 <br>
-<button type="button" class="btn btn-primary text-uppercase px-4 py-2 mt-3"  routerLink="/panel/administrador/ofertas-laborales/1">
-  ver
-</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">NOMBRE EMPRESA</th>
+    <th scope="col">CARGO</th>
+    <th scope="col">REQUISITOS</th>
+    <th scope="col">UBICACION</th>
+    <th scope="col">CIUDAD</th>
+    <th scope="col">DESCRIPCION</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let ofertas of oferta">
+    <td>{{ofertas.empresa}}</td>
+    <td>{{ofertas.cargo}}</td>
+    <td>{{ofertas.requisitos_academicos}}</td>
+    <td>{{ofertas.ubicacion}}</td>
+    <td>{{ofertas.ciudad}}</td>
+    <td>{{ofertas.descripcion}}</td>
+    <div>
+      <button type="button" class="btn btn-primary text-uppercase px-4 py-2 mt-3"
+              routerLink="/panel/administrador/ofertas-laborales/{{ofertas.id}}">
+        ver
+      </button>
+    </div>
+  </tr>
+  </tbody>
+</table>
+
 <p>list-ofertas-laborales works!</p>
