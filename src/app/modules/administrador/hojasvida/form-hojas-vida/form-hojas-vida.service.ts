@@ -1,6 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Curriculum} from "./form-hojas-vida";
+import {
+  Curriculum,
+  Educaciones,
+  Preferenciasempleo,
+  ReferenciaPersonal,
+  ReferenciaProfesional, Usuario
+} from "./form-hojas-vida";
+import {Observable} from "rxjs";
 
 
 @Injectable({
@@ -8,40 +15,36 @@ import {Curriculum} from "./form-hojas-vida";
 })
 export class CurriculumEstudianteService {
 
-  private urlEndPoint: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/estudiantes";
-  private urlprofecionalRef: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/referenciaProfesional";
-  private urlcapacitacion: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/capacitacion";
-  private urleducaciones: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/educaciones";
-  private urlpersonalRef: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/referenciaPersonal";
-  private urlexperiencia: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/experiencias";
+  private urlEndPoint: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com"
 
-  constructor(private _http:HttpClient) {
+  constructor(private _http: HttpClient) {
 
   }
 
-  getEstudiante(id : number){
-    console.log(this.urlEndPoint+"/"+id)
-    return this._http.get<Curriculum>(this.urlEndPoint+"/"+id);
+  getEstudiante(id: number) {
+    console.log(this.urlEndPoint + "/" + id)
+    return this._http.get<Curriculum>(this.urlEndPoint + "/estudiantes/" + id);
   }
-  getCapacitacion(id : number){
-    console.log(this.urlcapacitacion+"/"+id)
-    return this._http.get<Curriculum>(this.urlcapacitacion+"/"+id);
+
+  getReferenciaPersonal(id: number): Observable<ReferenciaPersonal[]> {
+    return this._http.get<ReferenciaPersonal[]>(this.urlEndPoint + "/referenciaPersonal/estudiante/" + id);
   }
-  getEducaciones(id : number){
-    console.log(this.urleducaciones+"/"+id)
-    return this._http.get<Curriculum>(this.urleducaciones+"/"+id);
+
+  getReferenciaProfesionales(id: number): Observable<ReferenciaProfesional[]> {
+    return this._http.get<ReferenciaProfesional[]>(this.urlEndPoint + "/referenciaProfesional/estudiante/" + id);
   }
-  getPersonalRef(id : number){
-    console.log(this.urlpersonalRef+"/"+id)
-    return this._http.get<Curriculum>(this.urlpersonalRef+"/"+id);
+
+  getPreferenciaEmpleo(id: number): Observable<Preferenciasempleo[]> {
+    return this._http.get<Preferenciasempleo[]>(this.urlEndPoint + "/preferenciasempleo/estudiante/" + id);
   }
-  getProfecionalRef(id : number){
-    console.log(this.urlprofecionalRef+"/"+id)
-    return this._http.get<Curriculum>(this.urlprofecionalRef+"/"+id);
+
+  getEducacion(id: number): Observable<Educaciones[]>{
+    return this._http.get<Educaciones[]>(this.urlEndPoint + "/educaciones/estudiante/" + id);
   }
-  getExperiencia(id : number){
-    console.log(this.urlexperiencia+"/"+id)
-    return this._http.get<Curriculum>(this.urlexperiencia+"/"+id);
+
+  updateUsuario(usuario: Usuario, id:number){
+    console.log(usuario.id)
+    return this._http.put<Usuario>(this.urlEndPoint + "/usuarios/" + id, usuario);
   }
 }
 
