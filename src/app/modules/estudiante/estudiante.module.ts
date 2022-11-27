@@ -7,7 +7,6 @@ import { PersonalFormComponent } from './personal-form/personal-form.component';
 import { ListLogrosComponent } from './logros/list-logros/list-logros.component';
 import { FormLogroComponent } from './logros/form-logro/form-logro.component';
 import { FormsModule} from '@angular/forms';
-import { PostulacionOfertasComponent } from './postulacion-ofertas/postulacion-ofertas.component';
 import { ListCapacitacionesComponent } from './capacitaciones/list-capacitaciones/list-capacitaciones.component';
 import { FormCapacitacionComponent } from './capacitaciones/form-capacitacion/form-capacitacion.component';
 
@@ -21,7 +20,6 @@ import { FormCapacitacionComponent } from './capacitaciones/form-capacitacion/fo
     PersonalFormComponent,
     ListLogrosComponent,
     FormLogroComponent, 
-    PostulacionOfertasComponent,
     ListCapacitacionesComponent,
     FormCapacitacionComponent
 
