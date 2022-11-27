@@ -14,6 +14,7 @@ import { PerfilEmpresarialPipe } from './perfilempresarial/pipe/perfil-empresari
 import { ListPostulacionesComponent } from './postulaciones/list-postulaciones/list-postulaciones.component';
 import { FormPostulacionesComponent } from './postulaciones/form-postulaciones/form-postulaciones.component';
 import { OfertasLaboralesPipe } from './ofertaslaborales/pipe/ofertas-laborales.pipe';
+import { ReportesComponent } from './reportes/reportes.component';
 
 
 
@@ -30,7 +31,8 @@ import { OfertasLaboralesPipe } from './ofertaslaborales/pipe/ofertas-laborales.
     PerfilEmpresarialPipe,
     ListPostulacionesComponent,
     FormPostulacionesComponent,
-    OfertasLaboralesPipe
+    OfertasLaboralesPipe,
+    ReportesComponent
   ],
   imports: [
     CommonModule,

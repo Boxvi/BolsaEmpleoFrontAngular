@@ -20,6 +20,11 @@ export const ADMIN_MENU_OPTIONS: CardOption[] = [
     icon: '../../../../assets/icons/profesional_references_icon.svg',
     title: 'Postulaciones',
     link: 'postulaciones'
+  },
+  {
+    icon: '../../../../assets/icons/statistical_reports_icon.svg',
+    title: 'Reportes',
+    link: 'reportes'
   }
 
 ]

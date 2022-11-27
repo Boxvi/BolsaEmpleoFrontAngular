@@ -17,6 +17,7 @@ import {
 } from "./perfilempresarial/form-perfil-empresarial/form-perfil-empresarial.component";
 import {ListPostulacionesComponent} from "./postulaciones/list-postulaciones/list-postulaciones.component";
 import {FormPostulacionesComponent} from "./postulaciones/form-postulaciones/form-postulaciones.component";
+import {ReportesComponent} from "./reportes/reportes.component";
 
 const routes: Routes = [
   {path: '', component: ResumeComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'postulaciones', component: ListPostulacionesComponent},
   {path: 'postulaciones/:id', component: FormPostulacionesComponent},
 
+  {path: 'reportes', component: ReportesComponent}
 
 ];
 

@@ -57,5 +57,10 @@ export const LEFT_NAV_ITEMS: {
       iconClass: 'bi bi-person',
       link: '/panel/administrador/postulaciones'
     },
+    {
+      title: 'Reportes',
+      iconClass: 'bi bi-flag',
+      link: '/panel/administrador/reportes'
+    },
   ]
 };
