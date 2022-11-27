@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'logros/estudiante/:id', component: ListLogrosComponent },
   { path: 'logros-form', component: FormLogroComponent },
   { path: 'logros-form/:id', component: FormLogroComponent }
+
   /* {path:'preferenciasLaborales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
   /* {path:'perfilOcupacional/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
   /* {path:'instruccionFormal/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */

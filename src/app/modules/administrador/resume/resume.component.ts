@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ADMIN_MENU_OPTIONS} from "../../../data/constants/ui/admin-menu-options";
+import {CardOption} from "../../../data/interfaces/ui/card-option";
 
 @Component({
   selector: 'app-resume',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
-  constructor() { }
+  public adminOptions: CardOption[] = ADMIN_MENU_OPTIONS;
+
+  public links: { link: string }[] = [
+    {link: 'hojas-vida'},
+    {link: 'perfil-empresarial'},
+    {link: 'ofertas-laborales'},
+    {link: 'postulaciones'},
+    {link: 'reportes'},
+  ];
+
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+
+    for (let index = 0; index < this.adminOptions.length; index++) {
+      this.adminOptions[index].link = this.links[index].link;
+    }
   }
 
 }
