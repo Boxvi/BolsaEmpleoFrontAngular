@@ -14,6 +14,8 @@ export class ListOfertasLaboralesComponent implements OnInit {
 
   constructor(private ofertaService: OfertaService) {}
 
+  filterPost: string = "";
+
   ngOnInit(): void {
 
     this.gerOfertas()
@@ -25,17 +27,7 @@ export class ListOfertasLaboralesComponent implements OnInit {
     );
   }
 
-  /*
-  cargarDatosOfertas():void {
-    this.ofertaService.obtenerOfertas().then((res)=>{
-      //console.log('respuesta ', res);
-      res.forEach((elem: any) => {
-        console.log(elem);
-        this.oferta.push(elem);
-      })
-    }).catch((err)=>{
-    });
-  }*/
+
 
 
 }

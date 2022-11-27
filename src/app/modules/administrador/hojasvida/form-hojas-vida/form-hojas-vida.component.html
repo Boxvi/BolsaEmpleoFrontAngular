@@ -7,14 +7,35 @@
 
 <div class="m-4">
   <div class="p-4">
-    <p>Cedula: {{curriculum.cedula}}</p>
-    <p>Nombre: {{curriculum.nombres}}</p>
-    <p>Apellidos: {{curriculum.apellidos}}</p>
-    <p>Generos: {{curriculum.genero}}</p>
-    <p>Fecha Nacimiento: {{curriculum.fechaNacimiento}}</p>
-    <p>Ciudad: {{curriculum.ciudad.nombre}}</p>
-    <p>Direccion: {{curriculum.direccion}}</p>
-    <p>Estado Civil: {{curriculum.estadoCivil}}</p>
+    <table class="table table-light  table-striped-columns">
+      <tbody>
+      <tr>
+        <td>CEDULA:</td>
+        <td>{{curriculum.cedula}}</td>
+        <td>FECHA NACIMIENTO:</td>
+        <td>{{curriculum.fechaNacimiento}}</td>
+      </tr>
+      <tr>
+        <td>NOMBRES:</td>
+        <td>{{curriculum.nombres}}</td>
+        <td>APELLIDOS</td>
+        <td>{{curriculum.apellidos}}</td>
+      </tr>
+      <tr>
+        <td>GENERO:</td>
+        <td>{{curriculum.genero}}</td>
+        <td>CIUDAD:</td>
+        <td>{{curriculum.ciudad}}</td>
+      </tr>
+      <tr>
+        <td>DIRECCION:</td>
+        <td>{{curriculum.direccion}}</td>
+        <td>ESTADO CIVIL:</td>
+        <td>{{curriculum.estadoCivil}}</td>
+      </tr>
+
+      </tbody>
+    </table>
   </div>
 </div>
 

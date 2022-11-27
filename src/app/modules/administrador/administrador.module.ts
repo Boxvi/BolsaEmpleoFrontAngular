@@ -13,6 +13,7 @@ import { ListHojasVidaPipe } from './hojasvida/pipe/list-hojas-vida.pipe';
 import { PerfilEmpresarialPipe } from './perfilempresarial/pipe/perfil-empresarial.pipe';
 import { ListPostulacionesComponent } from './postulaciones/list-postulaciones/list-postulaciones.component';
 import { FormPostulacionesComponent } from './postulaciones/form-postulaciones/form-postulaciones.component';
+import { OfertasLaboralesPipe } from './ofertaslaborales/pipe/ofertas-laborales.pipe';
 
 
 
@@ -28,7 +29,8 @@ import { FormPostulacionesComponent } from './postulaciones/form-postulaciones/f
     ListHojasVidaPipe,
     PerfilEmpresarialPipe,
     ListPostulacionesComponent,
-    FormPostulacionesComponent
+    FormPostulacionesComponent,
+    OfertasLaboralesPipe
   ],
   imports: [
     CommonModule,

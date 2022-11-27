@@ -7,125 +7,142 @@
 
 <div class="m-4">
   <div class="p-4">
-    <p>Ruc: {{ofertas.empresa.ruc}}</p>
-    <p>Nombre: {{ofertas.empresa.nombre}}</p>
-    <p>Sector Empresarial: {{ofertas.empresa.sectorEmpresarial.nombre}}</p>
-    <p>Tipo Empresa: {{ofertas.empresa.tipoEmpresa}}</p>
-    <p>Razon Social: {{ofertas.empresa.razonSocial}}</p>
-    <p>Departamento: {{ofertas.empresa.departamento}}</p>
-    <p>Ciudad: {{ofertas.empresa.ciudad}}</p>
-    <p>Direccion: {{ofertas.empresa.direccion}}</p>
-    <p>Sitio Web: {{ofertas.empresa.sitioWeb}}</p>
+    <table class="table table-light table-striped-columns">
+      <tbody>
+      <tr>
+        <td>RUC:</td>
+        <td>{{ofertas.empresa.ruc}}</td>
+        <td>NOMBRE:</td>
+        <td>{{ofertas.empresa.nombre}}</td>
+      </tr>
+      <tr>
+        <td>Sector Empresarial:</td>
+        <td>{{ofertas.empresa.sectorEmpresarial.nombre}}</td>
+        <td>Tipo Empresa:</td>
+        <td>{{ofertas.empresa.tipoEmpresa}}</td>
+      </tr>
+      <tr>
+        <td>Razon Social:</td>
+        <td>{{ofertas.empresa.razonSocial}}</td>
+        <td>Departamento:</td>
+        <td>{{ofertas.empresa.departamento}}</td>
+      </tr>
+      <tr>
+        <td>Ciudad:</td>
+        <td>{{ofertas.empresa.ciudad.nombre}}</td>
+        <td>Direccion:</td>
+        <td>{{ofertas.empresa.direccion}}</td>
+      </tr>
+      <tr>
+        <td>Sitio Web:</td>
+        <td>{{ofertas.empresa.sitioWeb}}</td>
+      </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>
 
-<h3 class="text-center">DATOS OFERTAS</h3>
+<h3 class="text-center">DATOS ESPECIFICOS DE LA OFERTA</h3>
+
 
 <div class="m-4">
   <div class="p-4">
-    <p>Cargo: {{ofertas.cargo}}</p>
-    <p>Descripcion: {{ofertas.descripcion}}</p>
-    <p>Area Conocimiento: {{ofertas.area_conocimiento}}</p>
-    <p>Salario: {{ofertas.salario}}</p>
-    <p>Jornada: {{ofertas.jornada}}</p>
-    <p>Requisitos Academicos: {{ofertas.requisitos_academicos}}</p>
-    <p>Experiencia: {{ofertas.experiencia}}</p>
-    <p>Ubicacion: {{ofertas.ubicacion}}</p>
-    <p>Fecha inicio: {{ofertas.fecha_inicio}}</p>
-    <p>Fecha fin: {{ofertas.fecha_fin}}</p>
-    <p>Ciudad: {{ofertas.ciudad.nombre}}</p>
-    <p>EMPRESA ID: {{ofertas.empresa.id}}</p>
+
+    <table class="table table-light table-striped-columns">
+      <tbody>
+      <tr>
+        <td>CARGO:</td>
+        <td>{{ofertas.cargo}}</td>
+        <td>DESCRIPCION:</td>
+        <td>{{ofertas.descripcion}}</td>
+      </tr>
+      <tr>
+        <td>AREA CONOCIMIENTO:</td>
+        <td>{{ofertas.area_conocimiento}}</td>
+        <td>SALARIO</td>
+        <td>{{ofertas.salario}}</td>
+      </tr>
+      <tr>
+        <td>JORNADA:</td>
+        <td>{{ofertas.jornada}}</td>
+        <td>REQUISITOS ACADEMICOS:</td>
+        <td>{{ofertas.requisitos_academicos}}</td>
+      </tr>
+      <tr>
+        <td>EXPERIENCIAS:</td>
+        <td>{{ofertas.experiencia}}</td>
+        <td>UBICACION:</td>
+        <td>{{ofertas.ubicacion}}</td>
+      </tr>
+      <tr>
+        <td>FECHA INICIO:</td>
+        <td>{{ofertas.fecha_inicio}}</td>
+        <td>FECHA FIN:</td>
+        <td>{{ofertas.fecha_fin}}</td>
+      </tr>
+      <tr>
+        <td>CIUDAD:</td>
+        <td>{{ofertas.ciudad.nombre}}</td>
+        <td>EMPRESA:</td>
+        <td>{{ofertas.empresa.nombre}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+
   </div>
 </div>
 
 
-<!--
+<h3 class="text-center">OTRAS DE LA MISMA EMPRESA EMPRESA</h3>
 
-<div>
+<div class="m-4">
+  <div class="p-4">
 
-  <h3>INFORMACIÓN OFERTAS LABORALES</h3>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">EMPRESA</th>
+        <th scope="col">CARGO</th>
+        <th scope="col">DESCRIPCION</th>
+        <th scope="col">AREA CONOCIMINETO</th>
+        <th scope="col">SALARIO
+        <th scope="col">JORNADA</th>
+        <th scope="col">REQUISITOS ACADEMICOS</th>
+        <th scope="col">EXPERIENCIA</th>
+        <th scope="col">UBICACIONES</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let ofertalaborales of ofertaE">
+        <td>{{ofertalaborales.empresa}}</td>
+        <td>{{ofertalaborales.cargo}}</td>
+        <td>{{ofertalaborales.descripcion}}</td>
+        <td>{{ofertalaborales.area_conocimiento}}</td>
+        <td>{{ofertalaborales.salario}}</td>
+        <td>{{ofertalaborales.jornada}}</td>
+        <td>{{ofertalaborales.requisitos_academicos}}</td>
+        <td>{{ofertalaborales.experiencia}}</td>
+        <td>{{ofertalaborales.ubicacion}}</td>
 
-  <div style="margin-left: 250px; width: 500px; height: 200px; margin-top: 50px;">
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">CARGO:
-        <input id="cargo" name="cargo" [(ngModel)]="ofertas.cargo" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">REQUISITOS:
-        <input id="requisitos" name="requisitos" [(ngModel)]="ofertas.requisitos_academicos" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">DESCRIPCIÓN:
-        <input id="descripdion" name="descripcion" [(ngModel)]="ofertas.descripcion" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">UBICACIÓN:
-        <input id="ubicacion" name="ubicacion" [(ngModel)]="ofertas.ubicacion" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">SECTOR EMPRESARIAL:
-        <input id="sector" name="sector" [(ngModel)]="ofertas.empresa.sectorEmpresarial" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">CIUDAD:
-        <input id="ciudad" name="ciudad" [(ngModel)]="ofertas.ciudad" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">JORNADA:
-        <input id="jornada" name="jornada" [(ngModel)]="ofertas.jornada" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">AREA DE CONOCIMIENTO:
-        <input id="area" name="area" [(ngModel)]="ofertas.area_conocimiento" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">FECHA DE INICIO DE CONVOCATORIA:
-        <input id="fechaini" name="fecha ini" [(ngModel)]="ofertas.fecha_inicio" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px; margin-top: 2%;">FECHA DE FIN DE CONVOCATORIA:
-        <input id="fechafin" name="fechafin" [(ngModel)]="ofertas.fecha_fin" [disabled]="true">
-      </label>
-    </div>
-    <div>
-
-      <label for="estado" style="font-size: 20px; margin-top: 2%;">ESTADO:</label>
-      <select name="estado" id="estado">
-        <option value="seleccionar"></option>
-        <option value="convocatoria">CONVOCATORIA</option>
-        <option value="evaluacion">EVALUACIÓN</option>
-        <option value="seleccion">SELECCIÓN</option>
-        <option value="finalizada">FINALIZADA</option>
-      </select>
-
-    </div>
+      </tr>
+      </tbody>
+    </table>
 
   </div>
-
 </div>
 
-<div style="margin-left: 25%; margin-top: 35%;">
+<h3 class="text-center">NOTIFICAR DE UN FALLO?</h3>
+<div class="m-4">
+  <div class="p-4">
+    <a
+      href="mailto:{{ofertas.empresa.usuario.email}}?subject=MODIFICAR%20PERFIL%20DE%20EMPRESARIAL&body=HOLA%20MODIFIQUE$20SU%20PERFIL%20EMPRESARIAL%20{{ofertas.empresa.nombre}}">
 
-  <div>
-    <input type="text" placeholder="COMENTARIOS..." style="width: 500px; height: 75px;">
+      <h1 class="text-center">
+        <button type="submit" class="btn btn-outline-primary">ENVIAR CORREO ELECTRONICO</button>
+      </h1>
+    </a>
   </div>
-
-  <div style="margin-top: 5%;">
-    <button style="background-color: red; color: white; width: 150px; height: 55px;">Enviar Correo Al Estudiante</button> <button style="margin-left: 250px;  background-color: blue; color: white; width: 150px; height: 55px;">Validar Y Publicar</button>
-  </div>
-
 </div>
-<br>
 
-
-<p>form-ofertas-laborales works!</p>
--->

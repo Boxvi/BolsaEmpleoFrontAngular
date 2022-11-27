@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ContactoEmpresa, Empresa, Usuario} from "./form-perfil-empresarial";
+import {ContactoEmpresa, Empresa, Ofertas, Usuario} from "./form-perfil-empresarial";
 import {DatosEmpresaService} from "./form-perfil-empresarial.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import Swal from "sweetalert2";
@@ -16,6 +16,7 @@ export class FormPerfilEmpresarialComponent implements OnInit {
   public usuario: Usuario = new Usuario();
 
   public contactoempresa: ContactoEmpresa[] = [];
+  public ofertas: Ofertas[] = [];
 
 
   constructor(private _empresaServiceDatos: DatosEmpresaService, private router: Router, private activatedRoute: ActivatedRoute,) { }
@@ -24,6 +25,7 @@ export class FormPerfilEmpresarialComponent implements OnInit {
 
     this.getEmpresas();
     this.getContactoEmpresa();
+    this.getOfertas();
 
   }
 
@@ -75,5 +77,18 @@ export class FormPerfilEmpresarialComponent implements OnInit {
         this.router.navigate(['/panel/administrador/perfil-empresarial'])
       }
     )
+  }
+
+  private getOfertas() {
+    this.activatedRoute.params.subscribe(
+      e => {
+        let id = e['id'];
+        if (id) {
+          this._empresaServiceDatos.getOfertas(id).subscribe(
+            es => this.ofertas = es
+          )
+        }
+      }
+    );
   }
 }

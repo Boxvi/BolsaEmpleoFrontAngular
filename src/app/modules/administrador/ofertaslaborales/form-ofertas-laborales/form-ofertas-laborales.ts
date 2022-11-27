@@ -1,5 +1,5 @@
 export class Ofertas {
-  id?: number;
+  id: number = 0;
   cargo?: string;
   descripcion?: string;
   area_conocimiento?: string;
@@ -27,15 +27,15 @@ export class Provincia {
 }
 
 export class Empresa {
-  id?: number;
-  usuario?: Usuario;
+  id: number = 0;
+  usuario: Usuario = new Usuario();
   sectorEmpresarial: SectorEmpresarial = new SectorEmpresarial();
   ruc?: string;
   nombre?: string;
   tipoEmpresa?: string;
   razonSocial?: string;
   departamento?: string;
-  ciudad?: Ciudad;
+  ciudad: Ciudad =new Ciudad();
   direccion?: string;
   sitioWeb?: string;
 }
@@ -56,3 +56,4 @@ export class Usuario {
   estado?: boolean;
   fechaCreacion?: Date;
 }
+

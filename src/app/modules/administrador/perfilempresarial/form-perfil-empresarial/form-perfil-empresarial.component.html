@@ -7,17 +7,38 @@
 
 <div class="m-4">
   <div class="p-4">
-    <p>Ruc: {{empresa.ruc}}</p>
-    <p>Nombre: {{empresa.nombre}}</p>
-    <p>Sector Empresarial: {{empresa.sectorEmpresarial.nombre}}</p>
-    <p>Tipo Empresa: {{empresa.tipoEmpresa}}</p>
-    <p>Razon Social: {{empresa.razonSocial}}</p>
-    <p>Departamento: {{empresa.departamento}}</p>
-    <p>Ciudad: {{empresa.ciudad}}</p>
-    <p>Direccion: {{empresa.direccion}}</p>
-    <p>Sitio Web: {{empresa.sitioWeb}}</p>
+    <table class="table table-light  table-striped-columns">
+      <tbody>
+      <tr>
+        <td>RUC:</td>
+        <td>{{empresa.ruc}}</td>
+        <td>EMPRESA:</td>
+        <td>{{empresa.nombre}}</td>
+      </tr>
+      <tr>
+        <td>SECTOR EMPRESARIAL:</td>
+        <td>{{empresa.sectorEmpresarial.nombre}}</td>
+        <td>RAZON SOCIAL</td>
+        <td>{{empresa.razonSocial}}</td>
+      </tr>
+      <tr>
+        <td>DEPARTAMENTO:</td>
+        <td>{{empresa.departamento}}</td>
+        <td>CIUDAD:</td>
+        <td>{{empresa.ciudad.nombre}}</td>
+      </tr>
+      <tr>
+        <td>DIRECCION:</td>
+        <td>{{empresa.direccion}}</td>
+        <td>SITIO WEB:</td>
+        <td>{{empresa.sitioWeb}}</td>
+      </tr>
+
+      </tbody>
+    </table>
   </div>
 </div>
+
 
 <h3 class="text-center">Conctato Empresarial</h3>
 
@@ -45,6 +66,7 @@
     </table>
   </div>
 </div>
+
 
 
 
