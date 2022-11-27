@@ -52,11 +52,6 @@ export const LEFT_NAV_ITEMS: {
       iconClass: 'bi bi-linkedin',
       link: '/panel/administrador/ofertas-laborales'
     },
-    {
-      title: 'Reportes estadísticos',
-      iconClass: 'bi bi-clipboard-data-fill',
-      link: '/panel/administrador/reportes-estadisticos'
-    }
   ]
 };
 /*

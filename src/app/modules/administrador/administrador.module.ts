@@ -10,6 +10,7 @@ import { ListReportesEstadisticosComponent } from './reportesestadisticos/list-r
 import { FormHojasVidaComponent } from './hojasvida/form-hojas-vida/form-hojas-vida.component';
 import { FormOfertasLaboralesComponent } from './ofertaslaborales/form-ofertas-laborales/form-ofertas-laborales.component';
 import { FormPerfilEmpresarialComponent } from './perfilempresarial/form-perfil-empresarial/form-perfil-empresarial.component';
+import { ListHojasVidaPipe } from './hojasvida/pipe/list-hojas-vida.pipe';
 
 
 
@@ -22,7 +23,8 @@ import { FormPerfilEmpresarialComponent } from './perfilempresarial/form-perfil-
     ListReportesEstadisticosComponent,
     FormHojasVidaComponent,
     FormOfertasLaboralesComponent,
-    FormPerfilEmpresarialComponent
+    FormPerfilEmpresarialComponent,
+    ListHojasVidaPipe
   ],
   imports: [
     CommonModule,

@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'ofertas-laborales/:id', component: FormOfertasLaboralesComponent},
   { path: 'perfil-empresarial', component: ListPerfilEmpresarialComponent},
   { path: 'perfil-empresarial/:id', component: FormPerfilEmpresarialComponent},
-  { path: 'reportes-estadisticos', component: ListReportesEstadisticosComponent}
 
 ];
 

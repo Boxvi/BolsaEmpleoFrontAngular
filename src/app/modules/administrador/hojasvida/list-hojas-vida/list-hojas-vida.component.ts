@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HojaDeVida} from "./list-hojas-vida";
+import {Estudiante} from "./list-hojas-vida";
 import {HojaDeVidaService} from "./list-hojas-vida.service";
 
 @Component({
@@ -9,24 +9,26 @@ import {HojaDeVidaService} from "./list-hojas-vida.service";
 })
 export class ListHojasVidaComponent implements OnInit {
 
-  hojaVidas: HojaDeVida[] = [];
+  public estudiante: Estudiante[] = [];
 
   constructor( private _hojaDeVidaService: HojaDeVidaService) { }
 
+  filterPost: string ="";
+
   ngOnInit(): void {
 
-    this.cargarHojaDeVida();
+    this.getEstudiante();
   }
 
-  cargarHojaDeVida():void {
-    this._hojaDeVidaService.obtenerHojadeVida().then((res)=>{
-      //console.log('respuesta ', res);
-      res.forEach((elem: any) => {
-        console.log(elem.apellidos);
-        this.hojaVidas.push(elem);
-      })
-    }).catch((err)=>{
-
-    });
+  getEstudiante(): void {
+    this._hojaDeVidaService.getEstudiante().subscribe(
+      estudiante => this.estudiante = estudiante
+    )
   }
+
+
+
+
+
+
 }
