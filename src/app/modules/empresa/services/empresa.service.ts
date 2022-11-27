@@ -11,6 +11,7 @@ const EMPRESA_API = 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstal
 export class EmpresaService {
 
   private empresa_id: number = 0;
+  private nombre_empresa?: string ;
 
   constructor(private http: HttpClient) { }
   setId(empresa_id: number) {
@@ -20,6 +21,16 @@ export class EmpresaService {
   getId() {
     return this.empresa_id;
   }
+
+setName(nombre: string){
+this.nombre_empresa=nombre;
+}
+getName(){
+  return this.nombre_empresa;
+}
+
+
+
 
   getEmpresaByUserId(usuario_id: number): Observable<any> {
     return this.http.get<any>(`${EMPRESA_API}/usuario/${usuario_id}`);

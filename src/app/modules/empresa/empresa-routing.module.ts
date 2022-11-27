@@ -10,6 +10,8 @@ import {FormOfertasComponent} from "./ofertas-publicadas/form-ofertas/form-ofert
 const routes: Routes = [
   { path: '', component: ResumeComponent },
   {path:'ofertasPublicadas/empresa/:id',component:ListarOfertasComponent},
+  {path:'form-ofertas',component:FormOfertasComponent},
+  {path:'form-ofertas/:id',component:FormOfertasComponent},
   { path: 'empresa-form', component: EmpresaFormComponent },
   { path: 'empresa-form/:id', component: EmpresaFormComponent }
 
