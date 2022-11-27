@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
 import { PassRoleService } from '../services/pass-role.service';
@@ -23,7 +24,9 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder,
-    private authService: AuthService, private passRoleService: PassRoleService) {
+    private authService: AuthService,
+    private passRoleService: PassRoleService,
+    private router: Router) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -73,14 +76,25 @@ export class LoginComponent implements OnInit {
       return;
     }
     console.log('🧧Data received', this.loginForm.value);
-    this.authService.login(this.loginForm.value, this.session).subscribe(r => {
+    this.authService.login(this.loginForm.value).subscribe(r => {
       if (r.error) {
         this.cleanForm();
         Swal.fire({
           icon: 'info',
           text: `${r.message}`
         })
+      } else {
+        if (r.data?.authorities[0]?.authority == this.role) {
+          this.router.navigateByUrl(`/panel/${this.session}`);
+        } else {
+          Swal.fire({
+            icon: 'error',
+            text: 'El usuario ingresado no pertence a este rol'
+          })
+        }
       }
+
+
       console.log(r);
     });
 
