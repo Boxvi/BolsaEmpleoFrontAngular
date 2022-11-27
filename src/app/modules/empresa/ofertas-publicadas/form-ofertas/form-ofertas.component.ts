@@ -33,8 +33,9 @@ export class FormOfertasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postOferta.empresa=this.empresaService.getName();
     this.empresa_id= this.empresaService.getId();
+    this.postOferta.empresa=this.empresaService.getName();
+  
     if(this.oferta_id){
 
       this.empresaService.getSummaryByEmpresaId(this.empresa_id).subscribe(

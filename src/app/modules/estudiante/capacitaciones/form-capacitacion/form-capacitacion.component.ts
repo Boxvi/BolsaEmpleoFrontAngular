@@ -32,9 +32,6 @@ constructor(
   this.capacitacion_id= this.route.snapshot.params['id'];
   }
 
-
-
-
   ngOnInit(): void {
   this.estudiante_id = this.estudianteService.getId();
   this.capacitacion.cedula= this.estudianteService.getCedula();
@@ -70,11 +67,6 @@ console.log(this.capacitacion )
 
 
 }
-
-
-
-
-
 
 
 

@@ -59,15 +59,17 @@
           </div>
           <div
           class="d-flex flex-column justify-content-between h-100 align-items-end">
-          <i class="bi bi-x-circle-fill text-danger fs-3 delete" ></i>
+          <i class="bi bi-x-circle-fill text-danger fs-3 delete" 
+          (click)="deleteOferta(oferta.id)"
+          ></i>
         </div>
 
         <div class="d-flex flex-column justify-content-between h-100 align-items-end">
           <button type="button" class="btn btn-warning" >
-            <i class="bi bi-pen-fill"></i>
+            <i class="bi bi-pen-fill"       
+            [routerLink]="'/panel/empresa/form-ofertas/' + oferta.id"  
+            ></i>
           </button>
-
-
         </div>
 
       </div>
