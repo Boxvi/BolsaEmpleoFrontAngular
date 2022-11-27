@@ -1,3 +1,19 @@
+export interface OfertaLaboral {
+  id?: number;
+  cargo?: string;
+  descripcion?: string;
+  area_conocimiento?: string;
+  salario?: string;
+  jornada?: string;
+  requisitos_academicos?: string;
+  experiencia?: string;
+  ubicacion?: string;
+  fecha_inicio?: Date;
+  fecha_fin?: Date;
+  empresa?: string;
+  ciudad?: string;
+}
+/*
 export class OfertaLaboral {
   id: number = 0;
   cargo: string = "";
@@ -11,17 +27,18 @@ export class OfertaLaboral {
   fechaIniConv: string = "";
   fechaFinConv: string = "";
   empresa: String = "";
-}
+}*/
+
 export class OfertasClase {
   id: number = 0;
   cargo: string = "";
   descripcion: string = "";
   area_conocimiento: string = "";
   salario: string = "";
-  jornada: string ="";
+  jornada: string = "";
   requisitos_academicos: string = "";
   experiencia: string = "";
-  ubicacion: string= "";
+  ubicacion: string = "";
   fecha_inicio: string = "";
   fecha_fin: string = "";
   empresa: Empresa = new Empresa();
@@ -36,7 +53,7 @@ export class Rol {
 }
 
 export class Usuario {
-  id: number= 0;
+  id: number = 0;
   rol: Rol = new Rol();
   username: string = "";
   password: string = "";
@@ -53,7 +70,7 @@ export class SectorEmpresarial {
 }
 
 export class Provincia {
-  id: number  = 1;
+  id: number = 1;
   nombre: string = "";
   pais: string = "";
 }

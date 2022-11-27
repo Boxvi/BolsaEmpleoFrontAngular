@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {PerfilEmpresa} from "./list-perfil-empresarial";
+import {Component, OnInit} from '@angular/core';
+import {Empresas} from "./list-perfil-empresarial";
 import {EmpresasService} from "./list-perfil-empresarial.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-list-perfil-empresarial',
@@ -9,26 +10,26 @@ import {EmpresasService} from "./list-perfil-empresarial.service";
 })
 export class ListPerfilEmpresarialComponent implements OnInit {
 
-  perfil: PerfilEmpresa[] =[
+  public empresas: Empresas[] = [];
+  public empresa: Empresas[] = [];
 
-  ];
+  estados: Boolean = new Boolean;
 
-  constructor(private _empresaService: EmpresasService) { }
+  filterPost: string = '';
 
-  ngOnInit(): void {
-    this.cargarEmpresas();
+  constructor(private _empresaService: EmpresasService) {
   }
 
-  cargarEmpresas():void {
-    this._empresaService.obtenerPerfilEmpresa().then((res)=>{
-      //console.log('respuesta ', res);
-      res.forEach((elem: any) => {
-        console.log(elem);
-        this.perfil.push(elem);
-      })
-    }).catch((err)=>{
+  ngOnInit(): void {
+    this.getEmpresas();
+    //this.getEmpresasById(this.empresas.id);
 
-    });
+  }
+
+  getEmpresas(): void {
+    this._empresaService.getEmpresas().subscribe(
+      empresas => this.empresas = empresas
+    )
   }
 
 }

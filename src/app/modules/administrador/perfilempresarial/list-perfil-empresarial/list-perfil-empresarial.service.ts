@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {PerfilEmpresa} from "./list-perfil-empresarial";
+import {Empresas} from "./list-perfil-empresarial";
+import {Observable} from "rxjs";
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import {PerfilEmpresa} from "./list-perfil-empresarial";
 })
 export class EmpresasService {
 
-  private urlEndPoint: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/empresas";
+  private urlEndPoint: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com";
 
 
   headers = new HttpHeaders().append('Content-Type', 'application/json')
@@ -16,12 +17,14 @@ export class EmpresasService {
   constructor(private _http:HttpClient) {
 
   }
-  obtenerPerfilEmpresa(): Promise<any>{
-    return this._http.get<any>('http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/empresas').toPromise();
+
+  getEmpresas(): Observable<Empresas[]>{
+    return this._http.get<Empresas[]>(this.urlEndPoint + '/empresas');
   }
 
-  getEmpresas(id : number){
-    return this._http.get<PerfilEmpresa>(this.urlEndPoint+"/"+id);
+  getEmpresasById(id: number): Observable<Empresas[]>{
+    return this._http.get<Empresas[]>(this.urlEndPoint + '/empresas/' + id);
   }
+
 
 }

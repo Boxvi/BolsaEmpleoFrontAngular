@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {OfertasClase} from "./form-oferta-laboral";
+import {Ofertas} from "./form-ofertas-laborales";
 
 
 @Injectable({
@@ -8,17 +8,20 @@ import {OfertasClase} from "./form-oferta-laboral";
 })
 export class OfertaService {
 
-  private urlEndPoint: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/ofertas";
+  private urlEndPoint: string = "http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com";
 
   headers = new HttpHeaders().append('Content-Type', 'application/json')
 
   constructor(private _http:HttpClient) { }
 
+  getOferta(id : number){
+    return this._http.get<Ofertas>(this.urlEndPoint+"/ofertas/"+id);
+  }
+
+  /*
   obtenerOfertas(): Promise<any>{
     return this._http.get<any>('http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/ofertas').toPromise();
   }
 
-  getOferta(id : number){
-    return this._http.get<OfertasClase>(this.urlEndPoint+"/"+id);
-  }
+ */
 }

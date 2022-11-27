@@ -52,6 +52,11 @@ export const LEFT_NAV_ITEMS: {
       iconClass: 'bi bi-linkedin',
       link: '/panel/administrador/ofertas-laborales'
     },
+    {
+      title: 'Postulaciones',
+      iconClass: 'bi bi-person',
+      link: '/panel/administrador/postulaciones'
+    },
   ]
 };
 /*

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {OfertaService} from "./list-ofertas-laborales.service";
-import {OfertaLaboral} from "./list-oferta-laborales";
+import {OfertaLaboral} from "./list-ofertas-laborales";
 
 @Component({
   selector: 'app-list-ofertas-laborales',
@@ -10,16 +10,22 @@ import {OfertaLaboral} from "./list-oferta-laborales";
 })
 export class ListOfertasLaboralesComponent implements OnInit {
 
-  oferta: OfertaLaboral[]= [];
+  public ofertalaboral: OfertaLaboral[]= [];
 
   constructor(private ofertaService: OfertaService) {}
 
   ngOnInit(): void {
 
-    this.cargarDatosOfertas()
+    this.gerOfertas()
 
   }
+  private gerOfertas() {
+    this.ofertaService.gerOfertas().subscribe(
+      ofertas => this.ofertalaboral = ofertas
+    );
+  }
 
+  /*
   cargarDatosOfertas():void {
     this.ofertaService.obtenerOfertas().then((res)=>{
       //console.log('respuesta ', res);
@@ -29,6 +35,7 @@ export class ListOfertasLaboralesComponent implements OnInit {
       })
     }).catch((err)=>{
     });
-  }
+  }*/
+
 
 }

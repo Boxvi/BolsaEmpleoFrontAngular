@@ -1,6 +1,45 @@
 <div class="text-lg-start">
-  <app-back-button link="/panel/administrador"></app-back-button>
+  <app-back-button link="/panel/administrador/ofertas-laborales"></app-back-button>
 </div>
+
+<br>
+<h3 class="text-center">EMPRESA RESPONSABLE</h3>
+
+<div class="m-4">
+  <div class="p-4">
+    <p>Ruc: {{ofertas.empresa.ruc}}</p>
+    <p>Nombre: {{ofertas.empresa.nombre}}</p>
+    <p>Sector Empresarial: {{ofertas.empresa.sectorEmpresarial.nombre}}</p>
+    <p>Tipo Empresa: {{ofertas.empresa.tipoEmpresa}}</p>
+    <p>Razon Social: {{ofertas.empresa.razonSocial}}</p>
+    <p>Departamento: {{ofertas.empresa.departamento}}</p>
+    <p>Ciudad: {{ofertas.empresa.ciudad}}</p>
+    <p>Direccion: {{ofertas.empresa.direccion}}</p>
+    <p>Sitio Web: {{ofertas.empresa.sitioWeb}}</p>
+  </div>
+</div>
+
+<h3 class="text-center">DATOS OFERTAS</h3>
+
+<div class="m-4">
+  <div class="p-4">
+    <p>Cargo: {{ofertas.cargo}}</p>
+    <p>Descripcion: {{ofertas.descripcion}}</p>
+    <p>Area Conocimiento: {{ofertas.area_conocimiento}}</p>
+    <p>Salario: {{ofertas.salario}}</p>
+    <p>Jornada: {{ofertas.jornada}}</p>
+    <p>Requisitos Academicos: {{ofertas.requisitos_academicos}}</p>
+    <p>Experiencia: {{ofertas.experiencia}}</p>
+    <p>Ubicacion: {{ofertas.ubicacion}}</p>
+    <p>Fecha inicio: {{ofertas.fecha_inicio}}</p>
+    <p>Fecha fin: {{ofertas.fecha_fin}}</p>
+    <p>Ciudad: {{ofertas.ciudad.nombre}}</p>
+    <p>EMPRESA ID: {{ofertas.empresa.id}}</p>
+  </div>
+</div>
+
+
+<!--
 
 <div>
 
@@ -89,3 +128,4 @@
 
 
 <p>form-ofertas-laborales works!</p>
+-->

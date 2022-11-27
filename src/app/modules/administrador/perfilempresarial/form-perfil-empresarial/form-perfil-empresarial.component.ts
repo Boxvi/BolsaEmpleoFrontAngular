@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Empresa} from "./form-perfil-empresarial";
-import {PerfilEmpresa} from "../list-perfil-empresarial/list-perfil-empresarial";
-import {DatosEmpresaService} from "./forms-perfil-empresarial.service";
+import {ContactoEmpresa, Empresa, Usuario} from "./form-perfil-empresarial";
+import {DatosEmpresaService} from "./form-perfil-empresarial.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-form-perfil-empresarial',
@@ -10,82 +10,70 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./form-perfil-empresarial.component.css']
 })
 export class FormPerfilEmpresarialComponent implements OnInit {
-  public empresas: Empresa = new Empresa();
 
-  empresa: Empresa[] =[
 
-  ];
+  public empresa: Empresa = new Empresa();
+  public usuario: Usuario = new Usuario();
 
-  perfil: PerfilEmpresa[] =[
+  public contactoempresa: ContactoEmpresa[] = [];
 
-  ];
 
   constructor(private _empresaServiceDatos: DatosEmpresaService, private router: Router, private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    this.cargarDatosRepre()
-    this.cargarDatosEmpresas()
 
-    this.cargarDatosEmpresaByBoris()
-    this.cargarDatosRepresentante()
-  }
-
-
-  cargarDatosEmpresas():void {
-    this._empresaServiceDatos.obtenerPerfilesEmpresa().then((res)=>{
-      //console.log('respuesta ', res);
-      res.forEach((elem: any) => {
-        console.log(elem);
-        this.perfil.push(elem);
-      })
-    }).catch((err)=>{
-    });
-  }
-  cargarDatosRepre():void {
-    this._empresaServiceDatos.obtenerPerfilesRespre().then((res)=>{
-      //console.log('respuesta ', res);
-      res.forEach((datos: any) => {
-        console.log(datos);
-        this.empresa.push(datos);
-      })
-    }).catch((err)=>{
-    });
+    this.getEmpresas();
+    this.getContactoEmpresa();
 
   }
 
-
-  cargarDatosEmpresaByBoris(): void{
+  private getEmpresas() {
     this.activatedRoute.params.subscribe(
       e => {
         let id = e['id'];
-
-        if(id){
+        if (id) {
           this._empresaServiceDatos.getEmpresas(id).subscribe(
-
-            es => this.empresas = es
-
+            es => this.empresa = es
           );
         }
       }
-
     );
   }
 
-  cargarDatosRepresentante(): void{
+
+  private getContactoEmpresa() {
     this.activatedRoute.params.subscribe(
       e => {
         let id = e['id'];
-
-        if(id){
-          this._empresaServiceDatos.getRepres(id).subscribe(
-
-            es => this.empresas = es
-
-          );
+        if (id) {
+          this._empresaServiceDatos.getContactoEmpresa(id).subscribe(
+            es => this.contactoempresa = es
+          )
         }
       }
     );
   }
 
+  updateUsuario(usuario: Usuario, id: number) {
+    usuario.username = this.empresa.usuario.username;
+    usuario.password = "1234";
+    usuario.email = this.empresa.usuario.email;
+    usuario.telefono = this.empresa.usuario.telefono;
+    usuario.rol = "ROLE_EMPRESA";
 
+    if (usuario.estado == true) {
+      usuario.estado = false;
+    } else {
+      usuario.estado = true;
+    }
+    console.log(usuario);
+
+    this._empresaServiceDatos.updateUsuario(usuario, id).subscribe(
+      response => {
+        Swal.fire('Estado Actualizado', `Usuario ${this.usuario.username} actualizado con éxito`, 'success');
+
+        this.router.navigate(['/panel/administrador/perfil-empresarial'])
+      }
+    )
+  }
 }

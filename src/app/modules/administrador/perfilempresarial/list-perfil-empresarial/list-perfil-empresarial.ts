@@ -1,14 +1,27 @@
-export class PerfilEmpresa {
+export class Empresas {
+  id?: number;
+  username?: string;
+  sectorEmpresarial?: string;
+  ruc?: string;
+  nombre?: string;
+  tipoEmpresa?: string;
+  razonSocial?: string;
+  departamento?: string;
+  ciudad?: string;
+  direccion?: string;
+  sitioWeb?: string;
 
+  usuario: Usuario = new  Usuario();
+
+}
+
+export class Usuario {
   id: number = 0;
-  ruc: number = 0;
-  nombre: string = "";
-  razonSocial: string = "";
-  tipoEmpresa: string = "";
-  sectorEmpresarial: string = "";
-  ciudad: string = "";
-  departamento: string = "";
-  sitioWeb: string = "";
-
-
+  rol: string="";
+  username?: string;
+  password?: string;
+  email?: string;
+  telefono?: string;
+  estado?: boolean;
+  fechaCreacion?: Date;
 }

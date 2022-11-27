@@ -10,6 +10,9 @@ import { FormHojasVidaComponent } from './hojasvida/form-hojas-vida/form-hojas-v
 import { FormOfertasLaboralesComponent } from './ofertaslaborales/form-ofertas-laborales/form-ofertas-laborales.component';
 import { FormPerfilEmpresarialComponent } from './perfilempresarial/form-perfil-empresarial/form-perfil-empresarial.component';
 import { ListHojasVidaPipe } from './hojasvida/pipe/list-hojas-vida.pipe';
+import { PerfilEmpresarialPipe } from './perfilempresarial/pipe/perfil-empresarial.pipe';
+import { ListPostulacionesComponent } from './postulaciones/list-postulaciones/list-postulaciones.component';
+import { FormPostulacionesComponent } from './postulaciones/form-postulaciones/form-postulaciones.component';
 
 
 
@@ -22,7 +25,10 @@ import { ListHojasVidaPipe } from './hojasvida/pipe/list-hojas-vida.pipe';
     FormHojasVidaComponent,
     FormOfertasLaboralesComponent,
     FormPerfilEmpresarialComponent,
-    ListHojasVidaPipe
+    ListHojasVidaPipe,
+    PerfilEmpresarialPipe,
+    ListPostulacionesComponent,
+    FormPostulacionesComponent
   ],
   imports: [
     CommonModule,

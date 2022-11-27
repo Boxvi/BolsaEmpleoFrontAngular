@@ -1,62 +1,77 @@
 <div class="text-lg-start">
-  <app-back-button link="/panel/administrador"></app-back-button>
-</div>
-<div>
-
-
-  <div style="margin-left: 250px; width: 500px; height: 200px; margin-top: 50px;">
-    <div>
-      <label style="font-size: 20px;"> RUC:
-        <input id="ruc" name="ruc"  [(ngModel)]="empresas.ruc" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px;">Nombre:
-        <input id="nombre" name="nombre" [(ngModel)]="empresas.nombre" [disabled]="true">
-
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px;">Razon Social:
-        <input id="razonSocial" name="razonSocial" [(ngModel)]="empresas.razonSocial" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px;">Tipo De Empresa:
-        <input id="tipoEmpresa" name="tipoEmpresa" [(ngModel)]="empresas.tipoEmpresa" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px;">Sector Empresarial:
-        <input id="sectorEmpresarial" name="sectorEmpresarial" [(ngModel)]="empresas.sectorEmpresarial.nombre" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px;">Departamento:
-        <input id="departamento" name="deparatamento" [(ngModel)]="empresas.departamento" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px;">Ciudad:
-        <input id="ciudad" name="ciudad" [(ngModel)]="empresas.ciudad.nombre" [disabled]="true">
-      </label>
-    </div>
-    <div>
-      <label style="font-size: 20px;">Pagina Web:
-        <input id="sitioWeb" name="sitioWeb" [(ngModel)]="empresas.sitioWeb" [disabled]="true">
-      </label>
-    </div>
-</div>
-<div style="margin-left: 25%; margin-top: 35%;">
-
-  <div>
-    <input type="text" placeholder="COMENTARIOS..." style="width: 500px; height: 75px;">
-  </div>
-
-  <div style="margin-top: 5%;">
-    <button style="background-color: red; color: white; width: 150px; height: 55px;">Enviar Correo</button> <button style="margin-left: 250px;  background-color: blue; color: white; width: 150px; height: 55px;">Validar Y Publicar</button>
-  </div>
-
+  <app-back-button link="/panel/administrador/perfil-empresarial"></app-back-button>
 </div>
 <br>
-<p>form-perfil-empresarial works!</p>
+
+<h3 class="text-center">DATOS EMPRESA</h3>
+
+<div class="m-4">
+  <div class="p-4">
+    <p>Ruc: {{empresa.ruc}}</p>
+    <p>Nombre: {{empresa.nombre}}</p>
+    <p>Sector Empresarial: {{empresa.sectorEmpresarial.nombre}}</p>
+    <p>Tipo Empresa: {{empresa.tipoEmpresa}}</p>
+    <p>Razon Social: {{empresa.razonSocial}}</p>
+    <p>Departamento: {{empresa.departamento}}</p>
+    <p>Ciudad: {{empresa.ciudad}}</p>
+    <p>Direccion: {{empresa.direccion}}</p>
+    <p>Sitio Web: {{empresa.sitioWeb}}</p>
+  </div>
+</div>
+
+<h3 class="text-center">Conctato Empresarial</h3>
+
+<div class="m-4">
+  <div class="p-4">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">EMPRESA</th>
+        <th scope="col">ENCARGADO</th>
+        <th scope="col">CARGO</th>
+        <th scope="col">TELEFONO</th>
+        <th scope="col">EMAIL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contactoempresas of contactoempresa">
+        <td class="text-uppercase" >{{empresa.nombre}}</td>
+        <td>{{contactoempresas.nombre}}</td>
+        <td>{{contactoempresas.cargo}}</td>
+        <td>{{contactoempresas.telefono}}</td>
+        <td>{{contactoempresas.email}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<h3 class="text-center">COMENTARIOS AL CORREO</h3>
+
+<div class="m-4">
+  <div class="p-4">
+    <a
+      href="mailto:{{empresa.usuario.email}}?subject=MODIFICAR%20PERFIL%20DE%20EMPRESARIAL&body=HOLA%20MODIFIQUE$20SU%20PERFIL%20EMPRESARIAL%20{{empresa.nombre}}">
+
+      <h1 class="text-center">
+        <button type="submit" class="btn btn-outline-primary">ENVIAR CORREO ELECTRONICO</button>
+      </h1>
+    </a>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+<h3 class="text-center">ACTIVAR PERFIL EMPRESARIAL</h3>
+
+<div class="m-4">
+  <div class="p-4">
+    <h1 class="text-center">
+      <button type="submit" class="btn btn-outline-success" (click)="updateUsuario(empresa.usuario, empresa.usuario.id)">ACTIVAR CV</button>
+    </h1>
+  </div>
+</div>

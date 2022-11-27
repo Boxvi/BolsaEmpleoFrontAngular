@@ -7,30 +7,38 @@
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">NOMBRE EMPRESA</th>
+    <th scope="col">EMPRESA</th>
     <th scope="col">CARGO</th>
-    <th scope="col">REQUISITOS</th>
-    <th scope="col">UBICACION</th>
-    <th scope="col">CIUDAD</th>
     <th scope="col">DESCRIPCION</th>
+    <th scope="col">AREA CONOCIMINETO</th>
+    <th scope="col">SALARIO
+    <th scope="col">JORNADA</th>
+    <th scope="col">REQUISITOS ACADEMICOS</th>
+    <th scope="col">EXPERIENCIA</th>
+    <th scope="col">UBICACIONES</th>
+    <th scope="col">VER</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor = "let ofertas of oferta">
-    <td>{{ofertas.empresa}}</td>
-    <td>{{ofertas.cargo}}</td>
-    <td>{{ofertas.requisitos_academicos}}</td>
-    <td>{{ofertas.ubicacion}}</td>
-    <td>{{ofertas.ciudad}}</td>
-    <td>{{ofertas.descripcion}}</td>
+  <tr *ngFor="let ofertalaborales of ofertalaboral">
+    <td>{{ofertalaborales.empresa}}</td>
+    <td>{{ofertalaborales.cargo}}</td>
+    <td>{{ofertalaborales.descripcion}}</td>
+    <td>{{ofertalaborales.area_conocimiento}}</td>
+    <td>{{ofertalaborales.salario}}</td>
+    <td>{{ofertalaborales.jornada}}</td>
+    <td>{{ofertalaborales.requisitos_academicos}}</td>
+    <td>{{ofertalaborales.experiencia}}</td>
+    <td>{{ofertalaborales.ubicacion}}</td>
+
     <div>
-      <button type="button" class="btn btn-primary text-uppercase px-4 py-2 mt-3"
-              routerLink="/panel/administrador/ofertas-laborales/{{ofertas.id}}">
-        ver
+      <button type="button" class="btn btn-outline-primary text-uppercase px-4 py-2 mt-3"
+              routerLink="/panel/administrador/ofertas-laborales/{{ofertalaborales.id}}">
+        ver MAS
       </button>
     </div>
   </tr>
   </tbody>
 </table>
 
-<p>list-ofertas-laborales works!</p>
+

@@ -16,5 +16,10 @@ export const ADMIN_MENU_OPTIONS: CardOption[] = [
     title: 'Ofertas Laborales',
     link: 'ofertas-laborales'
   },
+  {
+    icon: '../../../../assets/icons/profesional_references_icon.svg',
+    title: 'Postulaciones',
+    link: 'postulaciones'
+  }
 
 ]
