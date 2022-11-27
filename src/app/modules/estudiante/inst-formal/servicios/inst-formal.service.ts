@@ -33,6 +33,9 @@ posteducacion(educacion:InstFormal):Observable<any>{
 getEduTabla():Observable<any>{
   return this.http.get(`${this.apiUrl}/educaciones`)
 }
+getAll(id:any):Observable<any>{
+  return this.http.get(`${this.apiUrl}/educaciones/${id}`)
+}
 
 ElimirEdu(id:any):Observable<any>{
   return this.http.delete(`${this.apiUrl}/educaciones/${id}`)
