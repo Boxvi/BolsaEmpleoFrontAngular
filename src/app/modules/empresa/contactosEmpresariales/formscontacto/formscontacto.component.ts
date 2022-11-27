@@ -32,7 +32,6 @@ this.contacto_id= this.route.snapshot.params['id'];
 
   ngOnInit(): void {
 this.empresa_id = this.empresaService.getId();
-this.postContacto.empresa_id=this.empresa_id;
 if(this.contacto_id){
 this.contactosService.getSummaryByContactoId(this.contacto_id).subscribe(
 r=>{
