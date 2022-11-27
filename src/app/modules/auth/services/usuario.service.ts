@@ -4,7 +4,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 import { Iusuario } from 'src/app/data/interfaces/models/iusuario';
 
 const AUTH_API = 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/auth';
-
+const USUARIO_API = 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/usuarios';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,6 +32,30 @@ export class UsuarioService {
         return of(response);
       })
     );
+
+  }
+
+  edit(id: number, usuario: Iusuario): Observable<any> {
+    const response = { error: true, message: '', icon: '', data: null }
+    return this.http.put<any>(`${USUARIO_API}/${id}`, usuario).pipe(
+      map(r => {
+        response.error = false;
+        response.message = 'Datos Actualizados';
+        response.icon = 'success';
+        response.data = r;
+        return response;
+      }),
+      catchError(e => {
+        response.message = e.error.message;
+        response.icon = 'warning';
+        return of(response);
+      })
+    )
+  }
+
+  getResumenByUsuarioId(id: number): Observable<any> {
+
+    return this.http.get<any>(`${USUARIO_API}/resumen/${id}`);
 
   }
 }
