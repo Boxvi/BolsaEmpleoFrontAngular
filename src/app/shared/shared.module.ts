@@ -11,6 +11,8 @@ import { TitleComponent } from './components/title/title.component';
 import { AddOptionComponent } from './components/add-option/add-option.component';
 import { CardOptionComponent } from './components/card-option/card-option.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { DataCardComponent } from './components/data-card/data-card.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
     TitleComponent,
     AddOptionComponent,
     CardOptionComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    ProfileComponent,
+    DataCardComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +40,8 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
     TitleComponent,
     AddOptionComponent,
     CardOptionComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    DataCardComponent
   ]
 })
 export class SharedModule { }
