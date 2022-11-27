@@ -15,6 +15,7 @@ import { ListPostulacionesComponent } from './postulaciones/list-postulaciones/l
 import { FormPostulacionesComponent } from './postulaciones/form-postulaciones/form-postulaciones.component';
 import { OfertasLaboralesPipe } from './ofertaslaborales/pipe/ofertas-laborales.pipe';
 import { ReportesComponent } from './reportes/reportes.component';
+import { PostulacionesPipe } from './postulaciones/pipe/postulaciones.pipe';
 
 
 
@@ -32,7 +33,8 @@ import { ReportesComponent } from './reportes/reportes.component';
     ListPostulacionesComponent,
     FormPostulacionesComponent,
     OfertasLaboralesPipe,
-    ReportesComponent
+    ReportesComponent,
+    PostulacionesPipe
   ],
   imports: [
     CommonModule,

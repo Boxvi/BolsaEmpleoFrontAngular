@@ -123,10 +123,11 @@
       </div>
 
       <div class="mb-3">
-        <button type="submit" class="btn btn-primary" (click)="modificarEstado(postulacionesPut,postulaciones.id)">
-          MODIFICAR
-        </button>
-
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" (click)="modificarEstado(postulacionesPut,postulaciones.id)">
+            MODIFICAR
+          </button>
+        </div>
 
       </div>
 
@@ -136,31 +137,3 @@
 
   </div>
 </div>
-
-
-<!--
-            <div class="mb-3">
-        <label for="id" class="form-label">POSTULACION ID</label>
-        <input type="number" class="form-control" id="id" name="id" [(ngModel)]="postulaciones.id">
-      </div>
-
-      <div class="mb-3">
-        <label for="fecha" class="form-label">POSTULACION FECHA</label>
-        <input type="text" class="form-control" id="fecha" name="fecha" [(ngModel)]="postulaciones.fecha">
-      </div>
-
-
-      <div class="mb-3">
-        <label for="id_laburo" class="form-label"></label>
-        <input type="number" class="form-control" id="id_laburo" name="id_laburo"
-               [(ngModel)]="postulaciones.ofertaLaboral.id">
-      </div>
-
-      <div class="mb-3">
-        <label for="cedula" class="form-label"></label>
-        <input type="text" class="form-control" id="cedula" name="cedula"
-               [(ngModel)]="postulaciones.estudiante.cedula">{{postulaciones.estudiante.cedula}}
-      </div>
-
-
-      -->

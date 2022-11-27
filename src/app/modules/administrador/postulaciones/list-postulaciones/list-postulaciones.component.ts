@@ -37,23 +37,3 @@ export class ListPostulacionesComponent implements OnInit {
 
 
 }
-/*
-  private getOferta() {
-    this.activatedRoute.params.subscribe(
-      e => {
-        let id = e['id'];
-        if (id) {
-          this.datosOferta.getOferta(id).subscribe(
-            of => {
-              this.ofertas = of
-
-              this.datosOferta.getOfertaByEmpresa(this.ofertas.empresa.id).subscribe(
-                of => this.ofertaE = of
-              )
-
-            }
-          );
-        }
-      }
-    );
- */

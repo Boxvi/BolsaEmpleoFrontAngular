@@ -19,7 +19,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let postulacion of postulaciones">
+    <tr *ngFor="let postulacion of postulaciones | postulacionespipe:filterPost">
       <td>{{postulacion.fecha}}</td>
       <td>{{postulacion.estado}}</td>
       <td>{{postulacion.ofertalaboral_id}}</td>
