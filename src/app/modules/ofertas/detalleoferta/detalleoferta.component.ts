@@ -50,6 +50,7 @@ export class DetalleofertaComponent implements OnInit {
     this.creationDate = moment().format("YYYY-MM-DDTHH:mm:ss ");
     console.log(this.creationDate);
     this.getByDetail();
+  
   }
 
 

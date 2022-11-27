@@ -12,7 +12,7 @@ import { OfertasLaboralesService } from '../../services/ofertas/ofertas-laborale
   styleUrls: ['./listar-ofertas.component.css']
 })
 export class ListarOfertasComponent implements OnInit {
-filter= '';
+  filterPost='';
 public myofertas: IOferta []=[];
 public empresa: IEmpresa []=[];
 public empresa_id: number = 0;
@@ -26,16 +26,12 @@ private router:Router,private route: ActivatedRoute,
 this.empresa_id=this.route.snapshot.params['id']; 
 
 }
-filterPost='';
   ngOnInit(): void {
 
     this.getOfertasByEmpresa();
-    console.log(this.filter);
+
 
   }
-
-
-
 
 public getOfertasByEmpresa(): void{
 if(this.empresa_id){
@@ -49,16 +45,9 @@ this.empresaService.getSummaryByEmpresaId(this.empresa_id)
   this.empresaService.setName(r.nombre);
 })
 
-
 }
 
-
-
 }
-
-
-
-
 
   deleteOferta(oferta_id: number) {
 
