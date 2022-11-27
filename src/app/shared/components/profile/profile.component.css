@@ -32,3 +32,13 @@
 .border-bottom{
   border-color: rgb(239, 236, 236) !important;
 }
+
+.profile-body{
+  position: relative;
+}
+
+.options {
+  top: -90px;
+  right: 3rem;
+  position: absolute;
+}

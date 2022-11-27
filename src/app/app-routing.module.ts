@@ -28,7 +28,7 @@ const routes: Routes = [
   {
     path: 'perfil', component: BodyComponent, children: [
       { path: '', component: ProfileComponent }
-    ]
+    ], canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 
