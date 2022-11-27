@@ -6,8 +6,26 @@ import { OfertasAplicadasComponent } from './ofertas-aplicadas/ofertas-aplicadas
 
 const routes: Routes = [
   { path: '', component: ListOfertasComponent },
+
   {path:'oferta/detalle/:id',component: DetalleofertaComponent},
+  { path: 'ofertasAplicadas', component: OfertasAplicadasComponent },
+
+
+
+  { path: 'ofertasAplicadas', component: OfertasAplicadasComponent },
+
+  {path:'oferta/detalle/:id',component: DetalleofertaComponent},
+
+
+
+  {path:'oferta/detalle/:id',component: DetalleofertaComponent},
+
+
+
   { path: 'ofertasAplicadas', component: OfertasAplicadasComponent }
+
+
+
 ];
 
 @NgModule({

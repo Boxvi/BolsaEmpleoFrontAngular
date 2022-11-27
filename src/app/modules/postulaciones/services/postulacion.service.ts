@@ -25,11 +25,18 @@ export class PostulacionService {
     return this.http.get<IPostulacion>(`${POSTULACION_API}/estudiante/${estudiante_id}`);
   }
 
+  getPostulacionesByEmpresaId(empresa_id: number): Observable<any[]> {
+    return this.http.get<any[]>(`${POSTULACION_API}/empresa/${empresa_id}`);
+  }
+
   getPostulacionById(id: number): Observable<any> {
     return this.http.get<any>(`${POSTULACION_API}/${id}`);
   }
 
   deletePostulacion(id: number) {
     return this.http.delete(`${POSTULACION_API}/${id}`);
+  }
+  edit(id:number, postulacion: IPostulacion):Observable<any>{
+    return this.http.put(`${POSTULACION_API}/${id}`, postulacion);
   }
 }

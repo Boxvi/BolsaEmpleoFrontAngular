@@ -4,6 +4,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { EmpresaRoutingModule } from './empresa-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+
 import { ListarOfertasComponent } from './ofertas-publicadas/listar-ofertas/listar-ofertas.component';
 import { FormOfertasComponent } from './ofertas-publicadas/form-ofertas/form-ofertas.component';
 
@@ -12,11 +13,19 @@ import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
 import { FormscontactoComponent } from './contactosEmpresariales/formscontacto/formscontacto.component';
 import { ListContactosComponent } from './contactosEmpresariales/list-contactos/list-contactos.component';
 
+import { ListarOfertasComponent } from './publicar-ofertas/listar-ofertas/listar-ofertas.component';
+import { FormOfertasComponent } from './publicar-ofertas/form-ofertas/form-ofertas.component';
+import { OfAplicadasComponent } from './of-aplicadas/of-aplicadas.component';
+import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
+
+
+
 
 
 @NgModule({
   declarations: [
     ResumeComponent,
+
 
     ListarOfertasComponent,
     FormOfertasComponent,
@@ -24,6 +33,11 @@ import { ListContactosComponent } from './contactosEmpresariales/list-contactos/
     EmpresaFormComponent,
       FormscontactoComponent,
       ListContactosComponent,
+
+    ListarOfertasComponent,
+    FormOfertasComponent,
+    OfAplicadasComponent,
+    EmpresaFormComponent
 
 
   ],

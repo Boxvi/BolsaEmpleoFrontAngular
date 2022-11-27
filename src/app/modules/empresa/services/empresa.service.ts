@@ -36,6 +36,9 @@ getName(){
     return this.http.get<any>(`${EMPRESA_API}/usuario/${usuario_id}`);
   }
 
+  
+
+
   getSummaryByEmpresaId(id: number): Observable<any> {
     return this.http.get<any>(`${EMPRESA_API}/resumen/${id}`);
   }
@@ -75,4 +78,5 @@ getName(){
       })
     )
   }
+
 }

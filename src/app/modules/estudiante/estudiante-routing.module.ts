@@ -7,6 +7,8 @@ import { ListLogrosComponent } from "./logros/list-logros/list-logros.component"
 import { PersonalFormComponent } from "./personal-form/personal-form.component";
 import { ResumeComponent } from "./resume/resume.component";
 import{ListCapacitacionesComponent} from './capacitaciones/list-capacitaciones/list-capacitaciones.component'
+import { RefPersonalesComponent } from "./ref-personales/ref-personales.component";
+import { InstFormalComponent } from "./inst-formal/inst-formal.component";
 
 const routes: Routes = [
   { path: '', component: ResumeComponent },
@@ -19,19 +21,20 @@ const routes: Routes = [
 
   {path: 'capacitaciones/estudiante/:id', component:ListCapacitacionesComponent},
   {path:'capacitacion-form', component:FormCapacitacionComponent},
-  {path: 'capacitacion-form/:id', component:FormCapacitacionComponent}
+  {path: 'capacitacion-form/:id', component:FormCapacitacionComponent},
 
-
+  { path: 'ref-personales', component: RefPersonalesComponent},
+  { path: 'inst-formal', component: InstFormalComponent},
 
  //{path:'capacitaciones-form/estudiante/:id/ ',component: FormCapacitacionComponent},
   
 
   /* {path:'preferenciasLaborales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
   /* {path:'perfilOcupacional/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
-  /* {path:'instruccionFormal/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+   { path:'instruccionFormal/estudiante/:id',component: InstFormalComponent },
   /* {path:'capacitaciones/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
   /* {path:'referenciasProfesionales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
-  /* {path:'referenciasPersonales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+   { path:'referenciasPersonales/estudiante/:id',component: RefPersonalesComponent } 
 ];
 
 @NgModule({
