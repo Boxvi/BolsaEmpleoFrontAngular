@@ -15,6 +15,10 @@ getpublicadasByEmpresaid(id:number): Observable<any>{
   return this.http.get(`${OFERTAS_API}/empresa/${id}`);
 }
 
+getSummaryByOfertaId(estudiante_id: number): Observable<any> {
+  return this.http.get<any>(`${OFERTAS_API}/resumen/${estudiante_id}`);
+}
+
 //guarda una oferta 
 save(oferta:IOferta){
   const response = { error: true, message: '', icon: '', data: null }

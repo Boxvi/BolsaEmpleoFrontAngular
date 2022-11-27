@@ -21,7 +21,7 @@
 <!-- Ofertas -->
 <div class="d-flex justify-content-center flex-column align-items-center" >
   <div
-    *ngFor="let oferta of ofertas "
+    *ngFor="let oferta of ofertas | filter:filterPost"
     class="card mb-3 p-2"
     [routerLink]="'/ofertas/oferta/detalle/' + oferta.id"    
   >

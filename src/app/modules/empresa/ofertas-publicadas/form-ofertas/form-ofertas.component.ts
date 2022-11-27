@@ -38,18 +38,17 @@ export class FormOfertasComponent implements OnInit {
   
     if(this.oferta_id){
 
-      this.empresaService.getSummaryByEmpresaId(this.empresa_id).subscribe(
+      this.ofertaService.getSummaryByOfertaId(this.oferta_id).subscribe(
         r=>{
           this.postOferta = r;
         }
       )
     }
-this.getCiudades();
+    this.getCiudades();
 
   }
 
-//empresa y ciudad bienen de una tabla
-
+//empresa y ciudad viene de una tabla
 
 registrarOferta() { 
   if(this.oferta_id){
@@ -64,10 +63,7 @@ this.ofertaService.edit(this.oferta_id, this.postOferta).subscribe(r=>{
     alert.response('/panel/empresa/ofertasPublicadas/empresa/'+ this.empresa_id);
   })
 }
-
 console.log(this.postOferta)
-
-
 }
 
 
