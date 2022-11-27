@@ -41,7 +41,7 @@ if(this.empresa_id){
   })
 this.empresaService.getSummaryByEmpresaId(this.empresa_id)
 .subscribe(r=>{
-  this.empresaService.setId(r.id)
+  this.empresaService.setId(r.id);
   this.empresaService.setName(r.nombre);
 })
 

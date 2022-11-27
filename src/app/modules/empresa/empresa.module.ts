@@ -9,7 +9,8 @@ import { FormOfertasComponent } from './ofertas-publicadas/form-ofertas/form-ofe
 
 
 import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
-
+import { FormscontactoComponent } from './contactosEmpresariales/formscontacto/formscontacto.component';
+import { ListContactosComponent } from './contactosEmpresariales/list-contactos/list-contactos.component';
 
 
 
@@ -20,7 +21,10 @@ import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
     ListarOfertasComponent,
     FormOfertasComponent,
 
-    EmpresaFormComponent
+    EmpresaFormComponent,
+      FormscontactoComponent,
+      ListContactosComponent,
+
 
   ],
   imports: [
