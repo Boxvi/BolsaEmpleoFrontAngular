@@ -2,6 +2,89 @@
   <app-back-button link="/panel/administrador"></app-back-button>
 </div>
 
+<div>
+
+  <h3>INFORMACIÓN OFERTAS LABORALES</h3>
+
+  <div style="margin-left: 250px; width: 500px; height: 200px; margin-top: 50px;">
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">CARGO:
+        <input id="cargo" name="cargo" [(ngModel)]="ofertas.cargo" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">REQUISITOS:
+        <input id="requisitos" name="requisitos" [(ngModel)]="ofertas.requisitos_academicos" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">DESCRIPCIÓN:
+        <input id="descripdion" name="descripcion" [(ngModel)]="ofertas.descripcion" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">UBICACIÓN:
+        <input id="ubicacion" name="ubicacion" [(ngModel)]="ofertas.ubicacion" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">SECTOR EMPRESARIAL:
+        <input id="sector" name="sector" [(ngModel)]="ofertas.empresa.sectorEmpresarial" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">CIUDAD:
+        <input id="ciudad" name="ciudad" [(ngModel)]="ofertas.ciudad" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">JORNADA:
+        <input id="jornada" name="jornada" [(ngModel)]="ofertas.jornada" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">AREA DE CONOCIMIENTO:
+        <input id="area" name="area" [(ngModel)]="ofertas.area_conocimiento" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">FECHA DE INICIO DE CONVOCATORIA:
+        <input id="fechaini" name="fecha ini" [(ngModel)]="ofertas.fecha_inicio" [disabled]="true">
+      </label>
+    </div>
+    <div>
+      <label style="font-size: 20px; margin-top: 2%;">FECHA DE FIN DE CONVOCATORIA:
+        <input id="fechafin" name="fechafin" [(ngModel)]="ofertas.fecha_fin" [disabled]="true">
+      </label>
+    </div>
+    <div>
+
+      <label for="estado" style="font-size: 20px; margin-top: 2%;">ESTADO:</label>
+      <select name="estado" id="estado">
+        <option value="seleccionar"></option>
+        <option value="convocatoria">CONVOCATORIA</option>
+        <option value="evaluacion">EVALUACIÓN</option>
+        <option value="seleccion">SELECCIÓN</option>
+        <option value="finalizada">FINALIZADA</option>
+      </select>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div style="margin-left: 25%; margin-top: 35%;">
+
+  <div>
+    <input type="text" placeholder="COMENTARIOS..." style="width: 500px; height: 75px;">
+  </div>
+
+  <div style="margin-top: 5%;">
+    <button style="background-color: red; color: white; width: 150px; height: 55px;">Enviar Correo Al Estudiante</button> <button style="margin-left: 250px;  background-color: blue; color: white; width: 150px; height: 55px;">Validar Y Publicar</button>
+  </div>
+
+</div>
 <br>
 
 
