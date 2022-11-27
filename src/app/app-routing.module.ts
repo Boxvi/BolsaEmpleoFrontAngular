@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { BodyComponent } from './shared/components/panel/body/body.component';
+import { ProfileComponent } from './shared/components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: '', component: BodyComponent, children: [
       { path: 'ofertas', loadChildren: () => import('./modules/ofertas/ofertas.module').then((m) => m.OfertasModule) }
+    ]
+  },
+  {
+    path: 'perfil', component: BodyComponent, children: [
+      { path: '', component: ProfileComponent }
     ]
   },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
