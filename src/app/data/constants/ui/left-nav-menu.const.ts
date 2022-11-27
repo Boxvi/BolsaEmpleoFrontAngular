@@ -59,11 +59,3 @@ export const LEFT_NAV_ITEMS: {
     },
   ]
 };
-/*
-
-
-
-
-
-
- */

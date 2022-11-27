@@ -13,7 +13,7 @@ export class ListPerfilEmpresarialComponent implements OnInit {
   public empresas: Empresas[] = [];
   public empresa: Empresas[] = [];
 
-  estados: Boolean = new Boolean;
+
 
   filterPost: string = '';
 

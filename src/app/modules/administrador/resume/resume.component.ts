@@ -15,8 +15,7 @@ export class ResumeComponent implements OnInit {
     {link: 'hojas-vida'},
     {link: 'perfil-empresarial'},
     {link: 'ofertas-laborales'},
-    {link: 'reportes-estadisticos'},
-    {link: 'postulaciones'}
+    {link: 'postulaciones'},
   ];
 
 
