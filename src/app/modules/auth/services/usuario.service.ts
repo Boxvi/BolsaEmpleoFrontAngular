@@ -53,6 +53,9 @@ export class UsuarioService {
     )
   }
 
+  deleteUsuario(id: number): Observable<any> {
+    return this.http.delete<any>(`${USUARIO_API}/${id}`);
+  }
   getResumenByUsuarioId(id: number): Observable<any> {
 
     return this.http.get<any>(`${USUARIO_API}/resumen/${id}`);

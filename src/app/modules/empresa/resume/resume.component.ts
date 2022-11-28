@@ -29,6 +29,7 @@ export class ResumeComponent implements OnInit {
     this.empresaService.getEmpresaByUserId(this.usuario_id).subscribe(r => {
       //perfil Empresa
       this.perfilEmpresa = r;
+      localStorage.setItem('idEmpresa', r.id)
       this.empresaService.setId(r.id);
       for (let index = 0; index < this.empresaOptions.length; index++) {
         this.empresaOptions[index].link = this.links[index].link + r.id;

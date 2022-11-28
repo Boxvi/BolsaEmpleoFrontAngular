@@ -14,6 +14,7 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
 import { ProfileComponent } from './components/profile/profile.component';
 import { DataCardComponent } from './components/data-card/data-card.component';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -26,6 +27,8 @@ import { DataCardComponent } from './components/data-card/data-card.component';
     BackButtonComponent,
     ProfileComponent,
     DataCardComponent
+
+
   ],
   imports: [
     CommonModule,
