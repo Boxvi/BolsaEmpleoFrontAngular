@@ -39,6 +39,7 @@ export class ResumeComponent implements OnInit {
       localStorage.setItem('cedulaPerfil', d.cedula)
       this.estudiante_id = d.id;
       this.estudianteService.setId(d.id);
+      localStorage.setItem('idPerfil', d.id)
       /*       for (const studentOption of this.studentOptions) {
               studentOption.link += this.perfilEstudiante.id;
             } */

@@ -9,6 +9,7 @@ import { ResumeComponent } from "./resume/resume.component";
 import{ListCapacitacionesComponent} from './capacitaciones/list-capacitaciones/list-capacitaciones.component'
 import { RefPersonalesComponent } from "./ref-personales/ref-personales.component";
 import { InstFormalComponent } from "./inst-formal/inst-formal.component";
+import { PrefLaboralComponent } from "./pref-laboral/pref-laboral.component";
 
 const routes: Routes = [
   { path: '', component: ResumeComponent },
@@ -25,11 +26,12 @@ const routes: Routes = [
 
   { path: 'ref-personales', component: RefPersonalesComponent},
   { path: 'inst-formal', component: InstFormalComponent},
+  { path: 'pref-laboral', component: PrefLaboralComponent},
 
  //{path:'capacitaciones-form/estudiante/:id/ ',component: FormCapacitacionComponent},
   
 
-  /* {path:'preferenciasLaborales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
+   {path:'preferenciasLaborales/estudiante/:id',component: PrefLaboralComponent },
   /* {path:'perfilOcupacional/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
    { path:'instruccionFormal/estudiante/:id',component: InstFormalComponent },
   /* {path:'capacitaciones/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
