@@ -29,27 +29,14 @@ const routes: Routes = [
   {path:'capacitacion-form', component:FormCapacitacionComponent},
   {path: 'capacitacion-form/:id', component:FormCapacitacionComponent},
 
-  { path: 'ref-personales', component: RefPersonalesComponent},
-  { path: 'inst-formal', component: InstFormalComponent},
+  { path: 'referenciasProfesionales/estudiante/:id', component: RefPersonalesComponent},
+  { path: 'instruccionFormal/estudiante/:id', component: InstFormalComponent},
   {path:'perfilOcupacional/estudiante/:id',component: MiperfilocupacionlComponent},
   {path:'perfilOcupacional/form', component: FormperfilComponent},
   { path:'perfilOcupacional/form/:id',component:FormperfilComponent},
-
-  { path: 'pref-laboral', component: PrefLaboralComponent},
-
-
-
-
-  /*}
- //{path:'capacitaciones-form/estudiante/:id/ ',component: FormCapacitacionComponent},
-  
-
-   {path:'preferenciasLaborales/estudiante/:id',component: PrefLaboralComponent },
-  /* {path:'perfilOcupacional/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
-   { path:'instruccionFormal/estudiante/:id',component: InstFormalComponent },
-  /* {path:'capacitaciones/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
-  /* {path:'referenciasProfesionales/estudiante/:id',component: 🎈🎈Aquí va el nombre del componente } */
-   { path:'referenciasPersonales/estudiante/:id',component: RefPersonalesComponent } 
+  { path: 'preferenciasLaborales/estudiante/:id', component: PrefLaboralComponent},
+  { path:'instruccionFormal/estudiante/:id',component: InstFormalComponent },
+  { path:'referenciasPersonales/estudiante/:id',component: RefPersonalesComponent } 
 ];
 
 @NgModule({

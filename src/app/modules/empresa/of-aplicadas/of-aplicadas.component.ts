@@ -20,8 +20,8 @@ export class OfAplicadasComponent implements OnInit {
   idemp: string = '';
 
   public postulaciones: IPostulacion[] = [];
-  public ofertasLaboralesInfo: IOferta[] = [];
-  public estudiantesPostulados: IEstudiante[] = [];
+  public ofertasLaboralesInfo: any []= [];
+  public estudiantesPostulados: any [] = [];
 
   constructor(private ofertaService:OfertaService,
         private postulacionService: PostulacionService,
@@ -46,8 +46,7 @@ export class OfAplicadasComponent implements OnInit {
         this.estudianteService.getEstudianteByCedula(postulacion.cedula).subscribe(r=>{
           this.estudiantesPostulados?.push(r);
         })
-      }
-      
+      }      
     })
   }
 
