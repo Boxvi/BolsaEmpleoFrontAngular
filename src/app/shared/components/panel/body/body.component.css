@@ -46,6 +46,6 @@ app-sidenav {
 
 @media screen and ( min-height: 700px ) {
   app-sidenav {
-    height: calc(2500px - 4rem);
+    height: calc(1500px - 4rem);
   }
 }

@@ -49,7 +49,22 @@ export class ProfileComponent implements OnInit {
   }
 
   eliminarUsuario(id: number) {
-
+    Swal.fire({
+      title: '¿Estas seguro de eliminar tu cuenta?',
+      text: "No podrás reveritr los cambios",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.usuarioService.deleteUsuario(id).subscribe(() => {
+          Swal.fire('Registro Eliminado', '', 'info');
+          this.authService.logout();
+        });
+      }
+    })
   }
 
   redirect(role: string) {
