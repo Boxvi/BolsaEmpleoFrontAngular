@@ -23,6 +23,12 @@ export class OfertaService {
     return this.http.get(`${OFERTAS_API}/resumen/${id}`);
   }
 
+  getTotal():Observable<{total:number}> {
+    return this.http.get<{total:number}>(`${OFERTAS_API}/total`);
+  }
+
+
+
 
 
 

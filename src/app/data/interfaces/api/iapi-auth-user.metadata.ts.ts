@@ -3,5 +3,5 @@ export interface IApiAuthUserMetadataTs {
   tokenType: string;
   usuario_id: number,
   username: string;
-  authorities: string[];
+  authorities: {authority:string}[];
 }

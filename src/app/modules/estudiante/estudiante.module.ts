@@ -11,8 +11,11 @@ import { ListCapacitacionesComponent } from './capacitaciones/list-capacitacione
 import { FormCapacitacionComponent } from './capacitaciones/form-capacitacion/form-capacitacion.component';
 import { RefPersonalesComponent } from './ref-personales/ref-personales.component';
 import { InstFormalComponent } from './inst-formal/inst-formal.component';
+
 import { MiperfilocupacionlComponent } from './perfilocupacional/miperfilocupacionl/miperfilocupacionl.component';
 import { FormperfilComponent } from './perfilocupacional/formperfil/formperfil.component';
+import { PrefLaboralComponent } from './pref-laboral/pref-laboral.component';
+
 
 
 
@@ -28,8 +31,12 @@ import { FormperfilComponent } from './perfilocupacional/formperfil/formperfil.c
     FormCapacitacionComponent,
     RefPersonalesComponent,
     InstFormalComponent,
+
     MiperfilocupacionlComponent,
-    FormperfilComponent
+    FormperfilComponent,
+
+    PrefLaboralComponent
+
 
   ],
   imports: [
