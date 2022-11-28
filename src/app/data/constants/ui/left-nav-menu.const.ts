@@ -28,7 +28,8 @@ export const LEFT_NAV_ITEMS: {
   },
   {
     title: 'Hojas de Vida',
-    iconClass: 'bi bi-person-vcard-fill'
+    iconClass: 'bi bi-person-vcard-fill',
+    link: '/panel/empresa/ofertasAplicadas/empresa/id'
   }],
   administrador: [
     {
