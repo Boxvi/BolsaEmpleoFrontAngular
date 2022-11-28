@@ -1,23 +1,23 @@
 # Credenciales
-ADMINISTRADOR
-user: _BORIS_
-pass: 1234
+1) ADMINISTRADOR
+- user: _BORIS_
+- pass: 1234
 
-user: admin_boris
-pass: 1234
-
-
-EMPRESA
-user: copmego
-pass: 1234
-
-user: pepsi
-pass: 1234
+- user: admin_boris
+-pass: 1234
 
 
-EMPLEADO
-user: boxvi
-pass: 1234
+2) EMPRESA
+- user: copmego
+- pass: 1234
+
+- user: pepsi
+- pass: 1234
+
+
+3) EMPLEADO
+- user: boxvi
+- pass: 1234
 
 # Pasos para la clonacion
 1) Clonar el repositorio: https://github.com/Boxvi/webgc1.git
