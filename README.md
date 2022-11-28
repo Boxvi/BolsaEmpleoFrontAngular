@@ -2,15 +2,15 @@
 1) ADMINISTRADOR
 - user: _BORIS_
 - pass: 1234
-
+#
 - user: admin_boris
--pass: 1234
+- pass: 1234
 
 
 2) EMPRESA
 - user: copmego
 - pass: 1234
-
+#
 - user: pepsi
 - pass: 1234
 
