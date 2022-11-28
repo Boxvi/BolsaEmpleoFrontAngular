@@ -38,7 +38,6 @@ export class PersonalFormComponent implements OnInit {
         this.estudiante = r;
       })
     }
-
   }
 
   registrarEstudiante() {

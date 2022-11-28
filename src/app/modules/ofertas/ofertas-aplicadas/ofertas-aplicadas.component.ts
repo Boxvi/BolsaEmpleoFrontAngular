@@ -50,6 +50,8 @@ export class OfertasAplicadasComponent implements OnInit {
         return 'text-bg-primary';
       case 'Aprobado':
         return 'text-bg-success';
+        case 'No Aprobado':
+          return 'text-bg-black';
     }
     return 'text-bg-light';
 

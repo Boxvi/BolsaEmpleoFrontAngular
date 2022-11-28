@@ -81,4 +81,8 @@ export class EstudianteService {
     return this.http.get<any>(`${ESTUDIANTE_API}/resumen/${estudiante_id}`);
   }
 
+  getEstudianteByCedula(cedula:string):Observable<any>{
+    return this.http.get<any>(`${ESTUDIANTE_API}/cedula/${cedula}`);
+  }
+
 }
