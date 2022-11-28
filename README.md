@@ -1,3 +1,37 @@
+# Credenciales
+ADMINISTRADOR
+user: _BORIS_
+pass: 1234
+
+user: admin_boris
+pass: 1234
+
+
+EMPRESA
+user: copmego
+pass: 1234
+
+user: pepsi
+pass: 1234
+
+
+EMPLEADO
+user: boxvi
+pass: 1234
+
+# Pasos para la clonacion
+1) Clonar el repositorio: https://github.com/Boxvi/webgc1.git
+
+2) abrir con vscode: y en la terminal poner: npm istall
+
+3) imstalar las siguientes dependencias 
+npm install sweetalert2
+npm i @ng-bootstrap/ng-bootstrap
+npm install bootstrap@5.2.2
+
+4) aplicar el commando: ng serve -o
+
+
 # Webgc1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
