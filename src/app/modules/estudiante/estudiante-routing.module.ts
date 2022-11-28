@@ -9,6 +9,8 @@ import { ResumeComponent } from "./resume/resume.component";
 import{ListCapacitacionesComponent} from './capacitaciones/list-capacitaciones/list-capacitaciones.component'
 import { RefPersonalesComponent } from "./ref-personales/ref-personales.component";
 import { InstFormalComponent } from "./inst-formal/inst-formal.component";
+import { MiperfilocupacionlComponent } from "./perfilocupacional/miperfilocupacionl/miperfilocupacionl.component";
+import { FormperfilComponent } from "./perfilocupacional/formperfil/formperfil.component";
 
 const routes: Routes = [
   { path: '', component: ResumeComponent },
@@ -25,7 +27,13 @@ const routes: Routes = [
 
   { path: 'ref-personales', component: RefPersonalesComponent},
   { path: 'inst-formal', component: InstFormalComponent},
+  {path:'perfilOcupacional/estudiante/:id',component: MiperfilocupacionlComponent},
+  {path:'perfilOcupacional/form', component: FormperfilComponent},
+  { path:'perfilOcupacional/form/:id',component:FormperfilComponent},
 
+
+
+  /*}
  //{path:'capacitaciones-form/estudiante/:id/ ',component: FormCapacitacionComponent},
   
 

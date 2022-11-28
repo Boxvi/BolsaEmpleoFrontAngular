@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IOferta } from 'src/app/data/interfaces/models/ioferta';
 import { catchError, map, Observable, of } from 'rxjs';
-import { Observable } from 'rxjs';
+
 
 
 const OFERTAS_API  = 'http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/ofertas';
@@ -14,6 +14,9 @@ export class OfertasLaboralesService {
 
 
 constructor(private http: HttpClient) { }
+
+
+
 //trae por id
 getpublicadasByEmpresaid(id:number): Observable<any>{
   return this.http.get(`${OFERTAS_API}/empresa/${id}`);
@@ -71,7 +74,6 @@ deleteCapacitacion(id:number): Observable<any>{
 
 
 
-  constructor() { }
 
 
 
