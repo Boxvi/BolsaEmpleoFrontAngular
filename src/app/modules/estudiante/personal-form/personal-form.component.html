@@ -31,10 +31,16 @@
       id="cedula"
       placeholder="01010101010"
       name="cedula"
+      maxlength="10"
+      (change)="validateCedula(estudiante.cedula)"
       [(ngModel)]="estudiante.cedula"
       required
     />
+    <small *ngIf="!cedulaValidator" class="text-danger"
+      >Cédula ingresada no válida</small
+    >
   </div>
+
   <div class="col-lg-3 col-md-6 text-uppercase">
     <label for="inputAddress2" class="form-label text-uppercase">Género</label>
     <div>
@@ -133,7 +139,9 @@
     />
   </div>
 
-  <div class="col-12 text-center d-flex justify-content-center align-items-center gap-3">
+  <div
+    class="col-12 text-center d-flex justify-content-center align-items-center gap-3"
+  >
     <button
       type="button"
       class="btn btn-dark text-uppercase px-4 py-2 mt-3"

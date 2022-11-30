@@ -19,6 +19,7 @@ export class PersonalFormComponent implements OnInit {
   public estadosCivil = ESTADO_CIVIL_OPCIONES;
   public estudiante_id: number;
   public estudiante: IEstudiante | any = {/*     nombres: '',apellidos: '' */ };
+  public cedulaValidator = false;
 
   constructor(private route: ActivatedRoute, private ciudadService: CiudadService,
     private estudianteService: EstudianteService,
@@ -67,6 +68,41 @@ export class PersonalFormComponent implements OnInit {
     if (!state) {
       this.router.navigateByUrl('/panel/estudiante');
     }
+  }
+
+  validateCedula(cedula: string) {
+    let rightCedula = false;
+    if (cedula.length == 10) {
+
+      let thirdDigit = parseInt(cedula.substring(2, 3));
+      if (thirdDigit < 6) {
+        let coefValCedual = [2, 1, 2, 1, 2, 1, 2, 1, 2];
+        let verifier = parseInt(cedula.substring(9, 10));
+        let sum: number = 0;
+        let digit: number = 0;
+        for (let i = 0; i < (cedula.length - 1); i++) {
+          digit = parseInt(cedula.substring(i, i + 1)) * coefValCedual[i];
+          sum += ((parseInt((digit % 10) + '') + (parseInt((digit / 10) + ''))));
+          console.log(sum + " suma " + coefValCedual[i]);
+
+
+        }
+        sum = Math.round(sum);
+        if ((Math.round(sum % 10) == 0) && (Math.round(sum % 10) == verifier)) {
+          rightCedula = true;
+        } else if ((10 - (Math.round(sum % 10))) == verifier) {
+          rightCedula = true;
+        } else {
+          rightCedula = false;
+        }
+      } else {
+        rightCedula = false;
+      }
+
+    } else {
+      rightCedula = false;
+    }
+    this.cedulaValidator = rightCedula;
   }
 
 }
