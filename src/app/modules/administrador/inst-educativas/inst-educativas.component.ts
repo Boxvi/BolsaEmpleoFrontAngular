@@ -17,6 +17,7 @@ export class InstEducativasComponent implements OnInit {
   }
 
   public instituciones: Institucion[] = [];
+  filterPost: string = "";
 
 
   constructor(private institucionService: InstitucionesEduService) { }

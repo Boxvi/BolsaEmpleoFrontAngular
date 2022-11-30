@@ -21,6 +21,7 @@ export class ProvinciaComponent implements OnInit {
   public provincias: IProvincia[] = [];
 
   public paises = PAISES;
+  filterPost: string = "";
 
   constructor(private provinciaService: ProvinciaService) { }
 

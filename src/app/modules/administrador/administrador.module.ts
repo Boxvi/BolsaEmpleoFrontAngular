@@ -21,6 +21,8 @@ import { InstEducativasComponent } from './inst-educativas/inst-educativas.compo
 import { AreaEstudioComponent } from './area-estudio/area-estudio.component';
 import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.component';
 import { UsuarioListPipe } from './usuario/pipe/usuario-list.pipe';
+import { ProvinciaPipe } from './provincia/pipe/provincia.pipe';
+import { InstitucionPipe } from './inst-educativas/pipe/institucion.pipe';
 
 
 
@@ -44,7 +46,9 @@ import { UsuarioListPipe } from './usuario/pipe/usuario-list.pipe';
     InstEducativasComponent,
     AreaEstudioComponent,
     UsuarioListComponent,
-    UsuarioListPipe
+    UsuarioListPipe,
+    ProvinciaPipe,
+    InstitucionPipe
   ],
   imports: [
     CommonModule,
