@@ -17,9 +17,10 @@ import { OfertasLaboralesPipe } from './ofertaslaborales/pipe/ofertas-laborales.
 import { ReportesComponent } from './reportes/reportes.component';
 import { PostulacionesPipe } from './postulaciones/pipe/postulaciones.pipe';
 import { ProvinciaComponent } from './provincia/provincia.component';
-import { CiudadComponent } from './ciudad/ciudad.component';
 import { InstEducativasComponent } from './inst-educativas/inst-educativas.component';
 import { AreaEstudioComponent } from './area-estudio/area-estudio.component';
+import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.component';
+import { UsuarioListPipe } from './usuario/pipe/usuario-list.pipe';
 
 
 
@@ -40,9 +41,10 @@ import { AreaEstudioComponent } from './area-estudio/area-estudio.component';
     ReportesComponent,
     PostulacionesPipe,
     ProvinciaComponent,
-    CiudadComponent,
     InstEducativasComponent,
-    AreaEstudioComponent
+    AreaEstudioComponent,
+    UsuarioListComponent,
+    UsuarioListPipe
   ],
   imports: [
     CommonModule,

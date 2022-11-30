@@ -71,12 +71,6 @@ export const LEFT_NAV_ITEMS: {
     },
 
     {
-      title: 'Ciudad',
-      iconClass: 'bi bi-geo',
-      link: '/panel/administrador/ciudad'
-    },
-
-    {
       title: 'Area Estudio',
       iconClass: 'bi bi-book',
       link: '/panel/administrador/area-estudio'
@@ -87,6 +81,13 @@ export const LEFT_NAV_ITEMS: {
       iconClass: 'bi bi-house-door',
       link: '/panel/administrador/istitucion-educativa'
     },
+    {
+      title: 'Usuarios',
+      iconClass: 'bi bi-file-earmark-person',
+      link: '/panel/administrador/usuario-list'
+    },
+
+
 
   ]
 };

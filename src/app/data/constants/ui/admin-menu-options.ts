@@ -34,12 +34,6 @@ export const ADMIN_MENU_OPTIONS: CardOption[] = [
   },
 
   {
-    icon: '../../../../assets/icons/admin_ciudad_icon.svg',
-    title: 'Ciudad',
-    link: 'ciudad'
-  },
-
-  {
     icon: '../../../../assets/icons/areas_estudio_icon.svg',
     title: 'Area Estudio',
     link: 'area-estudio'
@@ -49,6 +43,13 @@ export const ADMIN_MENU_OPTIONS: CardOption[] = [
     icon: '../../../../assets/icons/ist_educativa_icon.svg',
     title: 'Institucion Educativa',
     link: 'istitucion-educativa'
+  },
+  {
+    icon: '../../../../assets/icons/training_icon.svg',
+    title: 'Usuarios',
+    link: 'usuario-list'
   }
+
+
 ]
 //

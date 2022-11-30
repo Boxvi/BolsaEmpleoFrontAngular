@@ -1,7 +1,10 @@
-<p>inst-educativas works!</p>
+<!-- title -->
+<app-title title="Istituciones Educativas"></app-title>
+
+
 <form class="row" ngNativeValidate (ngSubmit)="registrar()">
   <div class="col-md-6 offset-md-3">
-    <label for="nombre" class="form-label text-uppercase">NNOMBRE DE LA INSTITUCION</label>
+    <label for="nombre" class="form-label text-uppercase">NOMBRE DE LA INSTITUCION</label>
     <input
       type="text"
       class="form-control"
@@ -36,7 +39,7 @@
     <tr>
       <th scope="col">ID INSTITUCION</th>
       <th scope="col">NOMBRE INSTITUCIONAL</th>
-      <th colspan="2"> OPCIONES </th>
+      <th colspan="2"> OPCIONES</th>
     </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -49,7 +52,7 @@
           class="btn btn-warning"
           (click)="loadInfoToForm(Inst_edu)"
         >
-          <i class="bi bi-pen-fill"> Editar</i>
+          <i class="bi bi-pen-fill"></i>
         </button>
       </td>
       <td>
@@ -58,10 +61,12 @@
           class="btn btn-danger"
           (click)="EliminarInstitucion(Inst_edu.id!)"
         >
-          <i class="bi bi-x-circle-fill"> Eliminar</i>
+          <i class="bi bi-x-circle-fill"> </i>
         </button>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
+
+
