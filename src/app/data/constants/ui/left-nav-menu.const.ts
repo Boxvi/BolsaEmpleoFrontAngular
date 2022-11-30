@@ -27,6 +27,7 @@ export const LEFT_NAV_ITEMS: {
     link: '/panel/empresa'
   },
   {
+
     title: 'Ofertas Aplicadas',
     iconClass: 'bi bi-person-vcard-fill',
     link: '/panel/empresa/ofertasAplicadas/empresa/id'

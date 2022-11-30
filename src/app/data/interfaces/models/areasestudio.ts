@@ -1,5 +1,5 @@
-export class Areasestudio{
-    id?: number;
-    nombre?: string;
+export interface Areasestudio{
+    id: number;
+    nombre: string;
 
 }
