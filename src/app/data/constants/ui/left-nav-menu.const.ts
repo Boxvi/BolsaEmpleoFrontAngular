@@ -63,5 +63,30 @@ export const LEFT_NAV_ITEMS: {
       iconClass: 'bi bi-flag',
       link: '/panel/administrador/reportes'
     },
+
+    {
+      title: 'Provincia',
+      iconClass: 'bi bi-geo-alt',
+      link: '/panel/administrador/provincia'
+    },
+
+    {
+      title: 'Ciudad',
+      iconClass: 'bi bi-geo',
+      link: '/panel/administrador/ciudad'
+    },
+
+    {
+      title: 'Area Estudio',
+      iconClass: 'bi bi-book',
+      link: '/panel/administrador/area-estudio'
+    },
+
+    {
+      title: 'Istitucion Educativa',
+      iconClass: 'bi bi-house-door',
+      link: '/panel/administrador/istitucion-educativa'
+    },
+
   ]
 };
