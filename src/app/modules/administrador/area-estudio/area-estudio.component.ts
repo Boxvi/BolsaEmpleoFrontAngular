@@ -10,7 +10,7 @@ import { Alert } from 'src/app/data/classes/alert';
   styleUrls: ['./area-estudio.component.css']
 })
 export class AreaEstudioComponent implements OnInit {
-
+  filterPost: string = "";
   public areas: Areasestudio[] = [];
   public postArea: Areasestudio | any = {};
   public area_id: any;

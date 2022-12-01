@@ -23,6 +23,8 @@ import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.compon
 import { UsuarioListPipe } from './usuario/pipe/usuario-list.pipe';
 import { ProvinciaPipe } from './provincia/pipe/provincia.pipe';
 import { InstitucionPipe } from './inst-educativas/pipe/institucion.pipe';
+import { AreaestudioPipe } from './area-estudio/pipe/areaestudio.pipe';
+
 
 
 
@@ -48,7 +50,9 @@ import { InstitucionPipe } from './inst-educativas/pipe/institucion.pipe';
     UsuarioListComponent,
     UsuarioListPipe,
     ProvinciaPipe,
-    InstitucionPipe
+    InstitucionPipe,
+    AreaestudioPipe
+
   ],
   imports: [
     CommonModule,

@@ -20,7 +20,14 @@
 </form>
 
 <div class="container-fluid p-0">
-
+    <input
+    type="text"
+    class="form-control"
+    name="filterPost"
+    placeholder="Buscador..."
+    [(ngModel)]="filterPost"
+  />
+  <br>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -30,8 +37,8 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <tr *ngFor="let a of areas; index as i">
-                <td style="visibility: hidden">{{a.id}} </td>
+            <tr *ngFor="let a of areas | areaestudio: filterPost">
+                <td >{{a.id}} </td>
                 <td>{{a.nombre}}</td>
 
                 <td>

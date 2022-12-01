@@ -12,7 +12,7 @@ import { OfertasLaboralesService } from '../../services/ofertas/ofertas-laborale
   styleUrls: ['./listar-ofertas.component.css']
 })
 export class ListarOfertasComponent implements OnInit {
-  filterPost='';
+  filterPost: string = "";
 public myofertas: IOferta []=[];
 public empresa: IEmpresa []=[];
 public empresa_id: number = 0;
