@@ -14,6 +14,7 @@ import { MiperfilocupacionlComponent } from "./perfilocupacional/miperfilocupaci
 import { FormperfilComponent } from "./perfilocupacional/formperfil/formperfil.component";
 
 import { PrefLaboralComponent } from "./pref-laboral/pref-laboral.component";
+import { RefProfesionalesComponent } from "./ref-profesionales/ref-profesionales.component";
 
 
 const routes: Routes = [
@@ -28,8 +29,8 @@ const routes: Routes = [
   {path: 'capacitaciones/estudiante/:id', component:ListCapacitacionesComponent},
   {path:'capacitacion-form', component:FormCapacitacionComponent},
   {path: 'capacitacion-form/:id', component:FormCapacitacionComponent},
-
-  { path: 'referenciasProfesionales/estudiante/:id', component: RefPersonalesComponent},
+  { path: 'referenciasProfesionales/estudiante', component: RefProfesionalesComponent},
+  { path: 'referenciasProfesionales/estudiante/:id', component: RefProfesionalesComponent},
   { path: 'instruccionFormal/estudiante/:id', component: InstFormalComponent},
   {path:'perfilOcupacional/estudiante/:id',component: MiperfilocupacionlComponent},
   {path:'perfilOcupacional/form', component: FormperfilComponent},

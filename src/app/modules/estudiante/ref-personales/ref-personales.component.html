@@ -2,15 +2,15 @@
 <div class="container center">
   <div class="row g-4">
     <div class="col-lg-3 col-md-6">
-      <label for="nombre" class="form-label text-uppercase">Nombres</label>
+      <label for="nombre" class="form-label text-uppercase">NOMBRE Y APELLIDO</label>
 
-      <input type="text" [(ngModel)]="nombresdatos" class="form-control" aria-label="First name">
+      <input type="text" [(ngModel)]="nombresdatos" class="form-control" aria-label="First name" placeholder="- Ingrese Aquí -" required>
 
     </div>
     <div class="col-lg-3 col-md-6">
-      <label for="apellidos" class="form-label text-uppercase">Telefono</label>
+      <label for="apellidos" class="form-label text-uppercase">TELEFONO</label>
 
-      <input type="text" [(ngModel)]="telefonodatos" class="form-control" aria-label="Last name">
+      <input type="text" [(ngModel)]="telefonodatos" class="form-control" aria-label="Last name" placeholder="XXXXXXXXXX" required>
 <br>
     </div>
 
@@ -37,9 +37,9 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">NOMBRE</th>
+            <th scope="col">NOMBRES</th>
             <th scope="col">TELEFONO</th>
-            <th scope="col">ACCION</th>
+            <th scope="col">OPCIONES</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">

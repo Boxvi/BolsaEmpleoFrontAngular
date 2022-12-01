@@ -15,6 +15,7 @@ import { InstFormalComponent } from './inst-formal/inst-formal.component';
 import { MiperfilocupacionlComponent } from './perfilocupacional/miperfilocupacionl/miperfilocupacionl.component';
 import { FormperfilComponent } from './perfilocupacional/formperfil/formperfil.component';
 import { PrefLaboralComponent } from './pref-laboral/pref-laboral.component';
+import { RefProfesionalesComponent } from './ref-profesionales/ref-profesionales.component';
 
 
 
@@ -35,7 +36,8 @@ import { PrefLaboralComponent } from './pref-laboral/pref-laboral.component';
     MiperfilocupacionlComponent,
     FormperfilComponent,
 
-    PrefLaboralComponent
+    PrefLaboralComponent,
+    RefProfesionalesComponent
 
 
   ],

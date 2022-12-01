@@ -23,7 +23,7 @@
             <label><b>INSTITUCION</b></label>
             <br><br>
             <select [(ngModel)]="instituciondatos" class="container center; form-select" aria-label="Default select example"
-              style="width: 50%" >
+              style="width: 50%" required>
               <option >
                 Selecciona un dato</option>
               <option *ngFor="let listaInstituciones of datosPrueba2"> {{listaInstituciones.nombre}} </option>
@@ -33,7 +33,7 @@
             <label><b>AREA DE ESTUDIO</b></label>
             <br> <br>
             <select [(ngModel)]="areaEstudiodatos" class="container center; form-select" aria-label="Default select example"
-              style="width: 50%" >
+              style="width: 50%" required>
               <option >
                 Selecciona un dato</option>
               <option *ngFor="let listaAreaEstudio of datosPrueba3"> {{listaAreaEstudio.nombre}} </option>
@@ -50,7 +50,7 @@
             <label><b>PROMOCION</b></label>
             <br><br>
             <select class="container center; form-select" [(ngModel)]="promociondatos" aria-label="Default select example"
-              style="width: 50%" >
+              style="width: 50%" required>
               
               <option value="2030">2030</option>
               <option value="2029">2029</option>
@@ -81,7 +81,7 @@
                 <label><b>TITULO</b></label>
                 <br><br>
                 <input type="text" [(ngModel)]="titulodatos" class="container center; form-control" aria-label="First name"
-                  style="width: 50%" >
+                  style="width: 50%" placeholder="- Ingrese Aquí -" required>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@
         </button>
 
         <button type="submit" class="btn btn-dark text-uppercase px-4 py-2 mt-3" (click)="guardardatos()">
-            Registar
+            Registrar
         </button>
     </div>
 
@@ -123,7 +123,7 @@
                         <th scope="col">AREA ESTUDIO</th>
                         <th scope="col">PROMOCION</th>
                         <th scope="col" style="width: 15%;">TITULO</th>
-                        <th colspan="2"><i class="bi bi-gear"></i> Opciones</th>
+                        <th colspan="2"><i class="bi bi-gear"></i> OPCIONES</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
