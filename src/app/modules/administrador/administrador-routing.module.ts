@@ -23,6 +23,7 @@ import {AreaEstudioComponent} from "./area-estudio/area-estudio.component";
 import {InstEducativasComponent} from "./inst-educativas/inst-educativas.component";
 
 import {UsuarioListComponent} from "./usuario/usuario-list/usuario-list.component";
+import {CiudadComponent} from "./ciudad/ciudad.component";
 
 const routes: Routes = [
   {path: '', component: ResumeComponent},
@@ -39,8 +40,12 @@ const routes: Routes = [
   {path: 'provincia', component: ProvinciaComponent},
   {path: 'provincia/:id', component: ProvinciaComponent},
 
+  {path: 'ciudad', component: CiudadComponent},
+  {path: 'ciudad/:id', component: CiudadComponent},
+
   {path: 'area-estudio', component: AreaEstudioComponent},
   {path: 'area-estudio/:id', component: AreaEstudioComponent},
+
 
   {path: 'istitucion-educativa', component: InstEducativasComponent},
   {path: 'istitucion-educativa/:id', component: InstEducativasComponent},

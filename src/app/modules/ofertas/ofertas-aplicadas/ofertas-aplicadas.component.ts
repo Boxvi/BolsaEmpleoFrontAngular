@@ -17,6 +17,7 @@ export class OfertasAplicadasComponent implements OnInit {
   public postulacion_id: number = 0;
   public misPostulaciones: IPostulacion[] = [];
   public ofertasLaboralesInfo: IOferta[] | any[] = [];
+
   constructor(private estudianteService: EstudianteService,
     private postulacionService: PostulacionService,
     private ofertaService: OfertaService) {

@@ -24,6 +24,7 @@ import { UsuarioListPipe } from './usuario/pipe/usuario-list.pipe';
 import { ProvinciaPipe } from './provincia/pipe/provincia.pipe';
 import { InstitucionPipe } from './inst-educativas/pipe/institucion.pipe';
 import { AreaestudioPipe } from './area-estudio/pipe/areaestudio.pipe';
+import { CiudadComponent } from './ciudad/ciudad.component';
 
 
 
@@ -51,7 +52,8 @@ import { AreaestudioPipe } from './area-estudio/pipe/areaestudio.pipe';
     UsuarioListPipe,
     ProvinciaPipe,
     InstitucionPipe,
-    AreaestudioPipe
+    AreaestudioPipe,
+    CiudadComponent
 
   ],
   imports: [

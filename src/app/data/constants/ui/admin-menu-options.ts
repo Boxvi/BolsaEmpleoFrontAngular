@@ -32,12 +32,20 @@ export const ADMIN_MENU_OPTIONS: CardOption[] = [
     title: 'Provincia',
     link: 'provincia'
   },
+  {
+    icon: '../../../../assets/icons/admin_ciudad_icon.svg',
+    title: 'Ciudad',
+    link: 'ciudad'
+  },
+
 
   {
     icon: '../../../../assets/icons/areas_estudio_icon.svg',
     title: 'Area Estudio',
     link: 'area-estudio'
   },
+
+
 
   {
     icon: '../../../../assets/icons/ist_educativa_icon.svg',

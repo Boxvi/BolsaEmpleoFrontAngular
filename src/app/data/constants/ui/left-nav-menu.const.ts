@@ -70,7 +70,11 @@ export const LEFT_NAV_ITEMS: {
       iconClass: 'bi bi-geo-alt',
       link: '/panel/administrador/provincia'
     },
-
+    {
+      title: 'Ciudad',
+      iconClass: 'bi bi-house-heart-fill',
+      link: '/panel/administrador/ciudad'
+    },
     {
       title: 'Area Estudio',
       iconClass: 'bi bi-book',
