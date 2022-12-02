@@ -30,7 +30,7 @@ export class OfAplicadasComponent implements OnInit {
   ngOnInit(): void {
     this.idemp = localStorage.getItem('idEmpresa')!;
     this.getOfertasAplicadasByEmpresa();
-    
+
   }
 
 
@@ -46,7 +46,7 @@ export class OfAplicadasComponent implements OnInit {
         this.estudianteService.getEstudianteByCedula(postulacion.cedula).subscribe(r=>{
           this.estudiantesPostulados?.push(r);
         })
-      }      
+      }
     })
   }
 

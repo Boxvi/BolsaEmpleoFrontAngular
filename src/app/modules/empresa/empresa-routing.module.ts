@@ -7,12 +7,14 @@ import {ListarOfertasComponent} from "./ofertas-publicadas/listar-ofertas/listar
 import {FormOfertasComponent} from "./ofertas-publicadas/form-ofertas/form-ofertas.component"
 import { ListContactosComponent } from "./contactosEmpresariales/list-contactos/list-contactos.component";
 import { FormscontactoComponent } from "./contactosEmpresariales/formscontacto/formscontacto.component";
+import {HojaVidaComponent} from "./hoja-vida/hoja-vida.component";
 
 
 
 const routes: Routes = [
   { path: '', component: ResumeComponent },
   {path:'ofertasPublicadas/empresa/:id',component:ListarOfertasComponent},
+
   {path:'form-ofertas',component:FormOfertasComponent},
   {path:'form-ofertas/:id',component:FormOfertasComponent},
   { path: 'empresa-form', component: EmpresaFormComponent },
@@ -24,7 +26,10 @@ const routes: Routes = [
 
   /* {path:'contactosEmpresariales/empresa/:id',component: 🎈🎈Aquí va el nombre del componente } */
   /* {path:'ofertasPublicadas/empresa/:id',component: 🎈🎈Aquí va el nombre del componente } */
-   {path:'ofertasAplicadas/empresa/:id',component: OfAplicadasComponent } 
+   {path:'ofertasAplicadas/empresa/:id',component: OfAplicadasComponent },
+  {path:'ofertasAplicadas/empresa/:id/:id',component: HojaVidaComponent }
+
+
 
 ];
 

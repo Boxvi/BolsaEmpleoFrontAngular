@@ -17,6 +17,7 @@ import { ListContactosComponent } from './contactosEmpresariales/list-contactos/
 import { OfAplicadasComponent } from './of-aplicadas/of-aplicadas.component';
 import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
 import { FiltrolistPipe } from './ofertas-publicadas/pipe/filtrolist.pipe';
+import { HojaVidaComponent } from './hoja-vida/hoja-vida.component';
 
 
 
@@ -38,7 +39,8 @@ import { FiltrolistPipe } from './ofertas-publicadas/pipe/filtrolist.pipe';
     FormOfertasComponent,
     OfAplicadasComponent,
     EmpresaFormComponent,
-    FiltrolistPipe
+    FiltrolistPipe,
+    HojaVidaComponent
 
 
   ],

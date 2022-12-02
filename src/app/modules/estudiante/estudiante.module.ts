@@ -16,6 +16,7 @@ import { MiperfilocupacionlComponent } from './perfilocupacional/miperfilocupaci
 import { FormperfilComponent } from './perfilocupacional/formperfil/formperfil.component';
 import { PrefLaboralComponent } from './pref-laboral/pref-laboral.component';
 import { RefProfesionalesComponent } from './ref-profesionales/ref-profesionales.component';
+import { HojaVidaComponent } from './hoja-vida/hoja-vida.component';
 
 
 
@@ -27,17 +28,16 @@ import { RefProfesionalesComponent } from './ref-profesionales/ref-profesionales
     ResumeComponent,
     PersonalFormComponent,
     ListLogrosComponent,
-    FormLogroComponent, 
+    FormLogroComponent,
     ListCapacitacionesComponent,
     FormCapacitacionComponent,
     RefPersonalesComponent,
     InstFormalComponent,
-
     MiperfilocupacionlComponent,
     FormperfilComponent,
-
     PrefLaboralComponent,
-    RefProfesionalesComponent
+    RefProfesionalesComponent,
+    HojaVidaComponent
 
 
   ],

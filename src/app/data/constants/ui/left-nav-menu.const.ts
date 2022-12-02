@@ -19,7 +19,14 @@ export const LEFT_NAV_ITEMS: {
     title: 'Ofertas Aplicadas',
     iconClass: 'bi bi-check-circle-fill',
     link: '/ofertas/ofertasAplicadas'
-  }
+  },
+    {
+      title: 'Hoja De Vida',
+      iconClass: 'bi bi-file-earmark-person-fill',
+      link: '/panel/estudiante/hoja-vida'
+    }
+
+
   ],
   empresa: [{
     title: 'Datos Empresa',
