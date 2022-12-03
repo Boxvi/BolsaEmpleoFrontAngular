@@ -26,7 +26,7 @@
       <option value="" disabled selected="selected">
         Seleccione la provincia
       </option>
-      <option  *ngFor="let provi of provincias">
+      <option *ngFor="let provi of provincias">
         {{ provi.nombre }}
       </option>
     </select>
@@ -47,51 +47,48 @@
   </div>
 </form>
 
-
 <div class="p-4">
-
   <input
     type="text"
     class="form-control"
-    name="filterPost"
+    name="filterCiudad"
     placeholder="Buscador..."
-    [(ngModel)]="filterPost"
+    [(ngModel)]="filterCiudad"
   />
   <div class="container-fluid p-0 wrapper" *ngIf="ciudades.length > 0">
-
     <table class="table table-hover">
       <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nombre Ciudad</th>
-        <th scope="col">Provincia</th>
-        <th colspan="2"><i class="bi bi-gear"></i> Opciones</th>
-      </tr>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre Ciudad</th>
+          <th scope="col">Provincia</th>
+          <th colspan="2"><i class="bi bi-gear"></i> Opciones</th>
+        </tr>
       </thead>
       <tbody class="table-group-divider">
-      <tr *ngFor="let ciu of ciudades | provincia: filterPost; index as i  ">
-        <td>{{ i + 1 }}</td>
-        <td>{{ ciu.nombre }}</td>
-        <td>{{ ciu.provincia }}</td>
-        <td>
-          <button
-            type="button"
-            class="btn btn-warning"
-            (click)="loadInfoToForm(ciu)"
-          >
-            <i class="bi bi-pen-fill"></i>
-          </button>
-        </td>
-        <td>
-          <button
-            type="button"
-            class="btn btn-danger"
-            (click)="EliminarCiudades(ciu.id!)"
-          >
-            <i class="bi bi-x-circle-fill"></i>
-          </button>
-        </td>
-      </tr>
+        <tr *ngFor="let ciu of ciudades | ciudad : filterCiudad; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ ciu.nombre }}</td>
+          <td>{{ ciu.provincia }}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-warning"
+              (click)="loadInfoToForm(ciu)"
+            >
+              <i class="bi bi-pen-fill"></i>
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="EliminarCiudades(ciu.id!)"
+            >
+              <i class="bi bi-x-circle-fill"></i>
+            </button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
