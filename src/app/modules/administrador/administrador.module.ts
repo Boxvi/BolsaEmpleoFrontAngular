@@ -25,6 +25,7 @@ import { ProvinciaPipe } from './provincia/pipe/provincia.pipe';
 import { InstitucionPipe } from './inst-educativas/pipe/institucion.pipe';
 import { AreaestudioPipe } from './area-estudio/pipe/areaestudio.pipe';
 import { CiudadComponent } from './ciudad/ciudad.component';
+import { CiudadPipe } from './ciudad/pipe/ciudad.pipe';
 
 
 
@@ -53,7 +54,8 @@ import { CiudadComponent } from './ciudad/ciudad.component';
     ProvinciaPipe,
     InstitucionPipe,
     AreaestudioPipe,
-    CiudadComponent
+    CiudadComponent,
+    CiudadPipe
 
   ],
   imports: [
