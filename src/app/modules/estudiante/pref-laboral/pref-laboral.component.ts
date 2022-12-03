@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Alert } from 'src/app/data/classes/alert';
+import { JORNADAS } from 'src/app/data/constants/ui/jornadas';
 import { PrefLaboral } from 'src/app/data/interfaces/models/pref-laboral';
 import Swal from 'sweetalert2';
 import { PrefLaboralService } from '../services/pref-laboral/pref-laboral.service';
@@ -12,7 +13,7 @@ import { PrefLaboralService } from '../services/pref-laboral/pref-laboral.servic
 export class PrefLaboralComponent implements OnInit {
 
   prefLaboral: PrefLaboral = new PrefLaboral ;
-
+  jornadas = JORNADAS;
   cedulaUsuario:any;
   idUsuario:any;
   datosTabPref: any;
