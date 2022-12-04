@@ -13,6 +13,7 @@ import { CardOptionComponent } from './components/card-option/card-option.compon
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DataCardComponent } from './components/data-card/data-card.component';
+import { StudentInfoClipComponent } from './components/student-info-clip/student-info-clip.component';
 
 
 @NgModule({
@@ -26,9 +27,8 @@ import { DataCardComponent } from './components/data-card/data-card.component';
     CardOptionComponent,
     BackButtonComponent,
     ProfileComponent,
-    DataCardComponent
-
-
+    DataCardComponent,
+    StudentInfoClipComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +44,8 @@ import { DataCardComponent } from './components/data-card/data-card.component';
     AddOptionComponent,
     CardOptionComponent,
     BackButtonComponent,
-    DataCardComponent
+    DataCardComponent,
+    StudentInfoClipComponent
   ]
 })
 export class SharedModule { }
