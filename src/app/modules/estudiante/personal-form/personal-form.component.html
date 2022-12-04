@@ -139,6 +139,34 @@
     />
   </div>
 
+
+  <div class="wrapper">
+    <div class="position-relative">
+        <h3>Subir imagen</h3>
+        <input class="input-file" (change)="capturarFile($event)" type="file">
+        <div class="preview-img" *ngIf="previsualizacion">
+            <button class="clear-image" type="button" (click)="clearImage()">Cancelar</button>
+            <img  [src]="previsualizacion" alt="">
+        </div>
+      
+        <div class="p-1">
+            <small>Se aceptan archivos imágenes de tipo .png</small>
+        </div>
+        <div class="wrapper-button" *ngIf="previsualizacion">
+            <button type="button" class="button" [disabled]="loading" (click)="subirArchivo()">
+                {{(loading) ? 'Cargando.....' : 'Subir Archivo'}}
+            </button>
+        </div>
+  
+    </div>
+   
+</div>
+
+
+
+
+
+
   <div
     class="col-12 text-center d-flex justify-content-center align-items-center gap-3"
   >

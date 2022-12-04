@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ESTADO_CIVIL_OPCIONES } from 'src/app/data/constants/ui/estado-civil-select.const';
 import { ICiudad } from 'src/app/data/interfaces/models/iciudad';
@@ -7,6 +8,7 @@ import { CiudadService } from 'src/app/data/services/api/ciudad.service';
 import Swal from 'sweetalert2';
 import { AuthService } from '../../auth/services/auth.service';
 import { EstudianteService } from '../services/estudiante.service';
+import { UploadFilesService } from '../services/imagenes/upload-files.service';
 
 @Component({
   selector: 'app-personal-form',
@@ -14,7 +16,18 @@ import { EstudianteService } from '../services/estudiante.service';
   styleUrls: ['./personal-form.component.css']
 })
 export class PersonalFormComponent implements OnInit {
+  
+  //imagenes//
+  public previsualizacion?: string;
+  public archivos: any = []
+  public loading?: boolean
+  public rutaimagen: string = '';
+  public urlImage: string = '';
+  public inforest: any=[];
+  
+  
 
+  //-----------//
   public ciudades: ICiudad[] = [];
   public estadosCivil = ESTADO_CIVIL_OPCIONES;
   public estudiante_id: number;
@@ -24,7 +37,9 @@ export class PersonalFormComponent implements OnInit {
   constructor(private route: ActivatedRoute, private ciudadService: CiudadService,
     private estudianteService: EstudianteService,
     private authService: AuthService,
-    private router: Router) {
+    private router: Router,
+    private uploadFilesService: UploadFilesService,
+    private sanitizer: DomSanitizer) {
     this.estudiante_id = this.route.snapshot.params['id'];
   }
 
@@ -42,6 +57,8 @@ export class PersonalFormComponent implements OnInit {
   }
 
   registrarEstudiante() {
+    this.estudiante.urlImagen = this.urlImage
+    this.estudiante.rutaImagen=this.rutaimagen
     if (this.estudiante_id) {
       // actualizamos
 
@@ -51,6 +68,8 @@ export class PersonalFormComponent implements OnInit {
       })
 
     } else {
+      this.estudiante.urlImagen = this.urlImage
+      this.estudiante.rutaImagen=this.rutaimagen
       this.estudianteService.save(this.estudiante).subscribe(
         r => {
           this.response(r.error, r.icon, r.message);
@@ -104,5 +123,101 @@ export class PersonalFormComponent implements OnInit {
     }
     this.cedulaValidator = rightCedula;
   }
+
+
+
+//-------------------------------------------------------------------------//
+
+capturarFile(event: any): any {
+  const archivoCapturado = event.target.files[0]
+  this.extraerBase64(archivoCapturado).then((imagen: any) => {
+    this.previsualizacion = imagen.base;
+    console.log(imagen);
+
+  })
+  this.archivos.push(archivoCapturado)
+  // 
+  // console.log(event.target.files);
+
+}
+
+
+extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+try {
+  const unsafeImg = window.URL.createObjectURL($event);
+  const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+  const reader = new FileReader();
+  reader.readAsDataURL($event);
+  reader.onload = () => {
+    resolve({
+      base: reader.result
+    });
+  };
+  reader.onerror = error => {
+    resolve({
+      base: null
+    });
+  };
+
+} catch (e) {
+  return null;
+}
+} 
+) 
+
+
+/**
+* Limpiar imagen
+*/
+
+clearImage(): any {
+this.previsualizacion = '';
+this.archivos = [];
+}
+
+
+
+
+subirArchivo(): any {
+
+  this.loading = true;
+  const formularioDeDatos = new FormData();
+  this.archivos.forEach((archivo: string | Blob) => {
+    formularioDeDatos.append('multipartFile', archivo)
+  })
+
+  this.uploadFilesService.post(`http://springgc1-env.eba-mf2fnuvf.us-east-1.elasticbeanstalk.com/assets/upload`, formularioDeDatos)
+    .subscribe(res => {
+      this.loading = false;
+      console.log('Respuesta del servidor', res);
+     this.inforest=res;
+     console.log(this.inforest);
+     this.rutaimagen= this.inforest.key
+     this.urlImage = this.inforest.url
+     console.log(this.rutaimagen);
+     console.log(this.urlImage);
+    }, () => {
+      this.loading = false;
+      alert('Error');
+    })
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 }
