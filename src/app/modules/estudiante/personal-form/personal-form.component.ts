@@ -24,7 +24,7 @@ export class PersonalFormComponent implements OnInit {
   public rutaimagen: string = '';
   public urlImage: string = '';
   public inforest: any=[];
-  
+  public getRuta: string= '';
   
 
   //-----------//
@@ -52,16 +52,36 @@ export class PersonalFormComponent implements OnInit {
     if (this.estudiante_id) {
       this.estudianteService.getSummaryByEstudianteId(this.estudiante_id).subscribe(r => {
         this.estudiante = r;
+        this.estudiante.urlImagen= localStorage.getItem('urlimage');
+        this.estudiante.rutaImagen =localStorage.getItem('rutaimagen');
+        this.getRuta= this.estudiante.rutaImagen;
+        console.log(this.getRuta);
+        console.log(this.estudiante)
       })
     }
+
+
+
+
+
+
+
   }
 
   registrarEstudiante() {
-    this.estudiante.urlImagen = this.urlImage
-    this.estudiante.rutaImagen=this.rutaimagen
+    if(this.urlImage === '' && this.rutaimagen === ''){
+      console.log("no se modifico la foto")
+      
+    this.estudiante.urlImagen = localStorage.getItem('urlimage');
+    this.estudiante.rutaImagen=localStorage.getItem('rutaimagen');
+  }else{           
+ this.estudiante.urlImagen = this.urlImage
+  this.estudiante.rutaImagen=this.rutaimagen    
+  console.log("nueva foto")         
+}
+    
     if (this.estudiante_id) {
       // actualizamos
-
       this.estudianteService.edit(this.estudiante_id, this.estudiante).subscribe(r => {
         console.log('🎑Actualizando...');
         this.response(r.error, r.icon, r.message);
@@ -129,6 +149,7 @@ export class PersonalFormComponent implements OnInit {
 //-------------------------------------------------------------------------//
 
 capturarFile(event: any): any {
+
   const archivoCapturado = event.target.files[0]
   this.extraerBase64(archivoCapturado).then((imagen: any) => {
     this.previsualizacion = imagen.base;
@@ -138,7 +159,6 @@ capturarFile(event: any): any {
   this.archivos.push(archivoCapturado)
   // 
   // console.log(event.target.files);
-
 }
 
 
@@ -179,7 +199,6 @@ this.archivos = [];
 
 
 subirArchivo(): any {
-
   this.loading = true;
   const formularioDeDatos = new FormData();
   this.archivos.forEach((archivo: string | Blob) => {
@@ -200,8 +219,7 @@ subirArchivo(): any {
       this.loading = false;
       alert('Error');
     })
-
-
+    
 }
 
 
@@ -209,8 +227,7 @@ subirArchivo(): any {
 
 
 
-
-
+//----------------------------------------------------------------//
 
 
 
