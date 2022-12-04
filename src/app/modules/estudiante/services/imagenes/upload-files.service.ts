@@ -14,7 +14,7 @@ export class UploadFilesService {
   
     const formData: FormData = new FormData();
     formData.append('multipartFile', multipartFile);
-     const req = new HttpRequest ('POST', `${FILES_API}/upload/`, formData, {
+     const req = new HttpRequest ('POST', `${FILES_API}upload/`, formData, {
      reportProgress: true,
      responseType:'json'
      });
@@ -22,11 +22,11 @@ export class UploadFilesService {
   }
   
   getFile(filename:string){
-    return this.http.get( `${FILES_API}/get-object/${filename} `);
+    return this.http.get( `${FILES_API}get-object/${filename} `);
   }
   
   delete(filename: string){
-    return this.http.get(  `${FILES_API}/delete-object/${filename} `);
+    return this.http.get(  `${FILES_API}delete-object/${filename} `);
   }
   
   public post(url:string, body:any){
