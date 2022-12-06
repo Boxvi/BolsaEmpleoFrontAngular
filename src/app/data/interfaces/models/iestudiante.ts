@@ -9,4 +9,8 @@ export interface IEstudiante {
   ciudad: string;
   direccion: string;
   estadoCivil: string;
+  rutaImagen: string;
+  urlImagen: string;
+
+
 }
