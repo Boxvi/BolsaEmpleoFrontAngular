@@ -51,6 +51,7 @@ export class HojaVidaComponent implements OnInit {
     this.hojaVidaService.getEstudiante(this.estudiante_id).subscribe(
       e => this.curriculum = e
     );
+    //this.curriculum.urlImagen= localStorage.getItem('urlimage');
   }
 
   private getPreferenciaEmpleo() {
