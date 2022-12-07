@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
 import Swal from 'sweetalert2';
 import { EstudianteService } from '../services/estudiante.service';
 import { RefPersonales } from './modelos/ref-personales';
@@ -15,8 +16,11 @@ export class RefPersonalesComponent implements OnInit {
   arrayTabla:any []=[];
   datosTab:any;
 
-  cedulaUsuario:any;
 
+  referencia_id : any;
+
+
+  cedulaUsuario:any;
   nombresdatos:any;
   telefonodatos:any;
 
@@ -35,19 +39,66 @@ export class RefPersonalesComponent implements OnInit {
 
   
   guardardatos(){
-    this.referenciaPer.cedula=this.cedulaUsuario
-    this.referenciaPer.nombre=this.nombresdatos
-    this.referenciaPer.telefono=this.telefonodatos
-    console.log(this.referenciaPer)
-    this.serviceReferencia.postRefPer(this.referenciaPer).subscribe(dat => {
-     this.arrayTabla=[]
-      this.ObTabRef()
-      this.Campos()
+if(this.nombresdatos === undefined){
+
+  Swal.fire({
+    icon: 'error',
+    text: 'Llene todos los campos por favor'
+  });
+
+}else{
+
+  if( this.telefonodatos === undefined){
+    Swal.fire({
+      icon: 'error',
+      text: 'Llene todos los campos por favor'
+    });
+
+  }else{
+    if(isNaN(this.telefonodatos)){
       Swal.fire({
-        icon: 'success',
-        text: 'Datos Guardatos'
+        icon: 'error',
+        text: 'SOLO NUMEROS '
       });
-    })
+
+    }else{
+
+      this.referenciaPer.cedula=this.cedulaUsuario
+      this.referenciaPer.nombre=this.nombresdatos
+      this.referenciaPer.telefono=this.telefonodatos
+      console.log(this.referenciaPer)
+      this.serviceReferencia.postRefPer(this.referenciaPer).subscribe(dat => {
+       this.arrayTabla=[]
+        this.ObTabRef()
+        this.Campos()
+     
+      })
+    }
+
+
+
+
+   
+
+  }
+
+    
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+   
   }
 
   ObTabRef(){
@@ -117,4 +168,23 @@ export class RefPersonalesComponent implements OnInit {
 
 
 
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

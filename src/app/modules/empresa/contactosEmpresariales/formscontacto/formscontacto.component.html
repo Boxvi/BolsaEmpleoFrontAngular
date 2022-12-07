@@ -40,15 +40,18 @@
       <div class="col-md-12">
         <label for="telefono" class="form-label text-uppercase">Telefono</label>
         <input
-        type="number"
+        type="tel"
+
+        required pattern="[0-9]{10}" 
+        title="ingrese un numero valido por favor" 
         class="form-control"
         id="telefono"
         name="telefono"
         cols="30"
         rows="5"
         [(ngModel)]=" postContacto.telefono"
-        required
-        placeholder="numero de contacto"/>
+       
+        placeholder="09999999999"/>
       </div>
   
       <div class="col-md-12">

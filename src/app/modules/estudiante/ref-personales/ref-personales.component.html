@@ -8,10 +8,19 @@
 
     </div>
     <div class="col-lg-3 col-md-6">
-      <label for="apellidos" class="form-label text-uppercase">TELEFONO</label>
-
-      <input type="text" [(ngModel)]="telefonodatos" class="form-control" aria-label="Last name" placeholder="XXXXXXXXXX" required>
-<br>
+      <label for="telefonodatos" class="form-label text-uppercase">Telefono</label>
+        <input
+        type="tel"
+        required pattern="[0-9]{10}" 
+        title="ingrese un numero valido por favor" 
+        class="form-control"
+        id="telefonodatos"
+        name="telefonodatos"
+        cols="30"
+        rows="5"
+        [(ngModel)]="telefonodatos"
+       
+        placeholder="09999999999"/>
     </div>
 
   </div>
