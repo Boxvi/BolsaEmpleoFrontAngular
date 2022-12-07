@@ -36,26 +36,36 @@ export class PrefLaboralComponent implements OnInit {
   }
 
   guardardatos() {
-    if (this.arrayTabla.length == 0) {
-      this.prefLaboral.cedula_estudiante = this.cedulaUsuario
-      this.prefLaboral.sector_empresarial = this.sectordatos
-      this.prefLaboral.tiempo = this.tiempodatos
-      // this.educacion.anio = parseInt(this.promociondatos)
-      this.prefLaboral.salario = this.salariodatos
-      this.prefLaboralService.postPreferenciaL(this.prefLaboral).subscribe(data => {
-        this.arrayTabla = []
-        //alert(this.prefLaboral)
-        this.ObEduTab()
-        this.Campos()
-        Swal.fire({
-          icon: 'success',
-          text: 'Datos Guardatos'
-        });
-      })
+    if (this.sectordatos === undefined) {
+      this.Mensaje();
     } else {
-      Swal.fire("Solo se permite un Registro!")
+      if (this.tiempodatos === undefined) {
+        this.Mensaje();
+      } else {
+        if (this.salariodatos === undefined) {
+          this.Mensaje();
+        } else {
+          if (this.arrayTabla.length == 0) {
+            this.prefLaboral.cedula_estudiante = this.cedulaUsuario
+            this.prefLaboral.sector_empresarial = this.sectordatos
+            this.prefLaboral.tiempo = this.tiempodatos
+            this.prefLaboral.salario = this.salariodatos
+            this.prefLaboralService.postPreferenciaL(this.prefLaboral).subscribe(data => {
+              this.arrayTabla = []
+              this.ObEduTab()
+              this.Campos()
+              Swal.fire({
+                icon: 'success',
+                text: 'Datos Guardatos'
+              });
+            })
+          } else {
+            Swal.fire("Solo se permite un Registro!")
+            this.Campos()
+          }
+        }
+      }
     }
-
   }
 
 
@@ -130,6 +140,14 @@ export class PrefLaboralComponent implements OnInit {
     this.tiempodatos = null
     this.salariodatos = null
 
+  }
+
+  Mensaje() {
+
+    Swal.fire({
+      icon: 'error',
+      text: 'Llene todos los campos por favor'
+    });
   }
 
 }
