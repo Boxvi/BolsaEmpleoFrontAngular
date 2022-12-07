@@ -17,7 +17,7 @@ app-sidenav {
   position: absolute;
   left: 0rem;
   width: 60px;
-  height: calc(1200px - 4rem);
+  height: calc(100vh - 4rem);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(34, 34, 34, 1);
   border-top: 1px solid white;
@@ -44,8 +44,8 @@ app-sidenav {
   /*   max-width: calc(100% - 250px); */
 }
 
-@media screen and ( min-height: 700px ) {
+@media screen and (min-height: 100vh) {
   app-sidenav {
-    height: calc(1500px - 4rem);
+    height: calc(1700px - 4rem);
   }
 }

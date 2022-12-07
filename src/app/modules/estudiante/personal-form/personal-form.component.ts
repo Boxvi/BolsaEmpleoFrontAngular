@@ -19,7 +19,7 @@ export class PersonalFormComponent implements OnInit {
   public estadosCivil = ESTADO_CIVIL_OPCIONES;
   public estudiante_id: number;
   public estudiante: IEstudiante | any = {/*     nombres: '',apellidos: '' */ };
-  public cedulaValidator = false;
+  public cedulaValidator = true;
 
   constructor(private route: ActivatedRoute, private ciudadService: CiudadService,
     private estudianteService: EstudianteService,
@@ -83,8 +83,6 @@ export class PersonalFormComponent implements OnInit {
         for (let i = 0; i < (cedula.length - 1); i++) {
           digit = parseInt(cedula.substring(i, i + 1)) * coefValCedual[i];
           sum += ((parseInt((digit % 10) + '') + (parseInt((digit / 10) + ''))));
-          console.log(sum + " suma " + coefValCedual[i]);
-
 
         }
         sum = Math.round(sum);
