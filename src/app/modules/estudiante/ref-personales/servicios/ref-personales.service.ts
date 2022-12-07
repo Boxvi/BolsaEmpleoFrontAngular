@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { RefPersonales } from '../modelos/ref-personales';
+import { Observable, map, catchError, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,22 @@ export class RefPersonalesService {
 
 
   postRefPer(referencia:RefPersonales):Observable<any>{
+    const response = { error: true, message: '', icon: '', data: null }
     return this.http.post<any>(`${this.apiUrl}/referenciaPersonal`,referencia)
+    .pipe(
+      map(r => {
+        response.error = false;
+        response.message = 'Registrado con exito';
+        response.icon = 'success';
+        response.data = r;
+        return response;
+      }),
+      catchError(e => {
+        response.message = e.error.message;
+        response.icon = 'error';
+        return of(response);
+      })
+    );
   }
 
   getTabla():Observable<any>{
