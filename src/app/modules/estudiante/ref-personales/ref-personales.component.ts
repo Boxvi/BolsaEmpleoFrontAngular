@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { isNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {isNumber} from '@ng-bootstrap/ng-bootstrap/util/util';
+import {ActivatedRoute, Router} from '@angular/router';
 import Swal from 'sweetalert2';
-import { EstudianteService } from '../services/estudiante.service';
-import { RefPersonales } from './modelos/ref-personales';
-import { RefPersonalesService } from './servicios/ref-personales.service';
+import {EstudianteService} from '../services/estudiante.service';
+import {RefPersonales} from './modelos/ref-personales';
+import {RefPersonalesService} from './servicios/ref-personales.service';
 
 @Component({
   selector: 'app-ref-personales',
@@ -13,120 +13,76 @@ import { RefPersonalesService } from './servicios/ref-personales.service';
 })
 export class RefPersonalesComponent implements OnInit {
 
-
-  arrayTabla: any[] = [];
-  datosTab: any;
-
-
+  arrayTabla:any []=[];
+  datosTab:any;
   referencia_id : any;
-
-
   cedulaUsuario:any;
   nombresdatos:any;
   telefonodatos:any;
-  cedulaUsuario: any;
-
-  nombresdatos: any;
-  telefonodatos: any;
 
   referenciaPer: RefPersonales = new RefPersonales;
-  estudiante_id: number;
-
+  public estudiante_id: number;
 
   constructor(private serviceReferencia: RefPersonalesService,
-    private route: ActivatedRoute) {
-    this.estudiante_id = this.route.snapshot.params['id'];
+              private route: ActivatedRoute,
+              private router: Router) {
+
+    this.estudiante_id =  this.route.snapshot.params['id'];
   }
 
   ngOnInit(): void {
 
-
-    this.cedulaUsuario = localStorage.getItem('cedulaPerfil')
+    this.cedulaUsuario=localStorage.getItem('cedulaPerfil')
     this.ObTabRef();
 
   }
 
-
- guardardatos(){
-if(this.nombresdatos === undefined){
-
-  Swal.fire({
-    icon: 'error',
-    text: 'Llene todos los campos por favor'
-  });
-
-}else{
-
-  if( this.telefonodatos === undefined){
-    Swal.fire({
-      icon: 'error',
-      text: 'Llene todos los campos por favor'
-    });
-
-  }else{
-    if(isNaN(this.telefonodatos)){
-
-  guardardatos() {
-    this.referenciaPer.cedula = this.cedulaUsuario
-    this.referenciaPer.nombre = this.nombresdatos
-    this.referenciaPer.telefono = this.telefonodatos
-    console.log(this.referenciaPer)
-    this.serviceReferencia.postRefPer(this.referenciaPer).subscribe(dat => {
-      this.arrayTabla = []
-      this.ObTabRef()
-      this.Campos()
+  guardardatos(){
+    if(this.nombresdatos === undefined){
 
       Swal.fire({
         icon: 'error',
-        text: 'SOLO NUMEROS '
+        text: 'Llene todos los campos por favor'
       });
 
     }else{
 
-      this.referenciaPer.cedula=this.cedulaUsuario
-      this.referenciaPer.nombre=this.nombresdatos
-      this.referenciaPer.telefono=this.telefonodatos
-      console.log(this.referenciaPer)
-      this.serviceReferencia.postRefPer(this.referenciaPer).subscribe(dat => {
-       this.arrayTabla=[]
-        this.ObTabRef()
-        this.Campos()
-     
-      })
+      if( this.telefonodatos === undefined){
+        Swal.fire({
+          icon: 'error',
+          text: 'Llene todos los campos por favor'
+        });
+
+      }else{
+        if(isNaN(this.telefonodatos)){
+          Swal.fire({
+            icon: 'error',
+            text: 'SOLO NUMEROS '
+          });
+
+        }else{
+
+          this.referenciaPer.cedula=this.cedulaUsuario
+          this.referenciaPer.nombre=this.nombresdatos
+          this.referenciaPer.telefono=this.telefonodatos
+          console.log(this.referenciaPer)
+          this.serviceReferencia.postRefPer(this.referenciaPer).subscribe(dat => {
+            this.arrayTabla=[]
+            this.ObTabRef()
+            this.Campos()
+
+          })
+        }
+      }
     }
-
-
-
-
-   
-
   }
 
-    
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-   
-  }
-
-  ObTabRef() {
-    this.referenciaPer.cedula = this.cedulaUsuario
-    this.serviceReferencia.getTabla().subscribe(datTab => {
-      this.datosTab = datTab;
-      for (var datarray in datTab) {
-        if (datTab[datarray].cedula == this.referenciaPer.cedula) {
+  ObTabRef(){
+    this.referenciaPer.cedula=this.cedulaUsuario
+    this.serviceReferencia.getTabla().subscribe(datTab =>{
+      this.datosTab=datTab;
+      for(var datarray in datTab){
+        if(datTab[datarray].cedula == this.referenciaPer.cedula){
           this.arrayTabla.push(datTab[datarray])
         }
       }
@@ -134,7 +90,7 @@ if(this.nombresdatos === undefined){
   }
 
 
-  EliminarTab(id: any) {
+  EliminarTab(id:any){
 
     Swal.fire({
       title: '¿Estas seguro de eliminar este registro?',
@@ -146,9 +102,9 @@ if(this.nombresdatos === undefined){
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.serviceReferencia.ElimirRef(id).subscribe(result => {
+        this.serviceReferencia.ElimirRef(id).subscribe(result =>{
           Swal.fire('Registro Eliminado', '', 'info');
-          this.arrayTabla = []
+          this.arrayTabla=[]
           this.ObTabRef()
         });
 
@@ -157,18 +113,18 @@ if(this.nombresdatos === undefined){
   }
 
 
-  Actualizar(datoRefPer: any) {
-    this.referenciaPer.id = datoRefPer.id
-    this.nombresdatos = datoRefPer.nombre
-    this.telefonodatos = datoRefPer.telefono
+  Actualizar(datoRefPer:any){
+    this.referenciaPer.id=datoRefPer.id
+    this.nombresdatos=datoRefPer.nombre
+    this.telefonodatos=datoRefPer.telefono
   }
 
-  guardarEdit() {
-    this.referenciaPer.nombre = this.nombresdatos
-    this.referenciaPer.telefono = this.telefonodatos
-    this.serviceReferencia.ActualizarRef(this.referenciaPer).subscribe(datos => {
+  guardarEdit(){
+    this.referenciaPer.nombre=this.nombresdatos
+    this.referenciaPer.telefono=this.telefonodatos
+    this.serviceReferencia.ActualizarRef(this.referenciaPer).subscribe( datos =>{
       console.log(datos)
-      this.arrayTabla = []
+      this.arrayTabla=[]
       this.ObTabRef()
 
       this.Campos()
@@ -180,31 +136,10 @@ if(this.nombresdatos === undefined){
     })
   }
 
-  Campos() {
+  Campos(){
 
     this.nombresdatos = null
     this.telefonodatos = null
   }
 
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
