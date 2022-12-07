@@ -19,7 +19,7 @@ export class FormCapacitacionComponent implements OnInit {
   public capacitacion: Capacitacion| any = {};
   public capacitacion_id: number;
   public estudiante_id = 0;
-
+  today = new Date().toLocaleDateString();
   public evento:string[] = ["Conferencia", "Congreso", "Diplomado", "Taller", "Seminario"];
   public tiposdeC:string[] = ["Aprobacion", "Asistencia"];
 

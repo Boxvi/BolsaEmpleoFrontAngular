@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { isNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { EstudianteService } from '../services/estudiante.service';
 import { RefPersonales } from './modelos/ref-personales';
@@ -13,8 +14,8 @@ import { RefPersonalesService } from './servicios/ref-personales.service';
 export class RefPersonalesComponent implements OnInit {
 
 
-  arrayTabla:any []=[];
-  datosTab:any;
+  arrayTabla: any[] = [];
+  datosTab: any;
 
 
   referencia_id : any;
@@ -23,22 +24,30 @@ export class RefPersonalesComponent implements OnInit {
   cedulaUsuario:any;
   nombresdatos:any;
   telefonodatos:any;
+  cedulaUsuario: any;
+
+  nombresdatos: any;
+  telefonodatos: any;
 
   referenciaPer: RefPersonales = new RefPersonales;
-  
+  estudiante_id: number;
 
-  constructor(private serviceReferencia: RefPersonalesService) { }
+
+  constructor(private serviceReferencia: RefPersonalesService,
+    private route: ActivatedRoute) {
+    this.estudiante_id = this.route.snapshot.params['id'];
+  }
 
   ngOnInit(): void {
-  
 
-    this.cedulaUsuario=localStorage.getItem('cedulaPerfil')
+
+    this.cedulaUsuario = localStorage.getItem('cedulaPerfil')
     this.ObTabRef();
 
   }
 
-  
-  guardardatos(){
+
+ guardardatos(){
 if(this.nombresdatos === undefined){
 
   Swal.fire({
@@ -56,6 +65,17 @@ if(this.nombresdatos === undefined){
 
   }else{
     if(isNaN(this.telefonodatos)){
+
+  guardardatos() {
+    this.referenciaPer.cedula = this.cedulaUsuario
+    this.referenciaPer.nombre = this.nombresdatos
+    this.referenciaPer.telefono = this.telefonodatos
+    console.log(this.referenciaPer)
+    this.serviceReferencia.postRefPer(this.referenciaPer).subscribe(dat => {
+      this.arrayTabla = []
+      this.ObTabRef()
+      this.Campos()
+
       Swal.fire({
         icon: 'error',
         text: 'SOLO NUMEROS '
@@ -101,12 +121,12 @@ if(this.nombresdatos === undefined){
    
   }
 
-  ObTabRef(){
-    this.referenciaPer.cedula=this.cedulaUsuario
-    this.serviceReferencia.getTabla().subscribe(datTab =>{
-      this.datosTab=datTab;
-      for(var datarray in datTab){
-        if(datTab[datarray].cedula == this.referenciaPer.cedula){
+  ObTabRef() {
+    this.referenciaPer.cedula = this.cedulaUsuario
+    this.serviceReferencia.getTabla().subscribe(datTab => {
+      this.datosTab = datTab;
+      for (var datarray in datTab) {
+        if (datTab[datarray].cedula == this.referenciaPer.cedula) {
           this.arrayTabla.push(datTab[datarray])
         }
       }
@@ -114,8 +134,8 @@ if(this.nombresdatos === undefined){
   }
 
 
-  EliminarTab(id:any){ 
-    
+  EliminarTab(id: any) {
+
     Swal.fire({
       title: '¿Estas seguro de eliminar este registro?',
       text: "No podrás revertir los cambios",
@@ -126,44 +146,44 @@ if(this.nombresdatos === undefined){
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-      this.serviceReferencia.ElimirRef(id).subscribe(result =>{
-        Swal.fire('Registro Eliminado', '', 'info');
-      this.arrayTabla=[]
-      this.ObTabRef()
-    });
-    
+        this.serviceReferencia.ElimirRef(id).subscribe(result => {
+          Swal.fire('Registro Eliminado', '', 'info');
+          this.arrayTabla = []
+          this.ObTabRef()
+        });
+
+      }
+    })
   }
-})
-}
 
 
-  Actualizar(datoRefPer:any){
-    this.referenciaPer.id=datoRefPer.id
-    this.nombresdatos=datoRefPer.nombre
-    this.telefonodatos=datoRefPer.telefono
+  Actualizar(datoRefPer: any) {
+    this.referenciaPer.id = datoRefPer.id
+    this.nombresdatos = datoRefPer.nombre
+    this.telefonodatos = datoRefPer.telefono
   }
-  
-  guardarEdit(){
-    this.referenciaPer.nombre=this.nombresdatos
-  this.referenciaPer.telefono=this.telefonodatos
-  this.serviceReferencia.ActualizarRef(this.referenciaPer).subscribe( datos =>{
-    console.log(datos)
-    this.arrayTabla=[]
+
+  guardarEdit() {
+    this.referenciaPer.nombre = this.nombresdatos
+    this.referenciaPer.telefono = this.telefonodatos
+    this.serviceReferencia.ActualizarRef(this.referenciaPer).subscribe(datos => {
+      console.log(datos)
+      this.arrayTabla = []
       this.ObTabRef()
-      
+
       this.Campos()
       Swal.fire({
         icon: 'success',
         text: 'Datos Actualizados'
       });
-  
-  })
+
+    })
   }
 
-  Campos(){
+  Campos() {
 
     this.nombresdatos = null
-      this.telefonodatos = null
+    this.telefonodatos = null
   }
 
 

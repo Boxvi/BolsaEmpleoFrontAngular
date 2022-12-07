@@ -1,4 +1,5 @@
 <app-title title="Logros"></app-title>
+<app-student-info-clip [idEstudiante]="estudiante_id"></app-student-info-clip>
 <div class="container-fluid p-0" *ngIf="logros.length > 0; else addOption">
   <button class="btn btn-dark mb-3" routerLink="/panel/estudiante/logros-form">
     <i class="bi bi-plus-circle-fill"></i> Agregar Nuevo

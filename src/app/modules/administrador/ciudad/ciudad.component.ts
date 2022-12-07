@@ -20,7 +20,7 @@ export class CiudadComponent implements OnInit {
   public ciudades: VariablesCiudad[] = [];
   public provincias: ProvinceGet[] = [];
 
-  filterPost: string = "";
+  filterCiudad: string = "";
 
   constructor(private ciudadesService: CiudadService) { }
 
