@@ -49,6 +49,8 @@ export class ResumeComponent implements OnInit {
       this.estudiante_id = d.id;
       this.estudianteService.setId(d.id);
       localStorage.setItem('idPerfil', d.id)
+      localStorage.setItem('urlimage',d.urlImagen)
+      localStorage.setItem('rutaimagen',d.rutaImagen)
       /*       for (const studentOption of this.studentOptions) {
               studentOption.link += this.perfilEstudiante.id;
             } */
