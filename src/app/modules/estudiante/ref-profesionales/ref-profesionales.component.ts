@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RefProfesionales } from 'src/app/data/interfaces/models/ref-profesionales';
 import Swal from 'sweetalert2';
 import { RefProfesionalesService } from '../services/ref-profesionales/ref-profesionales.service';
@@ -25,7 +25,9 @@ export class RefProfesionalesComponent implements OnInit {
   refProfesional: RefProfesionales = new RefProfesionales;
 
   constructor(private serviceRefProfesional: RefProfesionalesService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router: Router) {
+
     this.estudiante_id = this.route.snapshot.params['id'];
   }
 
@@ -36,21 +38,38 @@ export class RefProfesionalesComponent implements OnInit {
   }
 
   guardardatos() {
-    this.refProfesional.cedula = this.cedulaUsuario
-    this.refProfesional.institucion = this.instituciondatos
-    this.refProfesional.nombre = this.nombresdatos
-    this.refProfesional.telefono = this.telefonodatos
-    this.refProfesional.email = this.emaildatos
-    console.log(this.refProfesional)
-    this.serviceRefProfesional.postRefPer(this.refProfesional).subscribe(dat => {
-      this.arrayTabla = []
-      this.ObTabRef()
-      this.Campos()
-      Swal.fire({
-        icon: 'success',
-        text: 'Datos Guardatos'
-      });
-    })
+    if (this.instituciondatos === undefined) {
+      this.Mensaje();
+    } else {
+      if (this.nombresdatos === undefined) {
+        this.Mensaje();
+      } else {
+        if (this.emaildatos === undefined) {
+          this.Mensaje();
+        } else {
+          if (this.telefonodatos === undefined) {
+            this.Mensaje();
+          } else {
+
+            this.refProfesional.cedula = this.cedulaUsuario
+            this.refProfesional.institucion = this.instituciondatos
+            this.refProfesional.nombre = this.nombresdatos
+            this.refProfesional.telefono = this.telefonodatos
+            this.refProfesional.email = this.emaildatos
+            console.log(this.refProfesional)
+            this.serviceRefProfesional.postRefPer(this.refProfesional).subscribe(dat => {
+              this.arrayTabla = []
+              this.ObTabRef()
+              this.Campos()
+              Swal.fire({
+                icon: 'success',
+                text: 'Datos Guardatos'
+              });
+            })
+          }
+        }
+      }
+    }
   }
 
   ObTabRef() {
@@ -122,5 +141,13 @@ export class RefProfesionalesComponent implements OnInit {
     this.telefonodatos = null
     this.instituciondatos = null
     this.emaildatos = null
+  }
+
+  Mensaje() {
+
+    Swal.fire({
+      icon: 'error',
+      text: 'Llene todos los campos por favor'
+    });
   }
 }

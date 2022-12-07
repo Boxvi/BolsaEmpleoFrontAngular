@@ -65,22 +65,42 @@ export class InstFormalComponent implements OnInit {
   }
 
   guardardatos() {
-    this.educacion.cedula = this.cedulaUsuario
-    this.educacion.nivel = this.nivelesdatos
-    this.educacion.institucion_educativa = this.instituciondatos
-    this.educacion.anio = parseInt(this.promociondatos)
-    this.educacion.titulo = this.titulodatos
-    this.educacion.area_estudio = this.areaEstudiodatos
-    this.serviceInstruccion.posteducacion(this.educacion).subscribe(data => {
-      this.arrayTabla = []
-      this.ObEduTab()
-      this.Campos()
-      Swal.fire({
-        icon: 'success',
-        text: 'Datos Guardatos'
-      });
+    if (this.nivelesdatos === undefined) {
+      this.Mensaje();
+    } else {
+      if (this.instituciondatos === undefined) {
+        this.Mensaje();
+      } else {
+        if (this.areaEstudiodatos === undefined) {
+          this.Mensaje();
+        } else {
+          if (this.promociondatos === undefined) {
+            this.Mensaje();
+          } else {
+            if (this.titulodatos === undefined) {
+              this.Mensaje();
+            } else {
+              this.educacion.cedula = this.cedulaUsuario
+              this.educacion.nivel = this.nivelesdatos
+              this.educacion.institucion_educativa = this.instituciondatos
+              this.educacion.anio = parseInt(this.promociondatos)
+              this.educacion.titulo = this.titulodatos
+              this.educacion.area_estudio = this.areaEstudiodatos
+              this.serviceInstruccion.posteducacion(this.educacion).subscribe(data => {
+                this.arrayTabla = []
+                this.ObEduTab()
+                this.Campos()
+                Swal.fire({
+                  icon: 'success',
+                  text: 'Datos Guardatos'
+                });
 
-    })
+              })
+            }
+          }
+        }
+      }
+    }
   }
 
 
@@ -159,6 +179,13 @@ export class InstFormalComponent implements OnInit {
     this.areaEstudiodatos = "Seleccione una opcion"
     this.promociondatos = "Seleccione una opcion"
     this.titulodatos = null
+  }
+
+  Mensaje() {
+    Swal.fire({
+      icon: 'error',
+      text: 'Llene todos los campos por favor'
+    });
   }
 
 }
