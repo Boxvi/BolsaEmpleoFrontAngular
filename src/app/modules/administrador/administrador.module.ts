@@ -16,6 +16,17 @@ import { FormPostulacionesComponent } from './postulaciones/form-postulaciones/f
 import { OfertasLaboralesPipe } from './ofertaslaborales/pipe/ofertas-laborales.pipe';
 import { ReportesComponent } from './reportes/reportes.component';
 import { PostulacionesPipe } from './postulaciones/pipe/postulaciones.pipe';
+import { ProvinciaComponent } from './provincia/provincia.component';
+import { InstEducativasComponent } from './inst-educativas/inst-educativas.component';
+import { AreaEstudioComponent } from './area-estudio/area-estudio.component';
+import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.component';
+import { UsuarioListPipe } from './usuario/pipe/usuario-list.pipe';
+import { ProvinciaPipe } from './provincia/pipe/provincia.pipe';
+import { InstitucionPipe } from './inst-educativas/pipe/institucion.pipe';
+import { AreaestudioPipe } from './area-estudio/pipe/areaestudio.pipe';
+import { CiudadComponent } from './ciudad/ciudad.component';
+import { CiudadPipe } from './ciudad/pipe/ciudad.pipe';
+
 
 
 
@@ -34,7 +45,18 @@ import { PostulacionesPipe } from './postulaciones/pipe/postulaciones.pipe';
     FormPostulacionesComponent,
     OfertasLaboralesPipe,
     ReportesComponent,
-    PostulacionesPipe
+    PostulacionesPipe,
+    ProvinciaComponent,
+    InstEducativasComponent,
+    AreaEstudioComponent,
+    UsuarioListComponent,
+    UsuarioListPipe,
+    ProvinciaPipe,
+    InstitucionPipe,
+    AreaestudioPipe,
+    CiudadComponent,
+    CiudadPipe
+
   ],
   imports: [
     CommonModule,

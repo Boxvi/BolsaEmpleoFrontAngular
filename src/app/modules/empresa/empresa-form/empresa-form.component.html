@@ -20,9 +20,13 @@
       id="ruc"
       name="ruc"
       placeholder="1768152560001"
+      (change)="validateRUC(empresa.ruc)"
       [(ngModel)]="empresa.ruc"
       required
     />
+    <small *ngIf="!validateRUC(empresa.ruc)" class="text-danger">{{
+      rucAlert
+    }}</small>
   </div>
   <div class="col-lg-3 col-md-6">
     <label for="sectorEmpresarial" class="form-label text-uppercase"
@@ -137,7 +141,7 @@
     class="col-12 text-center d-flex justify-content-center align-items-center gap-3"
   >
     <app-back-button link="/panel/empresa"></app-back-button>
-    <button type="submit" class="btn btn-dark text-uppercase px-4 py-2 mt-3">
+    <button type="submit" class="btn btn-dark text-uppercase px-4 py-2 mt-3" [disabled]="!validateRUC(empresa.ruc)">
       Registrar
     </button>
   </div>

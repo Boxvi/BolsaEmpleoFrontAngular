@@ -18,6 +18,12 @@ import {
 import {ListPostulacionesComponent} from "./postulaciones/list-postulaciones/list-postulaciones.component";
 import {FormPostulacionesComponent} from "./postulaciones/form-postulaciones/form-postulaciones.component";
 import {ReportesComponent} from "./reportes/reportes.component";
+import {ProvinciaComponent} from "./provincia/provincia.component";
+import {AreaEstudioComponent} from "./area-estudio/area-estudio.component";
+import {InstEducativasComponent} from "./inst-educativas/inst-educativas.component";
+
+import {UsuarioListComponent} from "./usuario/usuario-list/usuario-list.component";
+import {CiudadComponent} from "./ciudad/ciudad.component";
 
 const routes: Routes = [
   {path: '', component: ResumeComponent},
@@ -30,8 +36,21 @@ const routes: Routes = [
 
   {path: 'postulaciones', component: ListPostulacionesComponent},
   {path: 'postulaciones/:id', component: FormPostulacionesComponent},
+  {path: 'reportes', component: ReportesComponent},
+  {path: 'provincia', component: ProvinciaComponent},
+  {path: 'provincia/:id', component: ProvinciaComponent},
 
-  {path: 'reportes', component: ReportesComponent}
+  {path: 'ciudad', component: CiudadComponent},
+  {path: 'ciudad/:id', component: CiudadComponent},
+
+  {path: 'area-estudio', component: AreaEstudioComponent},
+  {path: 'area-estudio/:id', component: AreaEstudioComponent},
+
+
+  {path: 'istitucion-educativa', component: InstEducativasComponent},
+  {path: 'istitucion-educativa/:id', component: InstEducativasComponent},
+  {path: 'usuario-list', component: UsuarioListComponent},
+
 
 ];
 

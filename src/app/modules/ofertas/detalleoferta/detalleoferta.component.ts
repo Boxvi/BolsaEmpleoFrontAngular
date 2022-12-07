@@ -5,9 +5,7 @@ import { EstudianteService } from '../../estudiante/services/estudiante.service'
 import { Router, ActivatedRoute } from '@angular/router';
 import{OfertaService} from 'src/app/modules/ofertas/oferta.service';
 import { Alert } from 'src/app/data/classes/alert';
-import {Moment} from 'moment';
 import * as moment from 'moment';
-import { Ofertaslaborales } from 'src/app/data/interfaces/models/ofertaslaborales';
 import { IOferta } from 'src/app/data/interfaces/models/ioferta';
 
 @Component({
@@ -29,13 +27,13 @@ export class DetalleofertaComponent implements OnInit {
   public savePostulacion: Postulacion = new Postulacion();
 
 
-  constructor(private estudianteService: EstudianteService, 
+  constructor(private estudianteService: EstudianteService,
     private authService: AuthService,
     private ofertasService: OfertaService,
     private router:Router,private route: ActivatedRoute,
-    ) { 
+    ) {
 
-      this.oferta_id=this.route.snapshot.params['id']; 
+      this.oferta_id=this.route.snapshot.params['id'];
     }
 
   ngOnInit(): void {
@@ -43,14 +41,14 @@ export class DetalleofertaComponent implements OnInit {
     this.estudianteService.getEstudianteByUserId(this.usuario_id).subscribe(
       data => {
         console.log(data)
-      this.estudiante = data;   
+      this.estudiante = data;
       console.log(this.savePostulacion);
       }
     )
     this.creationDate = moment().format("YYYY-MM-DDTHH:mm:ss ");
     console.log(this.creationDate);
     this.getByDetail();
-  
+
   }
 
 

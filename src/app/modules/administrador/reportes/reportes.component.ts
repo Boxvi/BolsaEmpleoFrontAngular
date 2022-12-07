@@ -30,7 +30,8 @@ export class ReportesComponent implements OnInit {
     {
       total: 0,
       tag: 'Número de Usuarios',
-      background: '#69D595'
+      background: '#69D595',
+      link: '/panel/administrador/usuario-list'
     },
     {
       total: 0,

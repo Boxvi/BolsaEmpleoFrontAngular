@@ -17,6 +17,12 @@ export class ResumeComponent implements OnInit {
     {link: 'ofertas-laborales'},
     {link: 'postulaciones'},
     {link: 'reportes'},
+    {link: 'provincia'},
+    {link: 'ciudad'},
+    {link: 'area-estudio'},
+    {link: 'istitucion-educativa'},
+    {link: 'usuario-list'},
+
   ];
 
 

@@ -19,7 +19,14 @@ export const LEFT_NAV_ITEMS: {
     title: 'Ofertas Aplicadas',
     iconClass: 'bi bi-check-circle-fill',
     link: '/ofertas/ofertasAplicadas'
-  }
+  },
+    {
+      title: 'Hoja De Vida',
+      iconClass: 'bi bi-file-earmark-person-fill',
+      link: '/panel/estudiante/hoja-vida'
+    }
+
+
   ],
   empresa: [{
     title: 'Datos Empresa',
@@ -27,8 +34,10 @@ export const LEFT_NAV_ITEMS: {
     link: '/panel/empresa'
   },
   {
-    title: 'Hojas de Vida',
-    iconClass: 'bi bi-person-vcard-fill'
+
+    title: 'Ofertas Aplicadas',
+    iconClass: 'bi bi-person-vcard-fill',
+    link: '/panel/empresa/ofertasAplicadas/empresa/id'
   }],
   administrador: [
     {
@@ -62,5 +71,35 @@ export const LEFT_NAV_ITEMS: {
       iconClass: 'bi bi-flag',
       link: '/panel/administrador/reportes'
     },
+
+    {
+      title: 'Provincia',
+      iconClass: 'bi bi-geo-alt',
+      link: '/panel/administrador/provincia'
+    },
+    {
+      title: 'Ciudad',
+      iconClass: 'bi bi-house-heart-fill',
+      link: '/panel/administrador/ciudad'
+    },
+    {
+      title: 'Area Estudio',
+      iconClass: 'bi bi-book',
+      link: '/panel/administrador/area-estudio'
+    },
+
+    {
+      title: 'Istitucion Educativa',
+      iconClass: 'bi bi-house-door',
+      link: '/panel/administrador/istitucion-educativa'
+    },
+    {
+      title: 'Usuarios',
+      iconClass: 'bi bi-file-earmark-person',
+      link: '/panel/administrador/usuario-list'
+    },
+
+
+
   ]
 };

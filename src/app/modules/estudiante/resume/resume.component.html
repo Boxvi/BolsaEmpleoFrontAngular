@@ -65,8 +65,22 @@
               {{ perfilEstudiante?.estadoCivil }}
             </div>
           </div>
+
+          <div
+            *ngIf="perfilEstudiante?.urlImagen"
+            class="col-md-6 d-flex justify-content-start align-items-center gap-3 py-2"
+          >
+            <h6 class="mb-0 text-uppercase">Foto de perfil:</h6>
+            <img
+              [src]="perfilEstudiante?.urlImagen"
+              alt="FOTO"
+              width="100"
+              height="100"
+            />
+          </div>
         </div>
       </div>
+
       <div class="col-md-1 d-flex justify-content-end">
         <i
           class="bi bi-pencil-square"

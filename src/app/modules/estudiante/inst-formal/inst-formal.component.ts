@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
-import { AreaEstudio, InstFormal, Instituciones, Niveles} from './modelos/inst-formal';
+import { AreaEstudio, InstFormal, Instituciones, Niveles } from './modelos/inst-formal';
 import { InstFormalService } from './servicios/inst-formal.service';
 
 @Component({
@@ -25,21 +26,24 @@ export class InstFormalComponent implements OnInit {
   areaEstudiodatos: any;
 
   educacion: InstFormal = new InstFormal;
-
-  cedulaUsuario:any;
+  estudiante_id: number;
+  cedulaUsuario: any;
 
   niveles: Niveles[] = [];
   instituciones: Instituciones[] = [];
   areaEstudio: AreaEstudio[] = [];
-  constructor(private serviceInstruccion: InstFormalService) { }
+  constructor(private serviceInstruccion: InstFormalService,
+    private route: ActivatedRoute) {
+    this.estudiante_id = this.route.snapshot.params['id'];
+  }
 
 
 
   ngOnInit(): void {
 
-    
 
-    this.cedulaUsuario=localStorage.getItem('cedulaPerfil')
+
+    this.cedulaUsuario = localStorage.getItem('cedulaPerfil')
     this.ObEduTab();
 
 
@@ -61,26 +65,46 @@ export class InstFormalComponent implements OnInit {
   }
 
   guardardatos() {
-    this.educacion.cedula = this.cedulaUsuario
-    this.educacion.nivel = this.nivelesdatos
-    this.educacion.institucion_educativa = this.instituciondatos
-    this.educacion.anio = parseInt(this.promociondatos)
-    this.educacion.titulo = this.titulodatos
-    this.educacion.area_estudio = this.areaEstudiodatos
-    this.serviceInstruccion.posteducacion(this.educacion).subscribe(data => {
-      this.arrayTabla = []
-      this.ObEduTab()
-      this.Campos()
-      Swal.fire({
-        icon: 'success',
-        text: 'Datos Guardatos'
-      });
+    if (this.nivelesdatos === undefined) {
+      this.Mensaje();
+    } else {
+      if (this.instituciondatos === undefined) {
+        this.Mensaje();
+      } else {
+        if (this.areaEstudiodatos === undefined) {
+          this.Mensaje();
+        } else {
+          if (this.promociondatos === undefined) {
+            this.Mensaje();
+          } else {
+            if (this.titulodatos === undefined) {
+              this.Mensaje();
+            } else {
+              this.educacion.cedula = this.cedulaUsuario
+              this.educacion.nivel = this.nivelesdatos
+              this.educacion.institucion_educativa = this.instituciondatos
+              this.educacion.anio = parseInt(this.promociondatos)
+              this.educacion.titulo = this.titulodatos
+              this.educacion.area_estudio = this.areaEstudiodatos
+              this.serviceInstruccion.posteducacion(this.educacion).subscribe(data => {
+                this.arrayTabla = []
+                this.ObEduTab()
+                this.Campos()
+                Swal.fire({
+                  icon: 'success',
+                  text: 'Datos Guardatos'
+                });
 
-    })
+              })
+            }
+          }
+        }
+      }
+    }
   }
 
 
-  ObEduTab(){
+  ObEduTab() {
     this.educacion.cedula = this.cedulaUsuario
     this.serviceInstruccion.getEduTabla().subscribe(datoTab => {
       this.datosEduTab = datoTab;
@@ -94,28 +118,28 @@ export class InstFormalComponent implements OnInit {
 
   EliminarTab(id: any) {
 
-      Swal.fire({
-        title: '¿Estas seguro de eliminar este registro?',
-        text: "No podrás revertir los cambios",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Si, eliminar',
-        cancelButtonText: 'Cancelar'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.serviceInstruccion.ElimirEdu(id).subscribe(result => {
-            Swal.fire('Registro Eliminado', '', 'info');
-            this.arrayTabla = []
-            this.ObEduTab()
-          });
-    
-        }
-      })
-    }
-    
+    Swal.fire({
+      title: '¿Estas seguro de eliminar este registro?',
+      text: "No podrás revertir los cambios",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.serviceInstruccion.ElimirEdu(id).subscribe(result => {
+          Swal.fire('Registro Eliminado', '', 'info');
+          this.arrayTabla = []
+          this.ObEduTab()
+        });
 
-  
+      }
+    })
+  }
+
+
+
 
   Actualizar(datoEmpresa: any) {
     this.educacion.id = datoEmpresa.id
@@ -139,7 +163,7 @@ export class InstFormalComponent implements OnInit {
       this.ObEduTab()
 
       this.Campos()
-      
+
       Swal.fire({
         icon: 'success',
         text: 'Datos Actualizados'
@@ -148,13 +172,20 @@ export class InstFormalComponent implements OnInit {
     })
   }
 
-  Campos(){
+  Campos() {
 
     this.nivelesdatos = "Seleccione una opcion"
-      this.instituciondatos = "Seleccione una opcion"
-      this.areaEstudiodatos = "Seleccione una opcion"
-      this.promociondatos = "Seleccione una opcion"
-      this.titulodatos = null
+    this.instituciondatos = "Seleccione una opcion"
+    this.areaEstudiodatos = "Seleccione una opcion"
+    this.promociondatos = "Seleccione una opcion"
+    this.titulodatos = null
+  }
+
+  Mensaje() {
+    Swal.fire({
+      icon: 'error',
+      text: 'Llene todos los campos por favor'
+    });
   }
 
 }

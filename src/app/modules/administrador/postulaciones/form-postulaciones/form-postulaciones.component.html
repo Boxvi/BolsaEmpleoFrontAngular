@@ -8,6 +8,14 @@
   <h3 class="text-center">DATOS DEL POSTULANTE</h3>
   <div class="p-4">
 
+    <div class="text-center">
+
+      <img src= "https://pespringboots3bucket.s3.amazonaws.com/{{postulaciones.estudiante.rutaImagen}}"  alt="{{postulaciones.estudiante.cedula + postulaciones.estudiante.nombres + postulaciones.estudiante.apellidos}}"     width="250" height="250">
+
+    </div>
+    <br>
+
+
     <table class="table table-light  table-striped-columns">
       <tbody>
       <tr>
@@ -114,7 +122,6 @@
         <label for="estado" class="form-label">ESTADO</label>
         <select class="form-select" aria-label="Default select example" name="estado" id="estado"
                 [(ngModel)]="postulacionesPut.estado">
-          <option value="convocatoria">Convocatoria</option>
           <option value="evaluación">Evaluación</option>
           <option value="selección">Selección</option>
           <option value="finalizada">Finalizada</option>
